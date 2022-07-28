@@ -21,10 +21,12 @@
          *
          * @return array
          */
-        public function rules()
+        public function rules(): array
         {
             return [
-                //
+                "name" => "required|string",
+                "email" => "required|string|email",
+                "content" => "required|string|mind:10",
             ];
         }
     }
