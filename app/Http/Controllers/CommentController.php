@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Http\Requests\StoreCommentRequest;
-use App\Http\Requests\UpdateCommentRequest;
+use App\Http\Requests\Comments\StoreCommentRequest;
+use Illuminate\Http\RedirectResponse;
 
 class CommentController extends Controller
 {
@@ -31,14 +31,14 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCommentRequest  $request
-     * @return \Illuminate\Http\Response
+     * @param  App\Http\Requests\Comments\StoreCommentRequest $request
+     * @return RedirectResponse
      */
-    public function store(StoreCommentRequest $request)
+    public function store(StoreCommentRequest $request): RedirectResponse
     {
         $vadlidatedData = $request->validated();
 
-        $newComment = Comment::create($vadlidatedData);
+        Comment::create($vadlidatedData);
 
         return redirect()->route("blog-post.show");
     }

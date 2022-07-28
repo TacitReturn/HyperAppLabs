@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\AdminController;
     use App\Http\Controllers\CategoriesController;
+    use App\Http\Controllers\CommentController;
     use App\Http\Controllers\PostController;
     use App\Http\Controllers\TagController;
     use App\Http\Controllers\UserController;
@@ -14,6 +15,8 @@
     Route::get("/", [WelcomeController::class, "index"]);
 
     Route::get("blog/posts/{post}",[ \App\Http\Controllers\Blog\PostController::class, "show"])->name("blog-post.show");
+
+    Route::post("comments", [CommentController::class, "store"])->name("comments.store");
 
 
     Auth::routes();
