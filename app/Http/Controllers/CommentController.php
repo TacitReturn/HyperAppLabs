@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Http\Requests\Comments\StoreCommentRequest;
+use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 
 class CommentController extends Controller
@@ -31,16 +32,19 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  App\Http\Requests\Comments\StoreCommentRequest $request
      * @return RedirectResponse
      */
-    public function store(StoreCommentRequest $request): RedirectResponse
+    public function store(StoreCommentRequest $request, Post  $post): RedirectResponse
     {
         $vadlidatedData = $request->validated();
 
+        $vadlidatedData["post_id"] = $post->id;
+
         Comment::create($vadlidatedData);
 
-        return redirect()->route("blog-post.show");
+        return redirect()->back();
+
+//        return redirect()->route("blog-post.show")->with("post", $post);
     }
 
     /**

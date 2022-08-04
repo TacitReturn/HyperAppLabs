@@ -10,10 +10,17 @@ use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $posts = Post::orderBy("created_at", "DESC")->get();
+        $clientSearch = $request->input("client-search");
+
+        if ($request->has("client-search")) {
+            $posts = Post::where("title", "like", "%{$clientSearch}%")->get();
+        }
+
         return view("welcome", [
-            "posts" => Post::orderBy("created_at", "DESC")->get(),
+            "posts" => $posts,
             "tags" => Tag::all(),
             "categories" => Category::all(),
             "bio" => DB::table("bio")->where("id", 1)->first(),

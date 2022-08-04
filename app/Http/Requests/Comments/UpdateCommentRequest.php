@@ -17,7 +17,7 @@
             return [
                 "name" => "required|string",
                 "email" => "required|string|email",
-                "content" => "required|string|mind:10",
+                "content" => "required|string|min:10",
             ];
         }
     }

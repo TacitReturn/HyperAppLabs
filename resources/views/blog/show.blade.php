@@ -100,19 +100,25 @@
                                 @endforeach
                             </div>
                             <hr>
-                            <form action="{{ route('comments.store') }}" method="POST">
+                            @if($errors->any())
+                                @foreach($errors as $error)
+                                    {{ $error }}
+                                @endforeach
+                            @endif
+                            <form action="{{ route('comments.store', $post->id) }}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <div class="form-group col-12 col-md-6">
-                                        <input class="form-control" type="text" placeholder="Name">
+                                        <input name="name" class="form-control" type="text" placeholder="Name">
                                     </div>
 
                                     <div class="form-group col-12 col-md-6">
-                                        <input class="form-control" type="text" placeholder="Email">
+                                        <input name="email" class="form-control" type="text" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Comment" rows="4"></textarea>
+                                    <textarea name="content" class="form-control" placeholder="Comment"
+                                              rows="4"></textarea>
                                 </div>
                                 <button class="btn btn-primary btn-block" type="submit">Submit your comment</button>
                             </form>

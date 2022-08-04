@@ -7,16 +7,6 @@
     class StoreCommentRequest extends FormRequest
     {
         /**
-         * Determine if the user is authorized to make this request.
-         *
-         * @return bool
-         */
-        public function authorize()
-        {
-            return false;
-        }
-
-        /**
          * Get the validation rules that apply to the request.
          *
          * @return array
@@ -25,8 +15,8 @@
         {
             return [
                 "name" => "required|string",
-                "email" => "required|string|email",
-                "content" => "required|string|mind:10",
+                "email" => "required|string|email:rfc,dns",
+                "content" => "required|string|min:10",
             ];
         }
     }

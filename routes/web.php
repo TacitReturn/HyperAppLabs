@@ -16,13 +16,11 @@
 
     Route::get("blog/posts/{post}",[ \App\Http\Controllers\Blog\PostController::class, "show"])->name("blog-post.show");
 
-    Route::post("comments", [CommentController::class, "store"])->name("comments.store");
-
-
-    Auth::routes();
-
+    Route::post("comments/{post}", [CommentController::class, "store"])->name("comments.store");
 
     Route::middleware(["auth"])->group(function () {
+        Auth::routes();
+
         Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.index');
 
         Route::resource("categories", CategoriesController::class);
@@ -51,3 +49,5 @@
         Route::get("admin/create-user", [AdminController::class, "createUser"])->name("admin.create-user");
         Route::post("admin/create-user", [AdminController::class, "storeUser"])->name("admin.store-user");
     });
+
+    TODO:// Create middleware for comments to publish them before they're viewable.
