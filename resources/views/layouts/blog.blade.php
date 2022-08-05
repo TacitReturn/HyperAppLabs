@@ -142,9 +142,9 @@
     <div class="container">
         <div class="row gap-y align-items-center">
 
-            <div class="col-6 col-lg-3">
-                <a href="../index.html"><img src="../assets/img/logo-dark.png" alt="logo"></a>
-            </div>
+{{--            <div class="col-6 col-lg-3">--}}
+{{--                <a href="../index.html"><img src="../assets/img/logo-dark.png" alt="logo"></a>--}}
+{{--            </div>--}}
 
             <div class="col-6 col-lg-3 text-right order-lg-last">
 {{--                <div class="social">--}}
