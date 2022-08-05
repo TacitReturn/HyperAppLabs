@@ -85,20 +85,20 @@
                                 @endforeach
                             </div>
                             <hr>
-                            <h6 class="sidebar-title">Top posts</h6>
-                            <a class="media text-default align-items-center mb-5" href="blog-single.html">
-                                <img class="rounded w-65px mr-4" src="../assets/img/thumb/4.jpg">
-                                <p class="media-body small-2 lh-4 mb-0">Thank to Maryam for joining our team</p>
-                            </a>
-                            <hr>
-                            <h6 class="sidebar-title">Tags</h6>
-                            <div class="gap-multiline-items-1">
-                                @foreach($tags as $tag)
-                                    <a class="badge badge-secondary" href="#">
-                                        {{ $tag->name }}
-                                    </a>
-                                @endforeach
-                            </div>
+{{--                            <h6 class="sidebar-title">Top posts</h6>--}}
+{{--                            <a class="media text-default align-items-center mb-5" href="blog-single.html">--}}
+{{--                                <img class="rounded w-65px mr-4" src="../assets/img/thumb/4.jpg">--}}
+{{--                                <p class="media-body small-2 lh-4 mb-0">Thank to Maryam for joining our team</p>--}}
+{{--                            </a>--}}
+{{--                            <hr>--}}
+{{--                            <h6 class="sidebar-title">Tags</h6>--}}
+{{--                            <div class="gap-multiline-items-1">--}}
+{{--                                @foreach($tags as $tag)--}}
+{{--                                    <a class="badge badge-secondary" href="#">--}}
+{{--                                        {{ $tag->name }}--}}
+{{--                                    </a>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
