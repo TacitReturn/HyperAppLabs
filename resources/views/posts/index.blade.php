@@ -106,7 +106,6 @@
 @section("scripts")
     <script>
       function handleDelete (id) {
-        console.log(id)
         let form = document.getElementById("formPostId")
         form.action = "/posts/" + id
       }

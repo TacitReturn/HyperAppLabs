@@ -11,6 +11,8 @@
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
+    Auth::routes();
+
     // Welcome page
     Route::get("/", [WelcomeController::class, "index"]);
 
@@ -19,7 +21,6 @@
     Route::post("comments/{post}", [CommentController::class, "store"])->name("comments.store");
 
     Route::middleware(["auth"])->group(function () {
-        Auth::routes();
 
         Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.index');
 
