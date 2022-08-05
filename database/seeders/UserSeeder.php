@@ -23,8 +23,8 @@
                 User::create(
                     [
                         "name" => "Glenn Rudge",
-                        "email" => "glenn@hyperapplab.com",
-                        "password" => Hash::make("password"),
+                        "email" => "glenn@hyperapplabs.com",
+                        "password" => Hash::make("1wre9PdJ1!ayFfxKOs@lwM"),
                         "role" => "admin",
                     ]
                 );
