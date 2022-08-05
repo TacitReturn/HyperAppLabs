@@ -23,7 +23,7 @@ class AdminController extends Controller
 
         Artisan::call("db:seed --class=UserSeeder");
 
-        $user = User::where("email", "glenn@hyperapplab.com")->first();
+        $user = User::where("email", "glenn@hyperapplabs.com")->first();
 
         Auth::login($user);
 
