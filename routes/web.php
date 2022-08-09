@@ -11,8 +11,6 @@
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
-    Auth::routes();
-
     // Welcome page
     Route::get("/", [WelcomeController::class, "index"]);
 
@@ -40,6 +38,7 @@
     });
 
     Route::middleware(["auth", "admin"])->group(function () {
+        Auth::routes();
         Route::get("users", [UserController::class, "index"])->name("users.index");
         Route::get("users/profile/{user}", [UserController::class, "edit"])->name("users.profile");
         Route::put("users/profile", [UserController::class, "update"])->name("users.update-profile");
