@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class AdminController extends Controller
 {
@@ -15,9 +20,9 @@ class AdminController extends Controller
      * Runs php artisan migrate:fresh on database
      *
      * @param  Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function migrateDatabase(Request $request)
+    public function migrateDatabase(Request $request): RedirectResponse
     {
         Artisan::call("migrate:refresh");
 
@@ -32,11 +37,22 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * @return Application|Factory|View
+     *
+     * Display the view to create a new user.
+     */
     public function createUser()
     {
         return view("admin.create-user");
     }
 
+    /**
+     * @param  Request  $request
+     * @return Application|Factory|View
+     *
+     * Creates a new user.
+     */
     public function storeUser(Request $request)
     {
         if (\request()->hasFile("avatar")) {
@@ -50,6 +66,15 @@ class AdminController extends Controller
             "email" => $request["email"],
             "password" => Hash::make($request["password"]),
         ]);
+
+        return view("home");
+    }
+
+    public function deployCode()
+    {
+        Http::get("https://forge.laravel.com/servers/581193/sites/1716665/deploy/http?token=qIJV447YgI9h8yGwpM5m38tiwk8SbQ2UcWVQ4zhQ");
+
+        \request()->session()->flash("status", "Code deployed to server successfully.");
 
         return view("home");
     }

@@ -49,6 +49,7 @@
         Route::get("admin/create-user", [AdminController::class, "createUser"])->name("admin.create-user");
         Route::get("admin/create-user", [AdminController::class, "createUser"])->name("admin.create-user");
         Route::post("admin/create-user", [AdminController::class, "storeUser"])->name("admin.store-user");
+        Route::get("admin/deploy-code", [AdminController::class, "deployCode"])->name("admin.deploy-code");
     });
 
     TODO:// Create middleware for comments to publish them before they're viewable.

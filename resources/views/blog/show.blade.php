@@ -19,11 +19,18 @@
                     <h1 class="display-4 mt-7 mb-8">
                         {{ $post->title }}
                     </h1>
-                    <p><span class="opacity-70 mr-1">By</span> <a class="text-white"
-                                                                  href="#">{{ $post->user->name }}</a></p>
-                    {{--                    TODO:// Insert user profile image here--}}
-                    <p><img class="avatar avatar-sm" src="{{ asset('storage/'.$post->user->avatar) }}" alt="post image">
+                    <p>
+                        <span class="opacity-70 mr-1">By</span>
+                        <a class="text-white" href="#">{{ $post->user->name }}</a>
                     </p>
+                    <p>
+                    <p class="opacity-70 text-uppercase small ls-1">
+                        {{ $post->user->about }}
+                    </p>
+                    </p>
+                    {{--                    TODO:// Insert user profile image here--}}
+                    {{--                    <p><img class="avatar avatar-sm" src="{{ asset('storage/'.$post->user->avatar) }}" alt="post image">--}}
+                    {{--                    </p>--}}
 
                 </div>
 
