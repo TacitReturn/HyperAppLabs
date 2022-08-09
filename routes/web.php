@@ -7,7 +7,6 @@
     use App\Http\Controllers\TagController;
     use App\Http\Controllers\UserController;
     use App\Http\Controllers\WelcomeController;
-    use App\Models\Category;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
