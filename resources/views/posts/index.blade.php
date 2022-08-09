@@ -35,7 +35,7 @@
                             </td>
                             <td colspan="1">
                                 <img
-                                        src="{{ asset('storage/'.$post->image) }}"
+                                        src="{{ secure_asset('storage/'.$post->image) }}"
                                         alt="post image"
                                         height="60" width="60">
                             </td>

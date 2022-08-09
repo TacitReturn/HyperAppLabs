@@ -8,9 +8,9 @@
 
                 <div class="card-body d-flex justify-content-between">
                     <a href="{{ route("admin.migrate-database") }}" class="btn btn-success">Migrate Database</a>
-{{--                    <form class="" action="admin/deploy-code" method="GET">--}}
-{{--                        <button type="submit" class="btn btn-success">Deploy Code</button>--}}
-{{--                    </form>--}}
+                    <form class="" action="admin/deploy-code" method="GET">
+                        <button type="submit" class="btn btn-success">Deploy Code</button>
+                    </form>
                     <a href="{{ route("admin.create-user") }}" class="btn btn-success">Create User</a>
                 </div>
             </div>
