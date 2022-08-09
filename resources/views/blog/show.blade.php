@@ -6,7 +6,7 @@
 @section("header")
     <!-- Header -->
     <header class="header text-white h-fullscreen pb-80"
-            style="background-image: url({{ asset('storage/'.$post->image) }});"
+            style="background-image: url({{ secure_asset('storage/'.$post->image) }});"
             data-overlay="9">
         <div class="container text-center">
 
