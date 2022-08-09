@@ -19,8 +19,6 @@
         {
             $user = User::where("email", "glenn@hyperapplab.com")->first();
 
-
-
             DB::table("bio")->insert(
                 [
                     "bio" => "I started off in tech at a young age, building websites for my E-sports and skateboarding 
