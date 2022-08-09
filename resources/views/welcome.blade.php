@@ -38,7 +38,7 @@
                                 @foreach($posts as $post)
                                     <div class="col-md-6">
                                         <div class="card border hover-shadow-6 mb-6 d-block">
-                                            <img class="card-img-top" src="{{ asset("storage/{$post->image}") }}"
+                                            <img class="card-img-top" src="{{ secure_asset("storage/{$post->image}") }}"
                                                  alt="post image cap">
                                             <div class="p-6 text-center">
                                                 <p>
