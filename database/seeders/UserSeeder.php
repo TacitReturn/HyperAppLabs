@@ -19,16 +19,7 @@
         {
             $user = User::where("email", "glenn@hyperapplab.com")->first();
 
-            if (!$user) {
-                User::create(
-                    [
-                        "name" => "Glenn Rudge",
-                        "email" => "glenn@hyperapplabs.com",
-                        "password" => Hash::make("1wre9PdJ1!ayFfxKOs@lwM"),
-                        "role" => "admin",
-                    ]
-                );
-            }
+
 
             DB::table("bio")->insert(
                 [
