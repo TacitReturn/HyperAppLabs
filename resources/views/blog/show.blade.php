@@ -90,7 +90,7 @@
                             <div class="media-list">
                                 @foreach($post->comments as $comment)
                                     <div class="media">
-                                        <img class="avatar avatar-sm mr-4" src="../assets/img/avatar/1.jpg" alt="...">
+{{--                                        <img class="avatar avatar-sm mr-4" src="../assets/img/avatar/1.jpg" alt="...">--}}
 
                                         <div class="media-body">
                                             <div class="small-1">
