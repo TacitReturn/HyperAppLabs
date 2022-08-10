@@ -89,21 +89,23 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="media-list">
                                 @foreach($post->comments as $comment)
-                                    <div class="media">
-{{--                                        <img class="avatar avatar-sm mr-4" src="../assets/img/avatar/1.jpg" alt="...">--}}
+                                    @if($comment->isPublished)
+                                        <div class="media">
+                                            {{--<img class="avatar avatar-sm mr-4" src="../assets/img/avatar/1.jpg" alt="...">--}}
 
-                                        <div class="media-body">
-                                            <div class="small-1">
-                                                <strong>{{ $comment->name }}</strong>
-                                                <time class="ml-4 opacity-70 small-3" datetime="2018-07-14 20:00">
-                                                    {{ $comment->created_at->diffForHumans() }}
-                                                </time>
+                                            <div class="media-body">
+                                                <div class="small-1">
+                                                    <strong>{{ $comment->name }}</strong>
+                                                    <time class="ml-4 opacity-70 small-3" datetime="2018-07-14 20:00">
+                                                        {{ $comment->created_at->diffForHumans() }}
+                                                    </time>
+                                                </div>
+                                                <p class="small-2 mb-0">
+                                                    {{ $comment->content }}
+                                                </p>
                                             </div>
-                                            <p class="small-2 mb-0">
-                                                {{ $comment->content }}
-                                            </p>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endforeach
                             </div>
                             <hr>
