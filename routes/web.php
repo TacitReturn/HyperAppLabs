@@ -36,18 +36,36 @@
         );
     });
 
+    Auth::routes();
+
     Route::middleware(["auth", "admin"])->group(function () {
-        Auth::routes();
         Route::get("users", [UserController::class, "index"])->name("users.index");
+
         Route::get("users/profile/{user}", [UserController::class, "edit"])->name("users.profile");
+
         Route::put("users/profile", [UserController::class, "update"])->name("users.update-profile");
+
         Route::post("users/{user}/make-admin", [UserController::class, "makeAdmin"])->name("users.make-admin");
+
         Route::post("users/{user}/make-writer", [UserController::class, "makeWriter"])->name("users.make-writer");
+
         Route::get("admin/migrate-database/", [AdminController::class, "migrateDatabase"])->name("admin.migrate-database");
+
         Route::get("admin/create-user", [AdminController::class, "createUser"])->name("admin.create-user");
+
         Route::get("admin/create-user", [AdminController::class, "createUser"])->name("admin.create-user");
+
         Route::post("admin/create-user", [AdminController::class, "storeUser"])->name("admin.store-user");
+
         Route::get("admin/deploy-code", [AdminController::class, "deployCode"])->name("admin.deploy-code");
+
+        // Comments Index
+        Route::get("comments", [CommentController::class, "index"])->name("comments.index");
+
+//        // Comments publish
+        Route::put("comments/{comment}", [CommentController::class, "publishComment"])->name("comments.publish");
+
+        Route::put("comments/unpublish/{comment}", [CommentController::class, "unPublishComment"])->name("comments.unpublish");
     });
 
 //    TODO:// Create middleware for comments to publish them before they're viewable.

@@ -15,6 +15,11 @@ class Comment extends Model
         "email",
         "content",
         "post_id",
+        "isPublished",
+    ];
+
+    protected $casts = [
+        "isPublished" => "boolean",
     ];
 
     public function post(): BelongsTo

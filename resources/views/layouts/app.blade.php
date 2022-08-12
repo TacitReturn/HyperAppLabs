@@ -105,6 +105,9 @@
                             <li class="list-group-item">
                                 <a href="{{ route('posts.index') }}">Posts</a>
                             </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('comments.index') }}">Comments</a>
+                            </li>
                             @if(auth()->user()->isAdmin())
                                 <li class="list-group-item">
                                     <a href="{{ route("users.index") }}">Users</a>
@@ -115,9 +118,6 @@
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('categories.index') }}">Categories</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="{{ route('categories.index') }}">Comments</a>
                             </li>
                         </ul>
                         <ul class="list-group text-center my-3">
