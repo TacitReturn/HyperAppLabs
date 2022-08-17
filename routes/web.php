@@ -66,6 +66,8 @@
         Route::put("comments/{comment}", [CommentController::class, "publishComment"])->name("comments.publish");
 
         Route::put("comments/unpublish/{comment}", [CommentController::class, "unPublishComment"])->name("comments.unpublish");
+
+        Route::delete("comments/{comment}", [CommentController::class, "destroy"]);
     });
 
 //    TODO:// Create middleware for comments to publish them before they're viewable.

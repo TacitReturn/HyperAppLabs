@@ -92,7 +92,6 @@
                                     @if($comment->isPublished)
                                         <div class="media">
                                             {{--<img class="avatar avatar-sm mr-4" src="../assets/img/avatar/1.jpg" alt="...">--}}
-
                                             <div class="media-body">
                                                 <div class="small-1">
                                                     <strong>{{ $comment->name }}</strong>

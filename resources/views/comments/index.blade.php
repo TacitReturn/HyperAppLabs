@@ -71,7 +71,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-info" data-bs-dismiss="modal">No</button>
-                            <form method="POST" id="formcommentId">
+                            <form method="POST" id="formCommentId">
                                 @csrf
                                 @method("DELETE")
                                 <button type="submit" class="btn btn-danger">Yes Delete</button>
@@ -87,7 +87,7 @@
 @section("scripts")
     <script>
       function handleDelete (id) {
-        let form = document.getElementById("formcommentId")
+        let form = document.getElementById("formCommentId")
         form.action = "/comments/" + id
       }
     </script>

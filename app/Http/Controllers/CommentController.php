@@ -106,10 +106,14 @@
          * Remove the specified resource from storage.
          *
          * @param  Comment  $comment
-         * @return Response
+         * @return RedirectResponse
          */
-        public function destroy(Comment $comment)
+        public function destroy(Comment $comment): RedirectResponse
         {
-            //
+            $comment->delete();
+
+            \request()->session()->flash("status", "Comment deleted successfully..");
+
+            return redirect()->route("comments.index");
         }
     }
