@@ -70,5 +70,4 @@
         Route::delete("comments/{comment}", [CommentController::class, "destroy"]);
     });
 
-//    TODO:// Create middleware for comments to publish them before they're viewable.
-//    TODO:// Create 'published' field on comments.
+    //TODO: Create contact form.
