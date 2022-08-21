@@ -88,6 +88,15 @@
                                 @endforeach
                             </div>
                             <hr>
+                            <h6 class="sidebar-title">Tags</h6>
+                            <div class="row link-color-default fs-14 lh-24">
+                                @foreach($tags as $tag)
+                                    <div class="col-6"><a href="#">
+                                            {{ $tag->name }}
+                                        </a></div>
+                                @endforeach
+                            </div>
+                            <hr>
                             {{--                            <h6 class="sidebar-title">Top posts</h6>--}}
                             {{--                            <a class="media text-default align-items-center mb-5" href="blog-single.html">--}}
                             {{--                                <img class="rounded w-65px mr-4" src="../assets/img/thumb/4.jpg">--}}

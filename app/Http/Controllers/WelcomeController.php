@@ -12,7 +12,8 @@ class WelcomeController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::orderBy("created_at", "DESC")->get();
+        $posts = Post::published()->orderBy("created_at", "DESC")->get();
+
         $clientSearch = $request->input("client-search");
 
         if ($request->has("client-search")) {
