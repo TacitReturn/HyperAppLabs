@@ -27,7 +27,6 @@
                     <p class="opacity-70 text-uppercase small ls-1">
                         {{ $post->user->about }}
                     </p>
-                    </p>
                     {{--                    TODO:// Insert user profile image here--}}
                     {{--                    <p><img class="avatar avatar-sm" src="{{ asset('storage/'.$post->user->avatar) }}" alt="post image">--}}
                     {{--                    </p>--}}
@@ -64,7 +63,7 @@
                     @endforeach
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-lg-12 mx-auto">
                         <p class="lead">
                             {{ $post->description }}
                         </p>

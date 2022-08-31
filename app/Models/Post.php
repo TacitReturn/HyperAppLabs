@@ -19,7 +19,7 @@
         ];
 
         protected $fillable = [
-            "title", "description", "content", "image", "published_at", "category_id", "user_id"
+            "title", "slug","description", "content", "image", "published_at", "category_id", "user_id"
         ];
 
         /**
@@ -37,7 +37,7 @@
          */
         public function category(): BelongsTo
         {
-            return $this->belongsTo(Category::class);
+            return $this->belongsTo(Category::class, "category_id");
         }
 
         public function tags(): BelongsToMany

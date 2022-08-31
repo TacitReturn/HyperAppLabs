@@ -13,6 +13,7 @@
     use Illuminate\Http\RedirectResponse;
     use Illuminate\Http\Response;
     use Illuminate\Support\Facades\Request;
+    use Illuminate\Support\Str;
 
     class PostController extends Controller
     {
@@ -64,6 +65,7 @@
                 $post = Post::create(
                     [
                         "title" => $validatedData["title"],
+                        "slug" =>  Str::slug($validatedData["title"], "-"),
                         "description" => $validatedData["description"],
                         "content" => $validatedData["content"],
                         "image" => $image,
