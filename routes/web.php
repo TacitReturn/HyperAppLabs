@@ -22,7 +22,7 @@
 
     // Contact Us Routes
 
-    Route::get('/contact', [ContactUsFormController::class, 'createForm']);
+    Route::get('/contact', [ContactUsFormController::class, 'createForm'])->name("contact.create");
     Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
     Route::middleware(["auth"])->group(function () {

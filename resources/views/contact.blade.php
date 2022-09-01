@@ -1,68 +1,67 @@
-<div class="contact_info">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <div class="contact_info_container d-flex flex-lg-row flex-column justify-content-between align-items-between">
+@extends("layouts.blog")
+@section("content")
+    <section class="section">
+        <div class="container">
 
-                    <!-- Contact Item -->
-                    <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="contact_info_image"><img src="https://img.icons8.com/office/24/000000/iphone.png" alt=""></div>
-                        <div class="contact_info_content">
-                            <div class="contact_info_title">Phone</div>
-                            <div class="contact_info_text">+91 9876 543 2198</div>
+            <h2 class="text-center">Contact Us</h2>
+            <p class="lead text-center">
+                Have a project in mind? Or want to refactor an existing project? Get in touch with us.
+            </p>
+            <div class="row gap-y mt-8">
+                <form class="col-lg-6" action="{{ route('contact.store') }}" method="POST">
+                    @csrf
+                    @if($errors->any())
+                        @foreach($errors->all() as $error)
+                            <p class="">{{ $error }}</p>
+                        @endforeach
+                    @endif
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input class="form-control form-control-lg" type="text" name="name"
+                                   placeholder="Company Name">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input class="form-control form-control-lg" type="text" name="subject"
+                                   placeholder="Subject">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input class="form-control form-control-lg" type="email" name="email" placeholder="Email">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input class="form-control form-control-lg" type="text" name="phone" placeholder="Phone">
                         </div>
                     </div>
 
-                    <!-- Contact Item -->
-                    <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="contact_info_image"><img src="https://img.icons8.com/ultraviolet/24/000000/filled-message.png" alt=""></div>
-                        <div class="contact_info_content">
-                            <div class="contact_info_title">Email</div>
-                            <div class="contact_info_text">contact@bbbootstrap.com</div>
-                        </div>
+                    <div class="form-group">
+                        <textarea class="form-control form-control-lg" rows="4" placeholder="What do you have in mind?"
+                                  name="message"></textarea>
                     </div>
 
-                    <!-- Contact Item -->
-                    <div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
-                        <div class="contact_info_image"><img src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png" alt=""></div>
-                        <div class="contact_info_content">
-                            <div class="contact_info_title">Address</div>
-                            <div class="contact_info_text">298,Menlo Park,CA,USA</div>
-                        </div>
-                    </div>
+                    <button class="btn btn-lg btn-primary" type="submit">Send message</button>
 
+                </form>
+
+
+                <div class="col-lg-5 ml-auto text-center text-lg-left">
+                    <hr class="d-lg-none">
+                    <h5>Seattle, WA</h5>
+                    <p>2651 Main Street, Suit 124<br>Seattle, WA, 98101</p>
+                    <p>+1 (321) 654 9870<br>+1 (987) 123 6548</p>
+                    <p>hello@thetheme.io</p>
+                    <div class="fw-400">Follow Us</div>
+                    <div class="social social-sm social-inline">
+                        <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
+                        <a class="social-facebook" href="#"><i class="fa fa-facebook"></i></a>
+                        <a class="social-instagram" href="#"><i class="fa fa-instagram"></i></a>
+                        <a class="social-dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                    </div>
                 </div>
             </div>
+
         </div>
-    </div>
-</div>
 
-<!-- Contact Form -->
-
-<div class="contact_form">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <div class="contact_form_container">
-                    <div class="contact_form_title">Get in Touch</div>
-
-                    <form action="#" id="contact_form">
-                        <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
-                            <input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Your name" required="required" data-error="Name is required.">
-                            <input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="Your email" required="required" data-error="Email is required.">
-                            <input type="text" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Your phone number">
-                        </div>
-                        <div class="contact_form_text">
-                            <textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-                        </div>
-                        <div class="contact_form_button">
-                            <button type="submit" class="button contact_submit_button">Send Message</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel"></div>
-</div>
+    </section>
+@endsection

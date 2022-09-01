@@ -39,90 +39,33 @@
             <ul class="nav nav-navbar">
                 <li class="nav-item">
                     <a class="nav-link" href="/">HyperAppLab</a>
-                    {{--                    <ul class="nav">--}}
-                    {{--                        <li class="nav-item">--}}
-                    {{--                            <a class="nav-link" href="#">Marketing <span class="arrow"></span></a>--}}
-                    {{--                            <nav class="nav">--}}
-                    {{--                                <a class="nav-link" href="../demo/marketing-1.html">Marketing 1</a>--}}
-                    {{--                                <a class="nav-link" href="../demo/marketing-2.html">Marketing 2</a>--}}
-                    {{--                            </nav>--}}
-                    {{--                        </li>--}}
-                    {{--                    </ul>--}}
+{{--                    <ul class="nav">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="#">Marketing <span class="arrow"></span></a>--}}
+{{--                            <nav class="nav">--}}
+{{--                                <a class="nav-link" href="../demo/marketing-1.html">Marketing 1</a>--}}
+{{--                                <a class="nav-link" href="../demo/marketing-2.html">Marketing 2</a>--}}
+{{--                            </nav>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
                 </li>
-                {{--                <li class="nav-item">--}}
-                {{--                    <a class="nav-link" href="#">Pages <span class="arrow"></span></a>--}}
-                {{--                    <ul class="nav">--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="../page/how-it-works.html">How it works</a>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="../page/pricing.html">Pricing</a>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">Portfolio <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../page/portfolio.html">Potfolio listing</a>--}}
-                {{--                                <a class="nav-link" href="../page/portfolio-single.html">Potfolio single</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">Careers <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../page/career.html">Careers listing</a>--}}
-                {{--                                <a class="nav-link" href="../page/career-single.html">Careers single</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">Service <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../page/service-1.html">Service 1</a>--}}
-                {{--                                <a class="nav-link" href="../page/service-2.html">Service 2</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">About <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../page/about-1.html">About 1</a>--}}
-                {{--                                <a class="nav-link" href="../page/about-2.html">About 2</a>--}}
-                {{--                                <a class="nav-link" href="../page/about-3.html">About 3</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">Contact <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../page/contact-1.html">Contact 1</a>--}}
-                {{--                                <a class="nav-link" href="../page/contact-2.html">Contact 2</a>--}}
-                {{--                                <a class="nav-link" href="../page/contact-3.html">Contact 3</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-divider"></li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">Extra <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../page/demo.html">Request demo</a>--}}
-                {{--                                <a class="nav-link" href="../page/coming-soon.html">Coming soon</a>--}}
-                {{--                                <a class="nav-link" href="../page/terms.html">Terms</a>--}}
-                {{--                                <a class="nav-link" href="../page/error-404.html">Error 404</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">User <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../page/user-login.html">Login</a>--}}
-                {{--                                <a class="nav-link" href="../page/user-register.html">Register</a>--}}
-                {{--                                <a class="nav-link" href="../page/user-recover.html">Recover</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                        <li class="nav-item">--}}
-                {{--                            <a class="nav-link" href="#">Docs <span class="arrow"></span></a>--}}
-                {{--                            <nav class="nav">--}}
-                {{--                                <a class="nav-link" href="../docs/index.html">Support center</a>--}}
-                {{--                                <a class="nav-link" href="../docs/articles.html">Articles</a>--}}
-                {{--                                <a class="nav-link" href="../docs/faq.html">FAQ</a>--}}
-                {{--                            </nav>--}}
-                {{--                        </li>--}}
-                {{--                    </ul>--}}
-                {{--                </li>--}}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Our Services <span class="arrow"></span></a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Software<span class="arrow"></span></a>
+                            <nav class="nav">
+                                <a class="nav-link" href="">Web Application</a>
+                                <a class="nav-link" href="">Android Mobile</a>
+                                <a class="nav-link" href="">Desktop</a>
+                            </nav>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('contact.create') }}" class="nav-link">Contact Us</a>
+                </li>
             </ul>
         </section>
         @auth
@@ -142,18 +85,18 @@
     <div class="container">
         <div class="row gap-y align-items-center">
 
-{{--            <div class="col-6 col-lg-3">--}}
-{{--                <a href="../index.html"><img src="../assets/img/logo-dark.png" alt="logo"></a>--}}
-{{--            </div>--}}
+            {{--            <div class="col-6 col-lg-3">--}}
+            {{--                <a href="../index.html"><img src="../assets/img/logo-dark.png" alt="logo"></a>--}}
+            {{--            </div>--}}
 
             <div class="col-6 col-lg-3 text-right order-lg-last">
-{{--                <div class="social">--}}
-{{--                    <a class="social-facebook" href="https://www.facebook.com/thethemeio"><i class="fa fa-facebook"></i></a>--}}
-{{--                    <a class="social-twitter" href="https://twitter.com/thethemeio"><i class="fa fa-twitter"></i></a>--}}
-{{--                    <a class="social-instagram" href="https://www.instagram.com/thethemeio/"><i--}}
-{{--                                class="fa fa-instagram"></i></a>--}}
-{{--                    <a class="social-dribbble" href="https://dribbble.com/thethemeio"><i class="fa fa-dribbble"></i></a>--}}
-{{--                </div>--}}
+                {{--                <div class="social">--}}
+                {{--                    <a class="social-facebook" href="https://www.facebook.com/thethemeio"><i class="fa fa-facebook"></i></a>--}}
+                {{--                    <a class="social-twitter" href="https://twitter.com/thethemeio"><i class="fa fa-twitter"></i></a>--}}
+                {{--                    <a class="social-instagram" href="https://www.instagram.com/thethemeio/"><i--}}
+                {{--                                class="fa fa-instagram"></i></a>--}}
+                {{--                    <a class="social-dribbble" href="https://dribbble.com/thethemeio"><i class="fa fa-dribbble"></i></a>--}}
+                {{--                </div>--}}
             </div>
 
             <div class="col-lg-6">
