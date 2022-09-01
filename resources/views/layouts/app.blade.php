@@ -121,6 +121,13 @@
                                 <a href="{{ route('categories.index') }}">Categories</a>
                             </li>
                         </ul>
+
+                        <ul class="list-group text-center my-3">
+                            <li class="list-group-item">
+                                <a href="{{ route("messages.index") }}">Messages</a>
+                            </li>
+                        </ul>
+
                         <ul class="list-group text-center my-3">
                             <li class="list-group-item">
                                 <a href="{{ route("trashed-posts.index") }}">Trashed Post</a>

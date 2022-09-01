@@ -75,6 +75,10 @@
 
         Route::put("comments/unpublish/{comment}", [CommentController::class, "unPublishComment"])->name("comments.unpublish");
 
+        Route::get("messages", function () {
+            dd("All messages");
+        })->name("messages.index");
+
         Route::delete("comments/{comment}", [CommentController::class, "destroy"]);
     });
 

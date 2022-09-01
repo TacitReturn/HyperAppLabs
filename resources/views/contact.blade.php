@@ -47,17 +47,17 @@
 
                 <div class="col-lg-5 ml-auto text-center text-lg-left">
                     <hr class="d-lg-none">
-                    <h5>Seattle, WA</h5>
-                    <p>2651 Main Street, Suit 124<br>Seattle, WA, 98101</p>
+                    <h5>Miami, FL</h5>
+                    <p>2651 Main Street, Suit 124<br>Miami, FL, 98101</p>
                     <p>+1 (321) 654 9870<br>+1 (987) 123 6548</p>
-                    <p>hello@thetheme.io</p>
-                    <div class="fw-400">Follow Us</div>
-                    <div class="social social-sm social-inline">
-                        <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        <a class="social-facebook" href="#"><i class="fa fa-facebook"></i></a>
-                        <a class="social-instagram" href="#"><i class="fa fa-instagram"></i></a>
-                        <a class="social-dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                    </div>
+                    <p>contact@hyperapplabs.com</p>
+{{--                    <div class="fw-400">Follow Us</div>--}}
+{{--                    <div class="social social-sm social-inline">--}}
+{{--                        <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                        <a class="social-facebook" href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                        <a class="social-instagram" href="#"><i class="fa fa-instagram"></i></a>--}}
+{{--                        <a class="social-dribbble" href="#"><i class="fa fa-dribbble"></i></a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
 
