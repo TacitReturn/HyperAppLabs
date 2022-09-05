@@ -20,6 +20,8 @@
 
     Route::post("comments/{post}", [CommentController::class, "store"])->name("comments.store");
 
+    Route::delete("comments/comment", [CommentController::class, "destroy"])->name("comments.destroy");
+
     // Contact Us Routes
 
     Route::get('/contact', [ContactUsFormController::class, 'createForm'])->name("contact.create");

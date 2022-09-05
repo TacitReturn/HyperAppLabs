@@ -88,72 +88,7 @@
     <script>
       function handleDelete (id) {
         let form = document.getElementById("formCommentId")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        f+
-        3.
-        0
-
-
-
-
-
-        +++++++++++++++++++++++++++++++                                                                                                                                                                                                                                                                                                                          >>>>>>>>>>>>>>>>>>>>>>>>XWWWWWWWWWWWWWWWWW?><>>>>>>><"?<<<<<<<.orm.action = "/comments/" + id
+        form.action = "/comments/" + id
       }
     </script>
 @endsection
