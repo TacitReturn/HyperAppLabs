@@ -44,7 +44,7 @@
                             </td>
                             @if(!$post->trashed())
                                 <td colspan="1">
-                                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-info">Edit</a>
                                 </td>
                             @endif
                             @if($post->trashed())
