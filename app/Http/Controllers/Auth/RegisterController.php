@@ -66,17 +66,17 @@ class RegisterController extends Controller
      * @param  Request  $request
      * @return User
      */
-    protected function create(array $data)
-    {
-        if (\request()->hasFile("avatar")) {
-            $data["avatar"] = \request()->file("avatar")->store("users/images/avatars/");
-        }
-
-        return User::create([
-            "name" => $data["name"],
-//            "avatar" => $data["avatar"],
-            "email" => $data["email"],
-            "password" => Hash::make($data["password"]),
-        ]);
-    }
+//    protected function create(array $data)
+//    {
+//        if (\request()->hasFile("avatar")) {
+//            $data["avatar"] = \request()->file("avatar")->store("users/images/avatars/");
+//        }
+//
+//        return User::create([
+//            "name" => $data["name"],
+////            "avatar" => $data["avatar"],
+//            "email" => $data["email"],
+//            "password" => Hash::make($data["password"]),
+//        ]);
+//    }
 }
