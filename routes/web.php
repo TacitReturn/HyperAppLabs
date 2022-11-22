@@ -11,7 +11,9 @@
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
-    // Welcome Page
+    Auth::routes();
+
+// Welcome Page
     Route::get("/", [WelcomeController::class, "index"]);
 
     // Blog Routes
@@ -46,7 +48,7 @@
         );
     });
 
-    Auth::routes();
+//    Auth::routes();
 
     Route::middleware(["auth", "admin"])->group(function () {
         Route::get("users", [UserController::class, "index"])->name("users.index");
