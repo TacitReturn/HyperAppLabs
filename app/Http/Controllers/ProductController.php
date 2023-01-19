@@ -36,7 +36,7 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        return "Store Product";
+        return "Store Product lorem ipsum";
     }
 
     /**
