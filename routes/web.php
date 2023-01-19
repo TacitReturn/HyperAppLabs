@@ -86,4 +86,8 @@
         Route::delete("comments/{comment}", [CommentController::class, "destroy"]);
     });
 
-    //TODO: Create contact form.
+
+
+// TODO: Create products resource
+// TODO Create CRUD routes for products
+// TODO: Create views for routes
