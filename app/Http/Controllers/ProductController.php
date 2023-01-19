@@ -47,7 +47,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return "Show Product";
+        return "Show Product Lorem ipsum";
     }
 
     /**
