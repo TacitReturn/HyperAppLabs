@@ -8,6 +8,7 @@
     use App\Http\Controllers\TagController;
     use App\Http\Controllers\UserController;
     use App\Http\Controllers\WelcomeController;
+    use App\Http\Controllers\ProductController;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
@@ -86,4 +87,11 @@
         Route::delete("comments/{comment}", [CommentController::class, "destroy"]);
     });
 
-    //TODO: Create contact form.
+    /**
+     * Product Routes
+     */
+    Route::resource("products", ProductController::class);
+
+// TODO: Create products resource
+// TODO Create CRUD routes for products
+// TODO: Create views for routes
