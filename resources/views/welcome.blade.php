@@ -78,7 +78,7 @@
                             <hr/>
                             <h6 class="sidebar-title">About</h6>
                             <p class="small-3">
-                                <img src="{{ asset("img/bio.jpg") }}" alt="bio">
+                                <img src="{{ asset("img/bio-min.jpg") }}" alt="bio">
                                 {{ $bio->bio }}
                             </p>
                             <hr/>

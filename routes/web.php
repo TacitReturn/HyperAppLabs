@@ -95,3 +95,5 @@
 // TODO: Create products resource
 // TODO Create CRUD routes for products
 // TODO: Create views for routes
+
+// TODO: Create products index.blade.php and create.blade.php
