@@ -1,6 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
+<h1>hello world</h1>
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card">
