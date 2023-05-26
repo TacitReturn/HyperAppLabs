@@ -14,7 +14,7 @@
 
                     <h1>Welcome to Hyper App Labs</h1>
                     <p class="lead-2 opacity-90 mt-6">
-                        Read and get updates on software development.
+                        Read and get updates on software development. CI/CD
                     </p>
 
                 </div>
