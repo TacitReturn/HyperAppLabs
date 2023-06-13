@@ -3,7 +3,7 @@
     <section class="section">
         <div class="container">
 
-            <h2 class="text-center">Contact Us</h2>
+            <h2 class="text-center">Contact Us lorem</h2>
             <p class="lead text-center">
                 Have a project in mind? Or want to refactor an existing project? Get in touch with us.
             </p>
