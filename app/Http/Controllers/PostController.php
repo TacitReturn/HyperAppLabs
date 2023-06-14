@@ -159,8 +159,8 @@
             $post = Post::withTrashed()->where("id", $id)->firstOrFail();
 
             if ($post->trashed()) {
+                $post->tags()->sync([]);
                 $post->deleteImage();
-
                 $post->forceDelete();
             } else {
                 $post->delete();
