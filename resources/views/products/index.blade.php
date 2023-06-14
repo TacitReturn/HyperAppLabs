@@ -9,12 +9,12 @@
 </style>
 @section("content")
     <div class="d-flex justify-content-end mb-2">
-        <a href="{{ route('posts.create') }}" class="btn btn-success">Create Post</a>
+        <a href="{{ route('products.create') }}" class="btn btn-success">Create Product</a>
     </div>
     <div class="card card-default">
-        <div class="card-header">Posts</div>
+        <div class="card-header">Products</div>
         <div class="card-body">
-            @if($posts->count() > 0)
+            @if($products->count() > 0)
                 <table class="table w-full">
                     <thead>
                     <tr>
@@ -27,29 +27,29 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($posts as $post)
+                    @foreach($products as $product)
                         <tr>
-                            <th scope="row">{{ $post->title }}</th>
+                            <th scope="row">{{ $product->title }}</th>
                             <td colspan="1">
-                                {{ $post->published_at }}
+                                {{ $product->published_at }}
                             </td>
                             <td colspan="1">
                                 <img
-                                        src="{{ secure_asset('storage/'.$post->image) }}"
+                                        src="{{ secure_asset('storage/'.$product->image) }}"
                                         alt="post image"
                                         height="60" width="60">
                             </td>
                             <td class="text-sm" colspan="1">
-                                <a class="btn btn-success btn-sm" href="{{ route("categories.edit", $post->category->id) }}">{{ $post->category->name }}</a>
+                                <a class="btn btn-success btn-sm" href="{{ route("categories.edit", $product->category->id) }}">{{ $product->category->name }}</a>
                             </td>
-                            @if(!$post->trashed())
+                            @if(!$product->trashed())
                                 <td colspan="1">
-                                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                    <a href="{{ route('posts.edit', $product->id) }}" class="btn btn-sm btn-info">Edit</a>
                                 </td>
                             @endif
-                            @if($post->trashed())
+                            @if($product->trashed())
                                 <td colspan="1">
-                                    <form action="{{ route("restore-posts", $post->id) }}" method="POST">
+                                    <form action="{{ route("restore-posts", $product->id) }}" method="POST">
                                         @csrf
                                         @method("PUT")
                                         <button class="btn btn-sm btn-success">Restore</button>
@@ -57,10 +57,10 @@
                                 </td>
                             @endif
                             <td colspan="">
-                                <button onclick="handleDelete({{ $post->id }})" type="button"
+                                <button onclick="handleDelete({{ $product->id }})" type="button"
                                         class="btn btn-danger btn-sm"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                    {{ $post->trashed() ? "Delete" : "Trash" }}
+                                    {{ $product->trashed() ? "Delete" : "Trash" }}
                                 </button>
                             </td>
                         </tr>
@@ -79,11 +79,11 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-info" data-bs-dismiss="modal">No</button>
-                                        <form method="POST" id="formPostId">
+                                        <form method="POST" id="formProductId">
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-danger">
-                                                {{ $post->trashed() ? "delete" : "trash" }}
+                                                {{ $product->trashed() ? "delete" : "trash" }}
                                             </button>
                                         </form>
                                     </div>
@@ -106,8 +106,8 @@
 @section("scripts")
     <script>
       function handleDelete (id) {
-        let form = document.getElementById("formPostId")
-        form.action = "/posts/" + id
+        let form = document.getElementById("formProductId")
+        form.action = "/products/" + id
       }
     </script>
     <script type="text/javascript" src="trix.js" defer></script>
