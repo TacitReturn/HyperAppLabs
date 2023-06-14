@@ -104,7 +104,7 @@
                                 <a href="{{ route('admin.index') }}">Admin</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('posts.index') }}">Products</a>
+                                <a href="{{ route('products.index') }}">Products</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('posts.index') }}">Posts</a>
