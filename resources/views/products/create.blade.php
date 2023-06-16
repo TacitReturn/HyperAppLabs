@@ -7,7 +7,7 @@
 @section("content")
     <div class="card card-default">
         <div class="card-header lead text-center pb-5">
-            <p>{{ isset($post) ? "Edit post": "Create post" }}</p>
+            <p>{{ isset($product) ? "Edit post": "Create post" }}</p>
         </div>
         {{--        <div class="card-body">--}}
         @if($errors->any())
@@ -20,67 +20,67 @@
             </div>
         @endif
         <form class="m-1" class="mt-5"
-              action="{{ isset($post) ? route('posts.update', $post->id) : route('posts.store') }}"
+              action="{{ isset($product) ? route('posts.update', $product->id) : route('posts.store') }}"
               method="POST" enctype="multipart/form-data">
             @csrf
-            @if(isset($post))
+            @if(isset($product))
                 @method("PUT")
             @endif
             <div class="mb-3">
                 <label for="category">Category</label>
                 <select name="category" id="category" class="form-control">
-                    @foreach($categories as $category)
-                        <option value="{{ $category->id }}"
-                                @if(isset($post) && $category->id === $post->category_id)
-                                selected
-                                @endif
-                        >
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
+{{--                    @foreach($categories as $category)--}}
+{{--                        <option value="{{ $category->id }}"--}}
+{{--                                @if(isset($product) && $category->id === $product->category_id)--}}
+{{--                                selected--}}
+{{--                                @endif--}}
+{{--                        >--}}
+{{--                            {{ $category->name }}--}}
+{{--                        </option>--}}
+{{--                    @endforeach--}}
                 </select>
             </div>
-            @if($tags->count() > 0)
-                <div class="mb-3">
-                    <label for="tags">Tags</label>
-                    <select id="tags" class="tags-selector form-control" name="tags[]" multiple>
-                        @foreach($tags as $tag)
-                            <option value="{{ $tag->id }}"
-                                    @if(isset($post) && $post->hasTag($tag->id))
-                                    selected
-                                    @endif
-                                    {{ $tag->name }}
-                            >
-                                {{ $tag->name }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div>
-            @endif
+{{--            @if($tags->count() > 0)--}}
+{{--                <div class="mb-3">--}}
+{{--                    <label for="tags">Tags</label>--}}
+{{--                    <select id="tags" class="tags-selector form-control" name="tags[]" multiple>--}}
+{{--                        @foreach($tags as $tag)--}}
+{{--                            <option value="{{ $tag->id }}"--}}
+{{--                                    @if(isset($product) && $product->hasTag($tag->id))--}}
+{{--                                    selected--}}
+{{--                                    @endif--}}
+{{--                                    {{ $tag->name }}--}}
+{{--                            >--}}
+{{--                                {{ $tag->name }}--}}
+{{--                            </option>--}}
+{{--                        @endforeach--}}
+{{--                    </select>--}}
+{{--                </div>--}}
+{{--            @endif--}}
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input value="{{ isset($post) ? $post->title : '' }}" name="title" type="text"
+                <input value="{{ isset($product) ? $product->title : '' }}" name="title" type="text"
                        class="form-control" id="title">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea name="description" type="text" class="form-control"
-                          id="description">{{ isset($post) ? $post->description : '' }}</textarea>
+                          id="description">{{ isset($product) ? $product->description : '' }}</textarea>
             </div>
             <div class="mb-3">
                 <label for="content" class="form-label">Content</label>
-                <input value="{{ isset($post) ? $post->content : "" }}" id="content" class="form-control trix-content"
+                <input value="{{ isset($product) ? $product->content : "" }}" id="content" class="form-control trix-content"
                        type="hidden" name="content">
                 <trix-editor class="trix-editor" input="content"></trix-editor>
             </div>
             <div class="mb-3">
                 <label for="published_at" class="form-label">Published At</label>
-                <input value="{{ isset($post) ? $post->published_at : "" }}" class="form-control" id="published_at"
+                <input value="{{ isset($product) ? $product->published_at : "" }}" class="form-control" id="published_at"
                        name="published_at" type="text">
             </div>
             <div class="mb-3">
-                @if(isset($post->image))
-                    <img src="{{ asset('storage/'.$post->image) }}" style="width: 100%" alt="post image">
+                @if(isset($product->image))
+                    <img src="{{ asset('storage/'.$product->image) }}" style="width: 100%" alt="post image">
                     <label for="image" class="form-label">Image</label>
                     <input name="image" type="file" class="form-control" id="image">
                 @else
@@ -90,7 +90,7 @@
             </div>
             <div>
                 <button type="submit" class="btn btn-success btn-block">
-                    {{ isset($post) ? 'Update' : 'Create' }} Post
+                    {{ isset($product) ? 'Update' : 'Create' }} Post
                 </button>
             </div>
         </form>

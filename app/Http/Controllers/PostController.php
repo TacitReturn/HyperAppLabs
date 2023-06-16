@@ -56,7 +56,6 @@
          */
         public function store(StorePostRequest $request): RedirectResponse
         {
-
             $validatedData = $request->validated();
 
             // Check to see if there's an image in the request

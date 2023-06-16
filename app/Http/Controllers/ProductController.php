@@ -15,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view("products.index", ["product" => "products"]);
+        $products = Product::all();
+        return view("products.index", ["products" => $products]);
     }
 
     /**
@@ -25,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return "Create Product";
+        return view("products.create");
     }
 
     /**
@@ -36,7 +37,32 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        return "Store Product lorem ipsum";
+        $validatedData = $request->validated();
+
+        // Check to see if there's an image in the request
+        if ($request->hasFile("image")) {
+            $image = $request->file("image")->store("products/images");
+            $product = Product::create(
+                [
+                    "title" => $validatedData["title"],
+                    "slug" =>  Str::slug($validatedData["title"], "-"),
+                    "description" => $validatedData["description"],
+                    "content" => $validatedData["content"],
+                    "image" => $image,
+                    "published_at" => $validatedData["published_at"],
+                    "category_id" => $validatedData["category"],
+                    "user_id" => auth()->user()->id,
+                ]
+            );
+            // Check to see if there's tags in the request
+            if ($request->has("tags")) {
+                $product->tags()->attach($request->tags);
+            }
+        }
+
+        $request->session()->flash("status", "Post '{$product->title}' created successfully");
+
+        return redirect()->route("posts.index");
     }
 
     /**

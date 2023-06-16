@@ -17,8 +17,14 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string("title");
             $table->text("description");
-            $table->string("image");
-            $table->bigInteger("price");
+            $table->longText("content");
+            $table->string("image")->nullable();
+            $table->timestamp("published_at")->nullable();
+
+            $table->unsignedBigInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("CASCADE");
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

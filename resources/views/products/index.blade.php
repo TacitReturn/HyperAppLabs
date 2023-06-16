@@ -40,27 +40,27 @@
                                         height="60" width="60">
                             </td>
                             <td class="text-sm" colspan="1">
-                                <a class="btn btn-success btn-sm" href="{{ route("categories.edit", $product->category->id) }}">{{ $product->category->name }}</a>
+                                <a class="btn btn-success btn-sm" href="#">{{ $product->title}}</a>
                             </td>
-                            @if(!$product->trashed())
-                                <td colspan="1">
-                                    <a href="{{ route('posts.edit', $product->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                </td>
-                            @endif
-                            @if($product->trashed())
-                                <td colspan="1">
-                                    <form action="{{ route("restore-posts", $product->id) }}" method="POST">
-                                        @csrf
-                                        @method("PUT")
-                                        <button class="btn btn-sm btn-success">Restore</button>
-                                    </form>
-                                </td>
-                            @endif
+{{--                            @if(!$product->trashed())--}}
+{{--                                <td colspan="1">--}}
+{{--                                    <a href="{{ route('posts.edit', $product->id) }}" class="btn btn-sm btn-info">Edit</a>--}}
+{{--                                </td>--}}
+{{--                            @endif--}}
+{{--                            @if($product->trashed())--}}
+{{--                                <td colspan="1">--}}
+{{--                                    <form action="{{ route("restore-posts", $product->id) }}" method="POST">--}}
+{{--                                        @csrf--}}
+{{--                                        @method("PUT")--}}
+{{--                                        <button class="btn btn-sm btn-success">Restore</button>--}}
+{{--                                    </form>--}}
+{{--                                </td>--}}
+{{--                            @endif--}}
                             <td colspan="">
                                 <button onclick="handleDelete({{ $product->id }})" type="button"
                                         class="btn btn-danger btn-sm"
                                         data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                    {{ $product->trashed() ? "Delete" : "Trash" }}
+{{--                                    {{ $product->trashed() ? "Delete" : "Trash" }}--}}
                                 </button>
                             </td>
                         </tr>
@@ -83,7 +83,7 @@
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-danger">
-                                                {{ $product->trashed() ? "delete" : "trash" }}
+{{--                                                {{ $product->trashed() ? "delete" : "trash" }}--}}
                                             </button>
                                         </form>
                                     </div>
