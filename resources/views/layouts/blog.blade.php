@@ -10,8 +10,7 @@
 
     <!-- Styles -->
     <link href="{{ asset("css/page.min.css") }}" rel="stylesheet">
-    <link href="{{ asset("css/style.css") }} rel=" stylesheet
-    ">
+    <link href="{{ asset("css/style.css") }}" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
@@ -101,14 +100,13 @@
 
             <div class="col-lg-6">
                 <div class="nav nav-bold nav-uppercase nav-trim justify-content-lg-center">
-                    <a target="_blank" class="nav-link" href="https://www.linkedin.com/in/glenn-rudge/
-">
+                    <a target="_blank" class="nav-link" href="https://www.linkedin.com/in/glenn-rudge/">
                         LinkedIn
                     </a>
-                    <a class="nav-link" href="">
+                    <a target="_blank" class="nav-link" href="https://www.glenn-dev.com">
                         Portfolio
                     </a>
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('contact.create') }}">
                         Contact
                     </a>
                 </div>
