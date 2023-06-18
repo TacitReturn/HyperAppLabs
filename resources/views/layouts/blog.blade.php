@@ -62,9 +62,9 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('contact.create') }}" class="nav-link">Contact Us</a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="{{ route('contact.create') }}" class="nav-link">Contact Us</a>--}}
+{{--                </li>--}}
             </ul>
         </section>
         @auth
