@@ -11,15 +11,15 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name",
-        "email",
-        "content",
-        "post_id",
-        "isPublished",
+        'name',
+        'email',
+        'content',
+        'post_id',
+        'isPublished',
     ];
 
     protected $casts = [
-        "isPublished" => "boolean",
+        'isPublished' => 'boolean',
     ];
 
     public function post(): BelongsTo

@@ -6,7 +6,7 @@
     <div class="card card-default">
         <div class="card-header">Categories</div>
         <div class="card-body">
-            @if($categories->count() > 0)
+            @if ($categories->count() > 0)
                 <table class="table">
                     <thead>
                     <tr>
@@ -17,7 +17,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($categories as $category)
+                    @foreach ($categories as $category)
                         <tr>
                             <th scope="row">{{ $category->name }}</th>
                             <td>

@@ -15,11 +15,11 @@ class TagFactory extends Factory
     public function definition()
     {
         $tags = [
-            "TDD",
-            "Agile Workflow",
-            "Software Development",
-            "Cloud Infrastructure",
-            "UI/UX Design",
+            'TDD',
+            'Agile Workflow',
+            'Software Development',
+            'Cloud Infrastructure',
+            'UI/UX Design',
         ];
 
         $tagCollection = collect($tags);
@@ -27,12 +27,13 @@ class TagFactory extends Factory
         $tagCollection->each(function ($tag) {
             Tag::create(
                 [
-                    "name" => $tag
+                    'name' => $tag,
                 ]
             );
         });
+
         return [
-            "name" => array_rand(array_flip($tagCollection->toArray())),
+            'name' => array_rand(array_flip($tagCollection->toArray())),
         ];
     }
 }

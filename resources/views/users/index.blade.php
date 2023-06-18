@@ -14,7 +14,7 @@
     <div class="card card-default">
         <div class="card-header">Posts</div>
         <div class="card-body">
-            @if($users->count() > 0)
+            @if ($users->count() > 0)
                 <table class="table w-full">
                     <thead>
                     <tr>
@@ -26,7 +26,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $user)
+                    @foreach ($users as $user)
                         <tr>
                             <th scope="row">{{ $user->name }}</th>
                             <td colspan="1"></td>
@@ -37,7 +37,7 @@
                                 {{ $user->role }}
                             </td>
                             <td colspan="1">
-                                @if(!$user->isAdmin())
+                                @if (!$user->isAdmin())
                                     <form action="{{ route("users.make-admin", $user->id) }}" method="POST">
                                         @csrf
                                         <button class="btn btn-danger btn-sm" type="submit">Make Admin</button>

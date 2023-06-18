@@ -10,10 +10,10 @@
             <p>{{ isset($post) ? "Edit post": "Create post" }}</p>
         </div>
         {{--        <div class="card-body">--}}
-        @if($errors->any())
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <ul class="list-group">
-                    @foreach($errors->all() as $error)
+                    @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
@@ -23,15 +23,15 @@
               action="{{ isset($post) ? route('posts.update', $post->id) : route('posts.store') }}"
               method="POST" enctype="multipart/form-data">
             @csrf
-            @if(isset($post))
+            @if (isset($post))
                 @method("PUT")
             @endif
             <div class="mb-3">
                 <label for="category">Category</label>
                 <select name="category" id="category" class="form-control">
-                    @foreach($categories as $category)
+                    @foreach ($categories as $category)
                         <option value="{{ $category->id }}"
-                                @if(isset($post) && $category->id === $post->category_id)
+                                @if (isset($post) && $category->id === $post->category_id)
                                 selected
                                 @endif
                         >
@@ -40,13 +40,13 @@
                     @endforeach
                 </select>
             </div>
-            @if($tags->count() > 0)
+            @if ($tags->count() > 0)
                 <div class="mb-3">
                     <label for="tags">Tags</label>
                     <select id="tags" class="tags-selector form-control" name="tags[]" multiple>
-                        @foreach($tags as $tag)
+                        @foreach ($tags as $tag)
                             <option value="{{ $tag->id }}"
-                                    @if(isset($post) && $post->hasTag($tag->id))
+                                    @if (isset($post) && $post->hasTag($tag->id))
                                     selected
                                     @endif
                                     {{ $tag->name }}
@@ -79,7 +79,7 @@
                        name="published_at" type="text">
             </div>
             <div class="mb-3">
-                @if(isset($post->image))
+                @if (isset($post->image))
                     <img src="{{ asset('storage/'.$post->image) }}" style="width: 100%" alt="post image">
                     <label for="image" class="form-label">Image</label>
                     <input name="image" type="file" class="form-control" id="image">

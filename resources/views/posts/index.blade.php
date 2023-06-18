@@ -14,7 +14,7 @@
     <div class="card card-default">
         <div class="card-header">Posts</div>
         <div class="card-body">
-            @if($posts->count() > 0)
+            @if ($posts->count() > 0)
                 <table class="table w-full">
                     <thead>
                     <tr>
@@ -27,7 +27,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($posts as $post)
+                    @foreach ($posts as $post)
                         <tr>
                             <th scope="row">{{ $post->title }}</th>
                             <td colspan="1">
@@ -42,12 +42,12 @@
                             <td class="text-sm" colspan="1">
                                 <a class="btn btn-success btn-sm" href="{{ route("categories.edit", $post->category->id) }}">{{ $post->category->name }}</a>
                             </td>
-                            @if(!$post->trashed())
+                            @if (!$post->trashed())
                                 <td colspan="1">
                                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-info">Edit</a>
                                 </td>
                             @endif
-                            @if($post->trashed())
+                            @if ($post->trashed())
                                 <td colspan="1">
                                     <form action="{{ route("restore-posts", $post->id) }}" method="POST">
                                         @csrf

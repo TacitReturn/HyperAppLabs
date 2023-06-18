@@ -37,8 +37,8 @@
 
                     <div class="col-md-8 col-xl-9">
                         <div class="row gap-y">
-                            @if($posts->count() > 0)
-                                @foreach($posts as $post)
+                            @if ($posts->count() > 0)
+                                @foreach ($posts as $post)
                                     <div class="col-md-6">
                                         <div class="card border hover-shadow-6 mb-6 d-block">
                                             <img class="card-img-top" src="{{ secure_asset("storage/{$post->image}") }}"
@@ -84,7 +84,7 @@
                             <hr/>
                             <h6 class="sidebar-title">Categories</h6>
                             <div class="row link-color-default fs-14 lh-24">
-                                @foreach($categories as $category)
+                                @foreach ($categories as $category)
                                     <div class="col-6"><a href="#">
                                             {{ $category->name }}
                                         </a></div>
@@ -93,10 +93,12 @@
                             <hr>
                             <h6 class="sidebar-title">Tags</h6>
                             <div class="row link-color-default fs-14 lh-24">
-                                @foreach($tags as $tag)
-                                    <div class="col-12"><a href="#">
+                                @foreach ($tags as $tag)
+                                    <div class="col-12">
+                                        <a href="#">
                                             {{ $tag->name }}
-                                        </a></div>
+                                        </a>
+                                    </div>
                                 @endforeach
                             </div>
                             <hr>
@@ -108,7 +110,7 @@
                             {{--                            <hr>--}}
                             {{--                            <h6 class="sidebar-title">Tags</h6>--}}
                             {{--                            <div class="gap-multiline-items-1">--}}
-                            {{--                                @foreach($tags as $tag)--}}
+                            {{--                                @foreach ($tags as $tag)--}}
                             {{--                                    <a class="badge badge-secondary" href="#">--}}
                             {{--                                        {{ $tag->name }}--}}
                             {{--                                    </a>--}}

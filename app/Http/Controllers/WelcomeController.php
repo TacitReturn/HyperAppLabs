@@ -12,19 +12,19 @@ class WelcomeController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::published()->orderBy("created_at", "DESC")->get();
+        $posts = Post::published()->orderBy('created_at', 'DESC')->get();
 
-        $clientSearch = $request->input("client-search");
+        $clientSearch = $request->input('client-search');
 
-        if ($request->has("client-search")) {
-            $posts = Post::where("title", "like", "%{$clientSearch}%")->get();
+        if ($request->has('client-search')) {
+            $posts = Post::where('title', 'like', "%{$clientSearch}%")->get();
         }
 
-        return view("welcome", [
-            "posts" => $posts,
-            "tags" => Tag::all(),
-            "categories" => Category::all(),
-            "bio" => DB::table("bio")->where("id", 1)->first(),
+        return view('welcome', [
+            'posts' => $posts,
+            'tags' => Tag::all(),
+            'categories' => Category::all(),
+            'bio' => DB::table('bio')->where('id', 1)->first(),
         ]);
     }
 }

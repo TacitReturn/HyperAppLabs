@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -40,22 +39,19 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware("guest");
+        $this->middleware('guest');
     }
 
     /**
      * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data): \Illuminate\Contracts\Validation\Validator
     {
         return Validator::make($data, [
-            "name" => ["required", "string", "max:255"],
-            "avatar" => "nullable|image|mimes:jpeg,jpg,gif,png",
-            "email" => ["required", "string", "email", "max:255", "unique:users"],
-            "password" => ["required", "string", "min:8", "confirmed"],
+            'name' => ['required', 'string', 'max:255'],
+            'avatar' => 'nullable|image|mimes:jpeg,jpg,gif,png',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 

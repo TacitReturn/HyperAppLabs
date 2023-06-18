@@ -5,10 +5,10 @@
             {{ isset($tag) ? "Edit Tag": "Create Tag" }}
         </div>
         <div class="card-body">
-            @if($errors->any())
+            @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul class="list-group">
-                        @foreach($errors->all() as $error)
+                        @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
@@ -17,7 +17,7 @@
             <form action="{{ isset($tag) ? route('tags.update', $tag->id) : route('tags.store') }}"
                   method="POST">
                 @csrf
-                @if(isset($tag))
+                @if (isset($tag))
                     @method("PUT")
                 @endif
                 <div class="mb-3">

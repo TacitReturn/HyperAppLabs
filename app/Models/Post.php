@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Models;
+namespace App\Models;
 
     use Illuminate\Database\Eloquent\Factories\HasFactory;
     use Illuminate\Database\Eloquent\Model;
@@ -15,11 +15,11 @@
         use HasFactory, SoftDeletes;
 
         protected $dates = [
-            "published_at",
+            'published_at',
         ];
 
         protected $fillable = [
-            "title", "slug","description", "content", "image", "published_at", "category_id", "user_id"
+            'title', 'slug', 'description', 'content', 'image', 'published_at', 'category_id', 'user_id',
         ];
 
         /**
@@ -32,12 +32,9 @@
             Storage::delete($this->image);
         }
 
-        /**
-         * @return BelongsTo
-         */
         public function category(): BelongsTo
         {
-            return $this->belongsTo(Category::class, "category_id");
+            return $this->belongsTo(Category::class, 'category_id');
         }
 
         public function tags(): BelongsToMany
@@ -47,29 +44,20 @@
 
         /**
          * Check if post has a tag
-         *
-         * @param $tagID
-         * @return bool
          */
         public function hasTag($tagID): bool
         {
-            return in_array($tagID, $this->tags->pluck("id")->toArray());
+            return in_array($tagID, $this->tags->pluck('id')->toArray());
         }
-
 
         /**
          * Define relationship for user model
-         *
-         * @return BelongsTo
          */
         public function user(): BelongsTo
         {
             return $this->belongsTo(User::class);
         }
 
-        /**
-         * @return HasMany
-         */
         public function comments(): HasMany
         {
             return $this->hasMany(Comment::class);
@@ -77,7 +65,6 @@
 
         public function scopePublished($query)
         {
-            return $query->where("published_at", "<=", now());
+            return $query->where('published_at', '<=', now());
         }
-
     }

@@ -11,7 +11,7 @@
                         @method("PUT")
                         <div class="form-group mb-3">
                             <label for="avatar" class="form-label">Avatar</label>
-                            @if($user->avatar)
+                            @if ($user->avatar)
                                 <img width="150" class="img-thumbnail" src="{{ asset('storage/' . $user->avatar) }}" alt="user avatar">
                             @else
                                 <img src="" alt="">

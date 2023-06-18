@@ -14,7 +14,7 @@
     <div class="card card-default">
         <div class="card-header">Products</div>
         <div class="card-body">
-            @if($products->count() > 0)
+            @if ($products->count() > 0)
                 <table class="table w-full">
                     <thead>
                     <tr>
@@ -27,7 +27,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($products as $product)
+                    @foreach ($products as $product)
                         <tr>
                             <th scope="row">{{ $product->title }}</th>
                             <td colspan="1">
@@ -40,14 +40,14 @@
                                         height="60" width="60">
                             </td>
                             <td class="text-sm" colspan="1">
-                                <a class="btn btn-success btn-sm" href="#">{{ $product->title}}</a>
+                                <a class="btn btn-success btn-sm" href="#">{{ $product->title }}</a>
                             </td>
-{{--                            @if(!$product->trashed())--}}
+{{--                            @if (!$product->trashed())--}}
 {{--                                <td colspan="1">--}}
 {{--                                    <a href="{{ route('posts.edit', $product->id) }}" class="btn btn-sm btn-info">Edit</a>--}}
 {{--                                </td>--}}
 {{--                            @endif--}}
-{{--                            @if($product->trashed())--}}
+{{--                            @if ($product->trashed())--}}
 {{--                                <td colspan="1">--}}
 {{--                                    <form action="{{ route("restore-posts", $product->id) }}" method="POST">--}}
 {{--                                        @csrf--}}

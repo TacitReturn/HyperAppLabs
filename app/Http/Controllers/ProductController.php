@@ -16,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view("products.index", ["products" => $products]);
+
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -26,13 +27,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view("products.create");
+        return view('products.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreProductRequest $request)
@@ -40,73 +40,68 @@ class ProductController extends Controller
         $validatedData = $request->validated();
 
         // Check to see if there's an image in the request
-        if ($request->hasFile("image")) {
-            $image = $request->file("image")->store("products/images");
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('products/images');
             $product = Product::create(
                 [
-                    "title" => $validatedData["title"],
-                    "slug" =>  Str::slug($validatedData["title"], "-"),
-                    "description" => $validatedData["description"],
-                    "content" => $validatedData["content"],
-                    "image" => $image,
-                    "published_at" => $validatedData["published_at"],
-                    "category_id" => $validatedData["category"],
-                    "user_id" => auth()->user()->id,
+                    'title' => $validatedData['title'],
+                    'slug' => Str::slug($validatedData['title'], '-'),
+                    'description' => $validatedData['description'],
+                    'content' => $validatedData['content'],
+                    'image' => $image,
+                    'published_at' => $validatedData['published_at'],
+                    'category_id' => $validatedData['category'],
+                    'user_id' => auth()->user()->id,
                 ]
             );
             // Check to see if there's tags in the request
-            if ($request->has("tags")) {
+            if ($request->has('tags')) {
                 $product->tags()->attach($request->tags);
             }
         }
 
-        $request->session()->flash("status", "Post '{$product->title}' created successfully");
+        $request->session()->flash('status', "Post '{$product->title}' created successfully");
 
-        return redirect()->route("posts.index");
+        return redirect()->route('posts.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function show(Product $product)
     {
-        return "Show Product Lorem ipsum dolar amet";
+        return 'Show Product Lorem ipsum dolar amet';
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function edit(Product $product)
     {
-        return "Edit Product";
+        return 'Edit Product';
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProductRequest  $request
-     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        return "Update Product";
+        return 'Update Product';
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product)
     {
-        return "Destroy Product";
+        return 'Destroy Product';
     }
 }

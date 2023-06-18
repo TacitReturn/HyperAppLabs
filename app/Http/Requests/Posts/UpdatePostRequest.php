@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Http\Requests\Posts;
+namespace App\Http\Requests\Posts;
 
     use Illuminate\Foundation\Http\FormRequest;
 
@@ -8,8 +8,6 @@
     {
         /**
          * Determine if the user is authorized to make this request.
-         *
-         * @return bool
          */
         public function authorize(): bool
         {
@@ -18,18 +16,16 @@
 
         /**
          * Get the validation rules that apply to the request.
-         *
-         * @return array
          */
         public function rules(): array
         {
             return [
-                "title" => "required|string|min:3|",
-                "description" => "required|string|min:10",
-                "content" => "required|string|min:10",
-                "image" => "nullable|image",
-                "published_at" => "required|date",
-                "category" => "required|int",
+                'title' => 'required|string|min:3|',
+                'description' => 'required|string|min:10',
+                'content' => 'required|string|min:10',
+                'image' => 'nullable|image',
+                'published_at' => 'required|date',
+                'category' => 'required|int',
 
             ];
         }

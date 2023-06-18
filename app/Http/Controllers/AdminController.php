@@ -9,75 +9,13 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 
+use function request;
+
 class AdminController extends Controller
 {
-
-    /**
-     * Runs php artisan migrate:fresh on database
-     *
-     * @param  Request  $request
-     * @return RedirectResponse
-     */
-    public function migrateDatabase(Request $request): RedirectResponse
-    {
-        Artisan::call("migrate:refresh");
-
-        Artisan::call("db:seed --class=UserSeeder");
-
-        $user = User::where("email", "glenn@hyperapplabs.com")->first();
-
-        Auth::login($user);
-
-        $request->session()->flash("status", "Database migrate:refresh ran successfully.");
-
-        return redirect()->back();
-    }
-
-    /**
-     * @return Application|Factory|View
-     *
-     * Display the view to create a new user.
-     */
-    public function createUser()
-    {
-        return view("admin.create-user");
-    }
-
-    /**
-     * @param  Request  $request
-     * @return Application|Factory|View
-     *
-     * Creates a new user.
-     */
-    public function storeUser(Request $request)
-    {
-        if (\request()->hasFile("avatar")) {
-            $request["avatar"] = \request()->file("avatar")->store("users/images/avatars/");
-        }
-
-        User::create([
-            "name" => $request["name"],
-            "role" => $request["role"],
-            "avatar" => $request["avatar"],
-            "email" => $request["email"],
-            "password" => Hash::make($request["password"]),
-        ]);
-
-        return view("home");
-    }
-
-    public function deployCode()
-    {
-        Http::get("https://forge.laravel.com/servers/581193/sites/1716665/deploy/http?token=qIJV447YgI9h8yGwpM5m38tiwk8SbQ2UcWVQ4zhQ");
-
-        \request()->session()->flash("status", "Code deployed to server successfully.");
-
-        return view("home");
-    }
     /**
      * Display a listing of the resource.
      *
@@ -101,7 +39,6 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -134,7 +71,6 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -152,5 +88,64 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Runs php artisan migrate:fresh on database
+     */
+    public function migrateDatabase(Request $request): RedirectResponse
+    {
+        Artisan::call('migrate:refresh');
+
+        Artisan::call('db:seed --class=UserSeeder');
+
+        $user = User::where('email', 'glenn@hyperapplabs.com')->first();
+
+        auth()->login($user);
+
+        $request->session()->flash('status', 'Database migrate:refresh ran successfully.');
+
+        return redirect()->back();
+    }
+
+    /**
+     * @return Application|Factory|View
+     *
+     * Display the view to create a new user.
+     */
+    public function createUser()
+    {
+        return view('admin.create-user');
+    }
+
+    /**
+     * @return Application|Factory|View
+     *
+     * Creates a new user.
+     */
+    public function storeUser(Request $request)
+    {
+        if (request()->hasFile('avatar')) {
+            $request['avatar'] = request()->file('avatar')->store('users/images/avatars/');
+        }
+
+        User::create([
+            'name' => $request['name'],
+            'role' => $request['role'],
+            'avatar' => $request['avatar'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+        return view('home');
+    }
+
+    public function deployCode()
+    {
+        Http::get('https://forge.laravel.com/servers/581193/sites/1716665/deploy/http?token=qIJV447YgI9h8yGwpM5m38tiwk8SbQ2UcWVQ4zhQ');
+
+        request()->session()->flash('status', 'Code deployed to server successfully.');
+
+        return view('home');
     }
 }

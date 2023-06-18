@@ -1,12 +1,11 @@
 <?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
     use App\Models\Category;
     use App\Models\Contact;
     use App\Models\Post;
     use App\Models\Tag;
-    use Illuminate\Http\RedirectResponse;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\DB;
 
@@ -22,32 +21,32 @@
         public function ContactUsForm(Request $request)
         {
             // Form validation
-            $this->validate($request, [
+            request()->validate($request, [
                 'name' => 'required',
                 'email' => 'required|email',
                 'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
                 'subject' => 'required',
-                'message' => 'required'
+                'message' => 'required',
             ]);
             //  Store data in database
             Contact::create($request->all());
 
-            $request->session()->flash("status",
-                "We have received your message and would like to thank you for writing to us. We typically respond withen 3 hours.");
+            $request->session()->flash('status',
+                'We have received your message and would like to thank you for writing to us. We typically respond withen 3 hours.');
 
-            $posts = Post::published()->orderBy("created_at", "DESC")->get();
+            $posts = Post::published()->orderBy('created_at', 'DESC')->get();
 
-            $clientSearch = $request->input("client-search");
+            $clientSearch = $request->input('client-search');
 
-            if ($request->has("client-search")) {
-                $posts = Post::where("title", "like", "%{$clientSearch}%")->get();
+            if ($request->has('client-search')) {
+                $posts = Post::where('title', 'like', "%{$clientSearch}%")->get();
             }
 
-            return view("welcome", [
-                "posts" => $posts,
-                "tags" => Tag::all(),
-                "categories" => Category::all(),
-                "bio" => DB::table("bio")->where("id", 1)->first(),
+            return view('welcome', [
+                'posts' => $posts,
+                'tags' => Tag::all(),
+                'categories' => Category::all(),
+                'bio' => DB::table('bio')->where('id', 1)->first(),
             ]);
         }
     }

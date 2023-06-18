@@ -12,14 +12,13 @@ class VerifyIsAdmin
     /**
      * Handle an incoming request.
      *
-     * @param  Request  $request
      * @param  Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return Response|RedirectResponse
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!auth()->user()->isAdmin()) {
-            return redirect()->route("home");
+        if (! auth()->user()->isAdmin()) {
+            return redirect()->route('home');
         }
 
         return $next($request);

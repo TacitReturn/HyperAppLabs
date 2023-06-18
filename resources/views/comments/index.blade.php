@@ -3,7 +3,7 @@
     <div class="card card-default">
         <div class="card-header">Comments</div>
         <div class="card-body">
-            @if($comments->count() > 0)
+            @if ($comments->count() > 0)
                 <table class="table">
                     <thead>
                     <tr>
@@ -14,7 +14,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($comments as $comment)
+                    @foreach ($comments as $comment)
                         <tr>
                             <th scope="row">{{ $comment->name }}</th>
                             <td>
@@ -25,7 +25,7 @@
                             </td>
                             <td>{{ $comment->isPublished ? "true" : "false" }}</td>
                             <td colspan="1">
-                                @if($comment->isPublished)
+                                @if ($comment->isPublished)
                                     <form method="POST" action="{{ route('comments.unpublish', $comment->id) }}">
                                         @csrf
                                         @method("PUT")

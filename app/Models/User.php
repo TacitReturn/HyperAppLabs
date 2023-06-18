@@ -1,8 +1,7 @@
 <?php
 
-    namespace App\Models;
+namespace App\Models;
 
-    use Illuminate\Contracts\Auth\MustVerifyEmail;
     use Illuminate\Database\Eloquent\Factories\HasFactory;
     use Illuminate\Database\Eloquent\Relations\HasMany;
     use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -19,12 +18,12 @@
          * @var array<int, string>
          */
         protected $fillable = [
-            "name",
-            "about",
-            "avatar",
-            "email",
-            "password",
-            "role"
+            'name',
+            'about',
+            'avatar',
+            'email',
+            'password',
+            'role',
         ];
 
         /**
@@ -33,8 +32,8 @@
          * @var array<int, string>
          */
         protected $hidden = [
-            "password",
-            "remember_token",
+            'password',
+            'remember_token',
         ];
 
         /**
@@ -43,35 +42,31 @@
          * @var array<string, string>
          */
         protected $casts = [
-            "email_verified_at" => "datetime",
+            'email_verified_at' => 'datetime',
         ];
 
         /**
          * Define relationship for posts model
-         *
-         * @return HasMany
          */
         public function posts(): HasMany
         {
             return $this->hasMany(Post::class);
         }
+
         /**
          * Check to see if the user is an admin
-         *
-         * @return bool
          */
         public function isAdmin(): bool
         {
-            return $this->role === "admin";
+            return $this->role === 'admin';
         }
 
         /**
          * Make the selected user an admin
-         * @return bool
          */
         public function makeAdmin(): bool
         {
-            $this->role = "admin";
+            $this->role = 'admin';
 
             $this->save();
 
@@ -80,11 +75,10 @@
 
         /**
          * Make the selected user an writer
-         * @return bool
          */
         public function makeWriter(): bool
         {
-            $this->role = "writer";
+            $this->role = 'writer';
 
             $this->save();
 

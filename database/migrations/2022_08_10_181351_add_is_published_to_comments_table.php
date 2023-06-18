@@ -6,27 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class AddIsPublishedToCommentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::table("comments", function (Blueprint $table) {
-            $table->boolean("isPublished")->default(false);
+        Schema::table('comments', function (Blueprint $table) {
+            $table->boolean('isPublished')->default(false);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::table("comments", function (Blueprint $table) {
-            $table->dropColumn("isPublished");
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropColumn('isPublished');
         });
     }
 }

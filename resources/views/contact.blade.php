@@ -10,8 +10,8 @@
             <div class="row gap-y mt-8">
                 <form class="col-lg-6" action="{{ route('contact.store') }}" method="POST">
                     @csrf
-                    @if($errors->any())
-                        @foreach($errors->all() as $error)
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
                             <p class="">{{ $error }}</p>
                         @endforeach
                     @endif

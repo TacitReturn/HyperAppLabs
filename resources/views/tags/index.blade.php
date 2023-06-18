@@ -6,7 +6,7 @@
     <div class="card card-default">
         <div class="card-header">Categories</div>
         <div class="card-body">
-            @if($tags->count() > 0)
+            @if ($tags->count() > 0)
                 <table class="table">
                     <thead>
                     <tr>
@@ -17,7 +17,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($tags as $tag)
+                    @foreach ($tags as $tag)
                         <tr>
                             <th scope="row">{{ $tag->name }}</th>
                             <td>

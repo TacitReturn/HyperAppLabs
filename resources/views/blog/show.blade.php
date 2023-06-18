@@ -55,7 +55,7 @@
         <div class="section" id="section-content">
             <div class="container">
                 <div class="gap-xy-2 mt-6 mb-6 col-lg-8 mx-auto">
-                    @foreach($post->tags as $tag)
+                    @foreach ($post->tags as $tag)
                         <a href="" class="badge badge-pill badge-secondary">
                             {{ $tag->name }}
                         </a>
@@ -86,8 +86,8 @@
                     <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <div class="media-list">
-                                @foreach($post->comments as $comment)
-                                    @if($comment->isPublished)
+                                @foreach ($post->comments as $comment)
+                                    @if ($comment->isPublished)
                                         <div class="media">
                                             {{--<img class="avatar avatar-sm mr-4" src="../assets/img/avatar/1.jpg" alt="...">--}}
                                             <div class="media-body">
@@ -106,8 +106,8 @@
                                 @endforeach
                             </div>
                             <hr>
-                            @if($errors->any())
-                                @foreach($errors as $error)
+                            @if ($errors->any())
+                                @foreach ($errors as $error)
                                     {{ $error }}
                                 @endforeach
                             @endif
