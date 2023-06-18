@@ -94,7 +94,7 @@
                             <h6 class="sidebar-title">Tags</h6>
                             <div class="row link-color-default fs-14 lh-24">
                                 @foreach($tags as $tag)
-                                    <div class="col-6"><a href="#">
+                                    <div class="col-12"><a href="#">
                                             {{ $tag->name }}
                                         </a></div>
                                 @endforeach
