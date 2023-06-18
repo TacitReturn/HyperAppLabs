@@ -21,7 +21,7 @@ namespace App\Http\Controllers;
         public function ContactUsForm(Request $request)
         {
             // Form validation
-            request()->validate($request, [
+            $validatedData = request()->validate($request, [
                 'name' => 'required',
                 'email' => 'required|email',
                 'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
@@ -29,24 +29,26 @@ namespace App\Http\Controllers;
                 'message' => 'required',
             ]);
             //  Store data in database
-            Contact::create($request->all());
+            Contact::create($validatedData);
 
             $request->session()->flash('status',
-                'We have received your message and would like to thank you for writing to us. We typically respond withen 3 hours.');
+                'We have received your message and would like to thank you for writing to us. We typically respond within 24 hours.');
 
-            $posts = Post::published()->orderBy('created_at', 'DESC')->get();
+//            $posts = Post::published()->orderBy('created_at', 'DESC')->get();
+//
+//            $clientSearch = $request->input('client-search');
+//
+//            if ($request->has('client-search')) {
+//                $posts = Post::where('title', 'like', "%{$clientSearch}%")->get();
+//            }
 
-            $clientSearch = $request->input('client-search');
+            return view("welcome", ["posts" => Post::with("tags")->with("categories")->get()]);
 
-            if ($request->has('client-search')) {
-                $posts = Post::where('title', 'like', "%{$clientSearch}%")->get();
-            }
-
-            return view('welcome', [
-                'posts' => $posts,
-                'tags' => Tag::all(),
-                'categories' => Category::all(),
-                'bio' => DB::table('bio')->where('id', 1)->first(),
-            ]);
+//            return view('welcome', [
+//                'posts' => $posts,
+//                'tags' => Tag::all(),
+//                'categories' => Category::all(),
+//                'bio' => DB::table('bio')->where('id', 1)->first(),
+//            ]);
         }
     }
