@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <h1>Contact Us<</h1>
+                    <h1>Contact Us</h1>
                     <p class="lead-2 opacity-90 mt-6">
                         Have a project in mind? Or want to refactor an existing project? Get in touch with us.
                     </p>
