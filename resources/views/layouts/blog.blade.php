@@ -106,9 +106,9 @@
                     <a target="_blank" class="nav-link" href="https://www.glenn-dev.com">
                         Portfolio
                     </a>
-                    <a class="nav-link" href="{{ route('contact.create') }}">
-                        Contact
-                    </a>
+{{--                    <a class="nav-link" href="{{ route('contact.create') }}">--}}
+{{--                        Contact--}}
+{{--                    </a>--}}
                 </div>
             </div>
 
