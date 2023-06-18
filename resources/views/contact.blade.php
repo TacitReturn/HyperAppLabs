@@ -4,29 +4,20 @@
     <header class="header text-center text-white"
             style="background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);">
         <div class="container">
-
             <div class="row">
                 <div class="col-md-8 mx-auto">
-
-                    <h1>Welcome to Hyper App Labs</h1>
+                    <h1>Contact Us<</h1>
                     <p class="lead-2 opacity-90 mt-6">
-                        Read and get updates on software development. CI/CD
+                        Have a project in mind? Or want to refactor an existing project? Get in touch with us.
                     </p>
-
                 </div>
             </div>
-
         </div>
     </header><!-- /.header -->
 @endsection
 @section("content")
     <section class="section">
         <div class="container">
-
-            <h2 class="text-center">Contact Us</h2>
-            <p class="lead text-center">
-                Have a project in mind? Or want to refactor an existing project? Get in touch with us.
-            </p>
             <div class="row gap-y mt-8">
                 <form class="col-lg-6" action="{{ route('contact.store') }}" method="POST">
                     @csrf
