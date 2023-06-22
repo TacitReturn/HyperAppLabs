@@ -53,7 +53,7 @@
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                Software Development lorem
+                                Software Development
                             </a>
                             <nav class="nav">
                                 <a class="nav-link" href="">Web Application</a>
