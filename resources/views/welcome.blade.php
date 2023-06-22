@@ -76,7 +76,7 @@
                             <h6 class="sidebar-title">Categories</h6>
                             <div class="row link-color-default fs-14 lh-24">
                                 @foreach ($categories as $category)
-                                    <div class="col-6"><a href="#">
+                                    <div class="col-6"><a href="{{ route('blog.index') }}">
                                             {{ $category->name }}
                                         </a></div>
                                 @endforeach
