@@ -52,7 +52,9 @@
                     <a class="nav-link" href="#">Our Services <span class="arrow"></span></a>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Software Development<span class="arrow"></span></a>
+                            <a class="nav-link" href="#">
+                                Software Development lorem
+                            </a>
                             <nav class="nav">
                                 <a class="nav-link" href="">Web Application</a>
                                 <a class="nav-link" href="">Android Mobile</a>
@@ -60,7 +62,9 @@
                             </nav>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">DevOps<span class="arrow"></span></a>
+                            <a class="nav-link" href="#">
+                                DevOps
+                            </a>
                             <nav class="nav">
                                 <a class="nav-link" href="">
                                     AWS Cloud Architect
