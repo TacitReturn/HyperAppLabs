@@ -12,7 +12,7 @@
                 <div class="col-md-8 mx-auto">
                     <h1>Welcome to Hyper App Labs</h1>
                     <p class="lead-2 opacity-90 mt-6">
-                        Read and get updates on software development. CI/CD
+                        Learn about web development, CI/CD and more..
                     </p>
                 </div>
             </div>
@@ -25,12 +25,9 @@
     <main class="main-content">
         @include("partials.success")
         @include("partials.errors")
-
         <div class="section bg-gray">
             <div class="container">
                 <div class="row">
-
-
                     <div class="col-md-8 col-xl-9">
                         <div class="row gap-y">
                             @if ($posts->count() > 0)
@@ -63,8 +60,6 @@
                             @endif
                         </div>
                     </div>
-
-
                     <div class="col-md-4 col-xl-3">
                         <div class="sidebar px-4 py-md-0">
                             <h6 class="sidebar-title">Search</h6>
