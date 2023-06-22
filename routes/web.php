@@ -14,10 +14,7 @@
 
     Auth::routes();
 
-// Welcome Page
-    Route::get('/', [WelcomeController::class, 'index']);
-
-    // Blog Routes
+    Route::get('/', [WelcomeController::class, 'index'])->name('blog.index');
 
     Route::get('blog/posts/{post}', [\App\Http\Controllers\Blog\PostController::class, 'show'])->name('blog-post.show');
 
@@ -25,7 +22,7 @@
 
     Route::delete('comments/comment', [CommentController::class, 'destroy'])->name('comments.destroy');
 
-    // Contact Us Routes
+    // Contact Us Rout  es
 
     Route::get('contact', [ContactUsFormController::class, 'createForm'])->name('contact.create');
     Route::post('contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');

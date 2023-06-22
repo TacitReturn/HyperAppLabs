@@ -86,7 +86,7 @@
                             <div class="row link-color-default fs-14 lh-24">
                                 @foreach ($tags as $tag)
                                     <div class="col-12">
-                                        <a href="{{ route('posts.index') }}">
+                                        <a href="{{ route('blog.index') }}">
                                             {{ $tag->name }}
                                         </a>
                                     </div>
