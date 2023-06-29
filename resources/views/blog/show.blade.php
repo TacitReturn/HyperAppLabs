@@ -63,7 +63,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 mx-auto">
-                        <p class="display-2 text-secondary">
+                        <p class="display-3">
                             {{ $post->description }}
                         </p>
 
