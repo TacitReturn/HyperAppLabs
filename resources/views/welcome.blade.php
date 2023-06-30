@@ -27,10 +27,10 @@
         @include("partials.errors")
         <div class="section bg-gray">
             <div class="container">
-                <div>
+                <div class="m-2">
                     <h6 class="sidebar-title">Search</h6>
                     <form class="input-group" target="#" method="GET">
-                        <input type="text" class="form-control" name="client-search" placeholder="Search">
+                        <input type="text" class="form-control" name="client-search" placeholder="Enter a blog title here..">
                     </form>
                 </div>
                 <div class="row">
