@@ -28,38 +28,38 @@
         <div class="section bg-gray">
             <div class="container">
                 <div class="row">
-{{--                    <div class="col-md-8 col-xl-9">--}}
-{{--                        <div class="row gap-y">--}}
-{{--                            @if ($posts->count() > 0)--}}
-{{--                                @foreach ($posts as $post)--}}
-{{--                                    <div class="col-md-6">--}}
-{{--                                        <div class="card border hover-shadow-6 mb-6 d-block">--}}
-{{--                                            <img class="card-img-top" src="{{ secure_asset("storage/{$post->image}") }}"--}}
-{{--                                                 alt="post image cap">--}}
-{{--                                            <div class="p-6 text-center">--}}
-{{--                                                <p>--}}
-{{--                                                    <a class="small-5 text-lighter text-uppercase ls-2 fw-400"--}}
-{{--                                                       href="">--}}
-{{--                                                        {{ $post->category->name }}--}}
-{{--                                                    </a>--}}
-{{--                                                </p>--}}
-{{--                                                <h5 class="mb-0">--}}
-{{--                                                    <a class="text-dark"--}}
-{{--                                                       href="{{ route("blog-post.show", $post->id) }}">--}}
-{{--                                                        {{ \Illuminate\Support\Str::limit($post->title, 35) }}--}}
-{{--                                                    </a>--}}
-{{--                                                </h5>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
-{{--                            @else--}}
-{{--                                <p class="lead">--}}
-{{--                                    No Posts--}}
-{{--                                </p>--}}
-{{--                            @endif--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <div class="col-md-8 col-xl-9">
+                        <div class="row gap-y">
+                            @if ($posts->count() > 0)
+                                @foreach ($posts as $post)
+                                    <div class="col-md-6">
+                                        <div class="card border hover-shadow-6 mb-6 d-block">
+                                            <img class="card-img-top" src="{{ secure_asset("storage/{$post->image}") }}"
+                                                 alt="post image cap">
+                                            <div class="p-6 text-center">
+                                                <p>
+                                                    <a class="small-5 text-lighter text-uppercase ls-2 fw-400"
+                                                       href="">
+                                                        {{ $post->category->name }}
+                                                    </a>
+                                                </p>
+                                                <h5 class="mb-0">
+                                                    <a class="text-dark"
+                                                       href="{{ route("blog-post.show", $post->id) }}">
+                                                        {{ \Illuminate\Support\Str::limit($post->title, 35) }}
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                <p class="lead">
+                                    No Posts
+                                </p>
+                            @endif
+                        </div>
+                    </div>
                     <div class="col-md-4 col-xl-3">
                         <div class="sidebar px-4 py-md-0">
                             <h6 class="sidebar-title">Search</h6>
