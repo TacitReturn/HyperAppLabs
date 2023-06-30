@@ -6,27 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class AddIsPremiumToPostsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean("is_premium")->default(false);
+            $table->boolean('is_premium')->default(false);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            Schema::dropColumns("is_premium");
+            Schema::dropColumns('is_premium');
         });
     }
 }
