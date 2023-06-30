@@ -37,7 +37,7 @@
 
             <ul class="nav nav-navbar">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">HyperAppLab</a>
+                    <a class="nav-link" href="/">HyperAppLabs</a>
 {{--                    <ul class="nav">--}}
 {{--                        <li class="nav-item">--}}
 {{--                            <a class="nav-link" href="#">Marketing <span class="arrow"></span></a>--}}
