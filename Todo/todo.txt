@@ -1,0 +1,5 @@
+Topics to Teach
+TODO: New web tech, html dialog
+
+Things to fix
+TODO: Fix contact route, look into laravel packages that may help.
