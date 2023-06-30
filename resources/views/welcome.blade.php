@@ -65,6 +65,7 @@
                                 </p>
                             @endif
                         </div>
+                        <div>{{ $posts->links() }}</div>
                     </div>
                     <div class="col-md-4 col-xl-3">
                         <div class="sidebar px-4 py-md-0">
