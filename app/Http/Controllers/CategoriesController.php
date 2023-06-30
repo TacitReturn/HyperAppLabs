@@ -57,9 +57,9 @@ class CategoriesController extends Controller
         $category = Category::findOrFail($id);
 
         if ($category->posts->count() > 0) {
-        request()->session()->flash('error', "This category can't be deleted while it has posts");
+            request()->session()->flash('error', "This category can't be deleted while it has posts");
 
-        return redirect()->back();
+            return redirect()->back();
         }
 
         $category->delete();

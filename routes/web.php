@@ -28,7 +28,6 @@
     Route::post('contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
     Route::middleware(['auth'])->group(function () {
-
         Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.index');
 
         Route::resource('categories', CategoriesController::class);
@@ -89,8 +88,8 @@
      */
     Route::resource('products', ProductController::class);
 
-// TODO: Create products resource
-// TODO Create CRUD routes for products
-// TODO: Create views for routes
+    // TODO: Create products resource
+    // TODO Create CRUD routes for products
+    // TODO: Create views for routes
 
-// TODO: Create products index.blade.php and create.blade.php
+    // TODO: Create products index.blade.php and create.blade.php
