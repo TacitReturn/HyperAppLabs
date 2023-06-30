@@ -88,6 +88,10 @@
                     <input name="image" type="file" class="form-control" id="image">
                 @endif
             </div>
+            <div class="mb-3">
+                <label for="video" class="form-label">Video</label>
+                <input name="video" type="file" class="form-control" id="video">
+            </div>
             <div>
                 <button type="submit" class="btn btn-success btn-block">
                     {{ isset($post) ? 'Update' : 'Create' }} Post
