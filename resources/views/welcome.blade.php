@@ -40,8 +40,8 @@
                                 @foreach ($posts as $post)
                                     <div class="col-md-6">
                                         <div class="card border hover-shadow-6 mb-6 d-block">
-                                            <div class="d-flex">
-                                                    <a href="" class="align-self-end badge badge-pill badge-success">
+                                            <div class="m-3">
+                                                    <a href="" class="float-right badge badge-pill badge-success">
                                                         Premium
                                                     </a>
                                             </div>
