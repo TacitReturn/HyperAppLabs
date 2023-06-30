@@ -17,10 +17,13 @@
     <link rel="icon" href="{{ asset("img/favicon.png") }}">
 </head>
 
-<body>
+<body class="m-0">
+
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark" data-navbar="sticky">
     <div class="container">
+
         {{--        <div class="navbar-left">--}}
         {{--            <button class="navbar-toggler" type="button">&#9776;</button>--}}
         {{--            <a class="navbar-brand" href="../index.html">--}}
@@ -28,11 +31,13 @@
         {{--                <img class="logo-light" src="../assets/img/logo-light.png" alt="logo">--}}
         {{--            </a>--}}
         {{--        </div>--}}
+
         <section class="navbar-mobile">
             <span class="navbar-divider d-mobile-none"></span>
+
             <ul class="nav nav-navbar">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">HyperAppLabs</a>
+                    <a class="nav-link" href="/">HyperAppLab</a>
 {{--                    <ul class="nav">--}}
 {{--                        <li class="nav-item">--}}
 {{--                            <a class="nav-link" href="#">Marketing <span class="arrow"></span></a>--}}
