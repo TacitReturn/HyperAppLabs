@@ -27,6 +27,12 @@
         @include("partials.errors")
         <div class="section bg-gray">
             <div class="container">
+                <div>
+                    <h6 class="sidebar-title">Search</h6>
+                    <form class="input-group" target="#" method="GET">
+                        <input type="text" class="form-control" name="client-search" placeholder="Search">
+                    </form>
+                </div>
                 <div class="row">
                     <div class="col-md-8 col-xl-9">
                         <div class="row gap-y">
@@ -62,10 +68,10 @@
                     </div>
                     <div class="col-md-4 col-xl-3">
                         <div class="sidebar px-4 py-md-0">
-                            <h6 class="sidebar-title">Search</h6>
-                            <form class="input-group" target="#" method="GET">
-                                <input type="text" class="form-control" name="client-search" placeholder="Search">
-                            </form>
+{{--                            <h6 class="sidebar-title">Search</h6>--}}
+{{--                            <form class="input-group" target="#" method="GET">--}}
+{{--                                <input type="text" class="form-control" name="client-search" placeholder="Search">--}}
+{{--                            </form>--}}
                             <hr/>
                             <h6 class="sidebar-title">About</h6>
                             <p class="small-3">
