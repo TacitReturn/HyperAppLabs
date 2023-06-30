@@ -57,7 +57,7 @@
                             </a>
                             <nav class="nav">
                                 <a class="nav-link" href="">Web Application</a>
-                                <a class="nav-link" href="">Android Mobile</a>
+                                <a class="nav-link" href="">Android/Apple Mobile</a>
                                 <a class="nav-link" href="">Desktop</a>
                             </nav>
                         </li>
