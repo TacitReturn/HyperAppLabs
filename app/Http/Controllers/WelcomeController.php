@@ -17,7 +17,7 @@ class WelcomeController extends Controller
         $clientSearch = $request->input('client-search');
 
         if ($request->has('client-search')) {
-            $posts = Post::where('title', 'like', "%{$clientSearch}%")->get();
+            $posts = Post::where('title', 'like', "%{$clientSearch}%")->paginate(4);
         }
 
         return view('welcome', [
