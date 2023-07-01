@@ -24,6 +24,7 @@ class UpdatePostRequest extends FormRequest
             'description' => 'required|string|min:10',
             'content' => 'required|string|min:10',
             'image' => 'nullable|image',
+            'video' => 'mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi',
             'published_at' => 'required|date',
             'category' => 'required|int',
 
