@@ -54,8 +54,6 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request): RedirectResponse
     {
-        dd($request->file('video'));
-
         $validatedData = $request->validated();
 
         if ($request->hasFile('image')) {
@@ -68,7 +66,7 @@ class PostController extends Controller
                     'description' => $validatedData['description'],
                     'content' => $validatedData['content'],
                     'image' => $image,
-                    'video' => $request->file('video', null)->store('posts/videos'),
+                    'video' => $request->file('video')->store('posts/videos'),
                     'published_at' => $validatedData['published_at'],
                     'category_id' => $validatedData['category'],
                     'user_id' => auth()->user()->id,
