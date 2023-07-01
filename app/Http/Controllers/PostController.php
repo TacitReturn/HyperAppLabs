@@ -68,7 +68,7 @@ class PostController extends Controller
                     'description' => $validatedData['description'],
                     'content' => $validatedData['content'],
                     'image' => $image,
-                    'video' => $request->file("video" , null)->store("posts/videos"),
+                    'video' => $request->file('video', null)->store('posts/videos'),
                     'published_at' => $validatedData['published_at'],
                     'category_id' => $validatedData['category'],
                     'user_id' => auth()->user()->id,
