@@ -63,7 +63,7 @@
                                 preload="auto"
                                 width="640"
                                 height="264"
-                                poster=" url({{ secure_asset('storage/'.$post->image) }})"
+                                poster="{{ url(secure_asset('storage/' . $post->image)) }}"
                                 data-setup="{}"
                         >
                             <source src="MY_VIDEO.mp4" type="video/mp4" />
