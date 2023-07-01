@@ -56,11 +56,6 @@ class PostController extends Controller
     {
         $validatedData = $request->validated();
 
-        if ($request->hasFile("video"))
-        {
-            dd($request->file("video"));
-        }
-
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
 
@@ -71,7 +66,7 @@ class PostController extends Controller
                     'description' => $validatedData['description'],
                     'content' => $validatedData['content'],
                     'image' => $image,
-                    'video' => $video,
+                    'video' => $request->file("video" , null)->store("posts/videos"),
                     'published_at' => $validatedData['published_at'],
                     'category_id' => $validatedData['category'],
                     'user_id' => auth()->user()->id,
@@ -121,6 +116,14 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
+
+            $post->deleteImage();
+
+            $validatedData['image'] = $image;
+        }
+
+        if ($request->hasFile('video')) {
+            $image = $request->file('video')->store('posts/videos');
 
             $post->deleteImage();
 
