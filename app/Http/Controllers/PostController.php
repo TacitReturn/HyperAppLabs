@@ -56,7 +56,7 @@ class PostController extends Controller
     {
         $validatedData = $request->validated();
 
-        if ($request->hasFile("video")) {
+        if ($request->hasFile('video')) {
             $video = $request->file('video')->store('posts/videos');
         }
 
