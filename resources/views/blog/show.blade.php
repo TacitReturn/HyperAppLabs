@@ -57,13 +57,13 @@
                 <div class="gap-xy-2 mt-6 mb-6 col-lg-8 mx-auto">
                     <div>
                         <video
-                                id="my-video"
+                                id="video"
                                 class="video-js"
                                 controls
                                 preload="auto"
                                 width="640"
                                 height="264"
-                                poster="MY_VIDEO_POSTER.jpg"
+                                poster=" url({{ secure_asset('storage/'.$post->image) }})"
                                 data-setup="{}"
                         >
                             <source src="MY_VIDEO.mp4" type="video/mp4" />
