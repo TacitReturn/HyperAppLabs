@@ -55,7 +55,7 @@
         <div class="section" id="section-content">
             <div class="container">
                 <div class="gap-xy-2 mt-6 mb-6 col-lg-8 mx-auto">
-                    @if(isset($post->video))
+                    @if (isset($post->video))
                         <div>
                             <video
                                     id="video"
