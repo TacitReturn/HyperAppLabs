@@ -62,8 +62,8 @@
                                     class="video-js"
                                     controls
                                     preload="auto"
-                                    width="720"
-                                    height="1280"
+                                    width="640"
+                                    height="264"
                                     poster="{{ url(secure_asset('storage/' . $post->image)) }}"
                                     data-setup="{}"
                             >
