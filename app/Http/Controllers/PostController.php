@@ -56,10 +56,12 @@ class PostController extends Controller
     {
         $validatedData = $request->validated();
 
+        if ($request->hasFile("video")) {
+            $video = $request->file('video')->store('posts/videos');
+        }
+
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
-
-            $video = $request->file('video')->store('posts/videos');
 
             $post = Post::create(
                 [
