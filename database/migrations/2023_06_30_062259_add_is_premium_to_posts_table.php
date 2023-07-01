@@ -16,7 +16,7 @@ class AddIsPremiumToPostsTable extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            Schema::dropColumns(["is_premium"]);
+            Schema::dropColumns(['is_premium']);
         });
     }
 }

@@ -59,7 +59,7 @@ class PostController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
 
-            $video = $request->file("video")->store("posts/videos");
+            $video = $request->file('video')->store('posts/videos');
 
             $post = Post::create(
                 [
