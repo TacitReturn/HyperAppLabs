@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Storage;
  */
 class Post extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $dates = [
         'published_at',
