@@ -54,6 +54,8 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request): RedirectResponse
     {
+        dd($request->file('vide'));
+
         $validatedData = $request->validated();
 
         if ($request->hasFile('image')) {
