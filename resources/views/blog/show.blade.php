@@ -55,6 +55,28 @@
         <div class="section" id="section-content">
             <div class="container">
                 <div class="gap-xy-2 mt-6 mb-6 col-lg-8 mx-auto">
+                    <div>
+                        <video
+                                id="my-video"
+                                class="video-js"
+                                controls
+                                preload="auto"
+                                width="640"
+                                height="264"
+                                poster="MY_VIDEO_POSTER.jpg"
+                                data-setup="{}"
+                        >
+                            <source src="MY_VIDEO.mp4" type="video/mp4" />
+                            <source src="MY_VIDEO.webm" type="video/webm" />
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a
+                                web browser that
+                                <a href="https://videojs.com/html5-video-support/" target="_blank"
+                                >supports HTML5 video</a
+                                >
+                            </p>
+                        </video>
+                    </div>
                     @foreach ($post->tags as $tag)
                         <a href="" class="badge badge-pill badge-secondary">
                             {{ $tag->name }}
