@@ -54,7 +54,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request): RedirectResponse
     {
-        dd($request->file('vide'));
+        dd($request->file('video'));
 
         $validatedData = $request->validated();
 
