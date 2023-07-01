@@ -58,7 +58,7 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
-
+            $video = $request->file('video')->store('posts/videos');
             $post = Post::create(
                 [
                     'title' => $validatedData['title'],
@@ -66,7 +66,7 @@ class PostController extends Controller
                     'description' => $validatedData['description'],
                     'content' => $validatedData['content'],
                     'image' => $image,
-                    'video' => $request->file('video')->store('posts/videos'),
+                    'video' => $video,
                     'published_at' => $validatedData['published_at'],
                     'category_id' => $validatedData['category'],
                     'user_id' => auth()->user()->id,
@@ -116,14 +116,6 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
-
-            $post->deleteImage();
-
-            $validatedData['image'] = $image;
-        }
-
-        if ($request->hasFile('video')) {
-            $image = $request->file('video')->store('posts/videos');
 
             $post->deleteImage();
 
