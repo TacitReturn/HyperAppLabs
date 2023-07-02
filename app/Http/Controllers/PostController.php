@@ -54,7 +54,9 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request, PostService $postService): RedirectResponse
     {
-        $post = $postService->createPost($request + ["video" => $video = $request->file('video')->store('posts/videos')]);
+        $video = $postService->uploadVideo($request);
+
+        $post = $postService->createPost($request->validated() + ["video" => $video]);
 
 //        $validatedData = $request->validated();
 //

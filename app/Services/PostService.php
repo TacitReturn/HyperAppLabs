@@ -8,27 +8,18 @@ use Illuminate\Support\Str;
 
 class PostService
 {
-    public function createPost(Request $request): Post
+    public function createPost(array $postData): Post
     {
-        $validatedData = $request->validated();
-
-        $image = $request->file('image')->store('posts/images');
-
-        if ($request->hasFile('video'))
-        {
-            $validatedData["video"] = $video = $request->file('video')->store('posts/videos');
-        }
-
-        $post = Post::create(
+        return Post::create(
             [
-                'title' => $validatedData['title'],
-                'slug' => Str::slug($validatedData['title'], '-'),
-                'description' => $validatedData['description'],
-                'content' => $validatedData['content'],
-                'image' => $image,
-                'video' => $video,
-                'published_at' => $validatedData['published_at'],
-                'category_id' => $validatedData['category'],
+                'title' => $postData['title'],
+                'slug' => Str::slug($postData['title'], '-'),
+                'description' => $postData['description'],
+                'content' => $postData['content'],
+                'image' => $postData["image"],
+                'video' => $postData["video"],
+                'published_at' => $postData['published_at'],
+                'category_id' => $postData['category'],
                 'user_id' => auth()->user()->id,
             ]
         );
@@ -38,5 +29,12 @@ class PostService
         }
 
         return $post;
+    }
+
+    public function uploadVideo(Request $request): ?string
+    {
+        return ($request->hasFile("video"))
+            ? $request->file('video')->store('posts/videos')
+            : null;
     }
 }
