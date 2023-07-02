@@ -38,6 +38,7 @@ class CreatePost
             $post->tags()->attach($request->tags);
         }
 
+//        TODO:// Create an event, for the newly created post.
         return $post;
     }
 }

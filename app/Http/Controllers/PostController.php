@@ -111,6 +111,11 @@ class PostController extends Controller
 
         return redirect()->route('trashed-posts.index');
     }
+
+    /**
+     * @param DeleteAllTrashed $deleteAllTrashed
+     * @return RedirectResponse
+     */
     public function deleteAllDestroyed(DeleteAllTrashed $deleteAllTrashed): RedirectResponse
     {
         $deleteAllTrashed->handle();
