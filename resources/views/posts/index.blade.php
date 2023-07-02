@@ -16,7 +16,7 @@
                 <button class="btn btn-success" type="submit">Delete All</button>
             </form>
         @endif
-
+        {{ __(url()->current()) }}
         <a href="{{ route('posts.create') }}" class="btn btn-success">Create Post</a>
     </div>
     <div class="card card-default">
