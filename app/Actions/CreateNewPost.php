@@ -33,5 +33,7 @@ class CreateNewPost
         if ($request->has('tags')) {
             $post->tags()->attach($request->tags);
         }
+
+        return $post;
     }
 }
