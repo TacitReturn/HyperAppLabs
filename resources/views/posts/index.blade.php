@@ -9,7 +9,12 @@
 </style>
 @section("content")
     <div class="d-flex justify-content-end mb-2">
-        <a href="{{ route('posts.create') }}" class="btn btn-success">Create Post</a>
+        <form action="" method="POST">
+            @method("DELETE")
+            @csrf
+            <button type="submit">Delete All</button>
+        </form>
+        <a href="{{ route('posts.create') }}" class="btn btn-success">Delete All</a>
     </div>
     <div class="card card-default">
         <div class="card-header">Posts</div>
