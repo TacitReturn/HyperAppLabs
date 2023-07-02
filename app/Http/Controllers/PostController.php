@@ -55,7 +55,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request, CreateNewPost $createNewPost): RedirectResponse
     {
-        $createNewPost->handle($request);
+        $post = $createNewPost->handle($request);
 
 //        $video = $postService->uploadVideo($request);
 //
