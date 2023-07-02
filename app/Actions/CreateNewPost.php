@@ -12,6 +12,8 @@ class CreateNewPost
     {
         $validatedData = $request->validated();
 
+        $image = $request->file('image')->store('posts/images');
+
         $image = $request->hasFile("image")
             ? $request->file("image")->store("posts/images")
             : null;

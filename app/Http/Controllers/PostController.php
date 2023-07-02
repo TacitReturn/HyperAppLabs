@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\CreateNewPost;
+use App\Actions\UpdatePost;
 use App\Http\Requests\Posts\StorePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Models\Category;
@@ -88,29 +89,31 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post): RedirectResponse
+    public function update(UpdatePostRequest $request, UpdatePost $updatePost): RedirectResponse
     {
-        $validatedData = $request->validated();
+        $updatePost->handle($request);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('posts/images');
-
-            $video = $request->file('video')->store('posts/videos');
-
-            $post->deleteImage();
-
-            $validatedData['image'] = $image;
-
-            $validatedData['video'] = $video;
-        }
-
-        if ($request->tags) {
-            $post->tags()->syncWithoutDetaching($request->tags);
-        }
-
-        $post->category_id = $request->input('category');
-
-        $post->update($validatedData);
+//        $validatedData = $request->validated();
+//
+//        if ($request->hasFile('image')) {
+//            $image = $request->file('image')->store('posts/images');
+//
+//            $video = $request->file('video')->store('posts/videos');
+//
+//            $post->deleteImage();
+//
+//            $validatedData['image'] = $image;
+//
+//            $validatedData['video'] = $video;
+//        }
+//
+//        if ($request->tags) {
+//            $post->tags()->syncWithoutDetaching($request->tags);
+//        }
+//
+//        $post->category_id = $request->input('category');
+//
+//        $post->update($validatedData);
 
         $request->session()->flash('status', 'Post updated successfully..');
 
