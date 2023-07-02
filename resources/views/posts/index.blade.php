@@ -9,7 +9,7 @@
 </style>
 @section("content")
     <div class="d-flex justify-content-end mb-2">
-        @if(Route::is("/trashed-posts"))
+        @if(\Illuminate\Http\Request::is("/trashed-posts"))
             <form action="{{ route('posts.deleteAllDestroyed') }}" method="POST">
                 @method("DELETE")
                 @csrf
