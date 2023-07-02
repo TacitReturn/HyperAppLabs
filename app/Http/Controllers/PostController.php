@@ -8,7 +8,6 @@ use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
-use App\Services\PostService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
