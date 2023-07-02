@@ -4,6 +4,7 @@ namespace App\Actions;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CreateNewPost
 {
