@@ -13,7 +13,7 @@ class StorePostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->user()->email === 'glenn@hyperapplabs.comm';
+        return auth()->user()->email === 'glenn@hyperapplabs.com';
     }
 
     /**
