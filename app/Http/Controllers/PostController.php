@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Post\CreatePost;
+use App\Actions\Post\DeleteAllTrashed;
 use App\Actions\Post\DeletePost;
 use App\Actions\Post\UpdatePost;
 use App\Http\Requests\Posts\StorePostRequest;
@@ -108,19 +109,15 @@ class PostController extends Controller
 
         request()->session()->flash('status', 'Post deleted successfully..');
 
-        return redirect()->route('posts.index');
+        return redirect()->route('trashed-posts.index');
     }
-    public function deleteAllDestroyed()
+    public function deleteAllDestroyed(DeleteAllTrashed $deleteAllTrashed): RedirectResponse
     {
-        $deletedPosts = Post::onlyTrashed()->get();
+        $deleteAllTrashed->handle();
 
-        $deletedPosts->each(function ($deletedPost) {
-            $deletedPost->tags()->sync([]);
+        request()->session()->flash('status', 'Posts deleted successfully..');
 
-            $deletedPost->deleteImage();
-
-            $deletedPost->forceDelete();
-        });
+        return redirect()->route('trashed-posts.index');
     }
 
     /**
