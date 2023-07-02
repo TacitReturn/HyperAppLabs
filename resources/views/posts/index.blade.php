@@ -9,11 +9,15 @@
 </style>
 @section("content")
     <div class="d-flex justify-content-end mb-2">
-        <form action="{{ route('posts.deleteAllDestroyed') }}" method="POST">
-            @method("DELETE")
-            @csrf
-            <button class="btn btn-success" type="submit">Delete All</button>
-        </form>
+        @if(Route::is("/trashed-posts"))
+            <form action="{{ route('posts.deleteAllDestroyed') }}" method="POST">
+                @method("DELETE")
+                @csrf
+                <button class="btn btn-success" type="submit">Delete All</button>
+            </form>
+        @endif
+
+        <a href="{{ route('posts.create') }}" class="btn btn-success">Create Post</a>
     </div>
     <div class="card card-default">
         <div class="card-header">Posts</div>
