@@ -54,7 +54,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request, PostService $postService): RedirectResponse
     {
-        $post = $postService->createPost($request->validated());
+        $post = $postService->createPost($request);
 
 //        $validatedData = $request->validated();
 //

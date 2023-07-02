@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class PostService
 {
-    public function createPost(array $request): Post
+    public function createPost(Request $request): Post
     {
         $validatedData = $request->validated();
 
