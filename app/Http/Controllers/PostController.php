@@ -173,7 +173,9 @@ class PostController extends Controller
 
             $deletedPost->forceDelete();
 
-            return "Posts Deleted";
+            request()->session()->flash('status', 'All posts deleted successfully..');
+
+            return redirect()->route('posts.index');
         }
     }
 
