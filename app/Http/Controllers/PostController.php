@@ -58,7 +58,9 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
+
             $video = $request->file('video')->store('posts/videos');
+
             $post = Post::create(
                 [
                     'title' => $validatedData['title'],
@@ -117,9 +119,13 @@ class PostController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('posts/images');
 
+            $video = $request->file('video')->store('posts/videos');
+
             $post->deleteImage();
 
             $validatedData['image'] = $image;
+
+            $validatedData['video'] = $image;
         }
 
         if ($request->tags) {
