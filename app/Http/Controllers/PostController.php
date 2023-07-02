@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\CreateNewPost;
+use App\Actions\DeletePost;
 use App\Actions\UpdatePost;
 use App\Http\Requests\Posts\StorePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
@@ -13,6 +14,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class PostController extends Controller
@@ -93,28 +95,6 @@ class PostController extends Controller
     {
         $updatePost->handle($request, $post);
 
-//        $validatedData = $request->validated();
-//
-//        if ($request->hasFile('image')) {
-//            $image = $request->file('image')->store('posts/images');
-//
-//            $video = $request->file('video')->store('posts/videos');
-//
-//            $post->deleteImage();
-//
-//            $validatedData['image'] = $image;
-//
-//            $validatedData['video'] = $video;
-//        }
-//
-//        if ($request->tags) {
-//            $post->tags()->syncWithoutDetaching($request->tags);
-//        }
-//
-//        $post->category_id = $request->input('category');
-//
-//        $post->update($validatedData);
-
         $request->session()->flash('status', 'Post updated successfully..');
 
         return redirect()->route('posts.index');
@@ -123,19 +103,9 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id): RedirectResponse
+    public function destroy(DeletePost $deletePost, $id): RedirectResponse
     {
-        $post = Post::withTrashed()->where('id', $id)->firstOrFail();
-
-        if ($post->trashed()) {
-            $post->tags()->sync([]);
-
-            $post->deleteImage();
-
-            $post->forceDelete();
-        } else {
-            $post->delete();
-        }
+        $deletePost->handle($id);
 
         request()->session()->flash('status', 'Post deleted successfully..');
 

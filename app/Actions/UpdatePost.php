@@ -19,7 +19,6 @@ class UpdatePost
             ? $request->file("video")->store("posts/videos")
             : null;
 
-
             $post->deleteImage();
 
             $validatedData['image'] = $image;
