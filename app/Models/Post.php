@@ -72,10 +72,10 @@ class Post extends Model
         return $query->where('published_at', '<=', now());
     }
 
-    public static function boot()
-    {
-        static::created(function () {
-            dd("Post Created");
-        });
-    }
+//    public static function boot()
+//    {
+//        static::created(function () {
+//            dd('Post Created');
+//        });
+//    }
 }
