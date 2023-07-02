@@ -14,7 +14,10 @@ class PostService
 
         $image = $request->file('image')->store('posts/images');
 
-        $video = $request->file('video')->store('posts/videos');
+        if ($request->hasFile('video'))
+        {
+            $validatedData["video"] = $video = $request->file('video')->store('posts/videos');
+        }
 
         $post = Post::create(
             [
