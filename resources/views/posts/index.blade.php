@@ -13,11 +13,11 @@
             <form action="{{ route('posts.deleteAllDestroyed') }}" method="POST">
                 @method("DELETE")
                 @csrf
-                <button class="btn btn-success" type="submit">Delete All</button>
+                <button class="btn btn-danger btn-sm" type="submit">Delete All</button>
             </form>
+        @else
+            <a href="{{ route('posts.create') }}" class="btn btn-success btn-sm">Create Post</a>
         @endif
-        {{ __(url()->current()) }}
-        <a href="{{ route('posts.create') }}" class="btn btn-success">Create Post</a>
     </div>
     <div class="card card-default">
         <div class="card-header">Posts</div>
