@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DeletePost
 {
-    public function handle(?Request $request, $id)
+    public function handle(Request $request, $id)
     {
         $post = Post::withTrashed()->where('id', $id)->firstOrFail();
 
