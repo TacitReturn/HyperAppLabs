@@ -125,7 +125,7 @@ class PostController extends Controller
 
             $validatedData['image'] = $image;
 
-            $validatedData['video'] = $image;
+            $validatedData['video'] = $video;
         }
 
         if ($request->tags) {
