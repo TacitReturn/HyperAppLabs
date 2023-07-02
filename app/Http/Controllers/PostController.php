@@ -7,12 +7,12 @@ use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Services\PostService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
-use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -52,33 +52,35 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request): RedirectResponse
+    public function store(StorePostRequest $request, PostService $postService): RedirectResponse
     {
-        $validatedData = $request->validated();
+        $post = $postService->createPost($request);
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('posts/images');
-
-            $video = $request->file('video')->store('posts/videos');
-
-            $post = Post::create(
-                [
-                    'title' => $validatedData['title'],
-                    'slug' => Str::slug($validatedData['title'], '-'),
-                    'description' => $validatedData['description'],
-                    'content' => $validatedData['content'],
-                    'image' => $image,
-                    'video' => $video,
-                    'published_at' => $validatedData['published_at'],
-                    'category_id' => $validatedData['category'],
-                    'user_id' => auth()->user()->id,
-                ]
-            );
-
-            if ($request->has('tags')) {
-                $post->tags()->attach($request->tags);
-            }
-        }
+//        $validatedData = $request->validated();
+//
+//        if ($request->hasFile('image')) {
+//            $image = $request->file('image')->store('posts/images');
+//
+//            $video = $request->file('video')->store('posts/videos');
+//
+//            $post = Post::create(
+//                [
+//                    'title' => $validatedData['title'],
+//                    'slug' => Str::slug($validatedData['title'], '-'),
+//                    'description' => $validatedData['description'],
+//                    'content' => $validatedData['content'],
+//                    'image' => $image,
+//                    'video' => $video,
+//                    'published_at' => $validatedData['published_at'],
+//                    'category_id' => $validatedData['category'],
+//                    'user_id' => auth()->user()->id,
+//                ]
+//            );
+//
+//            if ($request->has('tags')) {
+//                $post->tags()->attach($request->tags);
+//            }
+//        }
 
         $request->session()->flash('status', "Post '{$post->title}' created successfully");
 
