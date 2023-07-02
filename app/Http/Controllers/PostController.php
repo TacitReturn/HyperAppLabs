@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\CreateNewPost;
 use App\Http\Requests\Posts\StorePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Models\Category;
@@ -52,15 +53,16 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request, PostService $postService): RedirectResponse
+    public function store(StorePostRequest $request, CreateNewPost $createNewPost): RedirectResponse
     {
-        $video = $postService->uploadVideo($request);
+        $createNewPost->handle($request);
 
-        $image = $postService->uploadImage($request);
+//        $video = $postService->uploadVideo($request);
+//
+//        $image = $postService->uploadImage($request);
+//
+//        $post = $postService->createPost($request->validated() + ["video" => $video] + ["image" => $image]);
 
-        $post = $postService->createPost($request->validated() + ["video" => $video] + ["image" => $image]);
-
-        $post->save();
 
 //        $validatedData = $request->validated();
 //
