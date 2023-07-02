@@ -10,7 +10,7 @@ class PostService
 {
     public function createPost(array $postData): Post
     {
-        return Post::create(
+        $post = Post::create(
             [
                 'title' => $postData['title'],
                 'slug' => Str::slug($postData['title'], '-'),
@@ -24,20 +24,18 @@ class PostService
             ]
         );
 
-        if ($request->has('tags')) {
-            $post->tags()->attach($request->tags);
+        if ($postData['tags']) {
+            $post->tags()->attach($postData['tags']);
         }
 
         return $post;
     }
-
     public function uploadVideo(Request $request): ?string
     {
         return ($request->hasFile("video"))
             ? $request->file('video')->store('posts/videos')
             : null;
     }
-
     public function uploadImage(Request $request): ?string
     {
         return ($request->hasFile("image"))
