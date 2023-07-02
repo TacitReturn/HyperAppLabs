@@ -166,17 +166,13 @@ class PostController extends Controller
     {
         $deletedPosts = Post::onlyTrashed()->get();
 
-        foreach ($deletedPosts as $deletedPost) {
+        $deletedPosts->each(function ($deletedPost) {
             $deletedPost->tags()->sync([]);
 
             $deletedPost->deleteImage();
 
             $deletedPost->forceDelete();
-
-            request()->session()->flash('status', 'All posts deleted successfully..');
-
-            return redirect()->route('posts.index');
-        }
+        });
     }
 
     /**
