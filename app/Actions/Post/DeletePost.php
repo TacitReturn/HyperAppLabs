@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Post;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class DeletePost
 {
-    public function handle($id)
+    public function handle($id): void
     {
         $post = Post::withTrashed()->where('id', $id)->firstOrFail();
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Post;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class UpdatePost
 {
-    public function handle(Request $request, Post $post)
+    public function handle(Request $request, Post $post): void
     {
         $validatedData = $request->validated();
 

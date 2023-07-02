@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Actions;
+namespace App\Actions\Post;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class CreateNewPost
+class CreatePost
 {
-    public function handle(Request $request)
+    public function handle(Request $request): Post
     {
         $validatedData = $request->validated();
 

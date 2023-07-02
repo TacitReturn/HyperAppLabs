@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\CreateNewPost;
-use App\Actions\DeletePost;
-use App\Actions\UpdatePost;
+use App\Actions\Post\CreatePost;
+use App\Actions\Post\DeletePost;
+use App\Actions\Post\UpdatePost;
 use App\Http\Requests\Posts\StorePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
 use App\Models\Category;
@@ -14,7 +14,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class PostController extends Controller
@@ -55,7 +54,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request, CreateNewPost $createNewPost): RedirectResponse
+    public function store(StorePostRequest $request, CreatePost $createNewPost): RedirectResponse
     {
         $post = $createNewPost->handle($request);
 
