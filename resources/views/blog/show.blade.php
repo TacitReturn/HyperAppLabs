@@ -67,8 +67,8 @@
                                     poster="{{ url(secure_asset('storage/' . $post->image)) }}"
                                     data-setup="{}"
                             >
-                                <source src="{{ url(secure_asset('storage/' . $post->video)) }}" type="video/mp4" />
-                                <source src="{{ url(secure_asset('storage/' . $post->video)) }}" type="video/webm" />
+                                <source src="{{ url(secure_asset('storage/'.$post->video)) }}" type="video/mp4" />
+                                <source src="{{ url(secure_asset('storage/'.$post->video)) }}" type="video/webm" />
                                 <p class="vjs-no-js">
                                     To view this video please enable JavaScript, and consider upgrading to a
                                     web browser that
