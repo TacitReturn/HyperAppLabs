@@ -9,7 +9,7 @@
 </style>
 @section("content")
     <div class="d-flex justify-content-end mb-2">
-        @if(url()->current() == "/trashed-posts")
+        @if(url()->current() == "https://hyperapplabs.com/trashed-posts")
             <form action="{{ route('posts.deleteAllDestroyed') }}" method="POST">
                 @method("DELETE")
                 @csrf
