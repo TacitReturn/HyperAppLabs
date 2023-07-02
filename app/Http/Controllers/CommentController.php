@@ -93,7 +93,7 @@ class CommentController extends Controller
         return redirect()->route('comments.index');
     }
 
-    public function publishComment(Request $request, Comment $comment)
+    public function publishComment(Request $request, Comment $comment): RedirectResponse
     {
         $comment->update(['isPublished' => true]);
 
@@ -102,7 +102,7 @@ class CommentController extends Controller
         return redirect()->route('comments.index');
     }
 
-    public function unPublishComment(Request $request, Comment $comment)
+    public function unPublishComment(Request $request, Comment $comment): RedirectResponse
     {
         $comment->update(['isPublished' => false]);
 

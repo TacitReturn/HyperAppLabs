@@ -232,4 +232,10 @@ return [
 
     ],
 
+    /*
+     * A list of emails to send event data to.
+     */
+    'emails' => [
+        "glenn@hyperapplabs.com"
+    ]
 ];

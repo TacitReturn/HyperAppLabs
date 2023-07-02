@@ -2,8 +2,10 @@
 
 namespace App\Actions\Post;
 
+use App\Mail\PostCreated;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class CreatePost
@@ -39,6 +41,8 @@ class CreatePost
         }
 
 //        TODO:// Create an event, for the newly created post.
+        Mail::to($post->user)->send(new PostCreated($post));
+
         return $post;
     }
 }
