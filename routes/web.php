@@ -32,7 +32,7 @@
 
         Route::resource('categories', CategoriesController::class);
 
-        Route::delete("delete-all-destroyed")->name("posts.deleteAllDestroyed");
+        Route::delete("/delete-all-destroyed", [PostController::class, "deleteAllDestroyed"])->name("posts.deleteAllDestroyed");
 
         Route::resource('posts', PostController::class);
 
