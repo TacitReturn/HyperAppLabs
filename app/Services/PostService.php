@@ -37,4 +37,11 @@ class PostService
             ? $request->file('video')->store('posts/videos')
             : null;
     }
+
+    public function uploadImage(Request $request): ?string
+    {
+        return ($request->hasFile("image"))
+            ? $request->file('image')->store('posts/images')
+            : null;
+    }
 }

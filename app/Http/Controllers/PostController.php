@@ -56,7 +56,9 @@ class PostController extends Controller
     {
         $video = $postService->uploadVideo($request);
 
-        $post = $postService->createPost($request->validated() + ["video" => $video]);
+        $image = $postService->uploadImage($request);
+
+        $post = $postService->createPost($request->validated() + ["video" => $video, "image" => $image]);
 
 //        $validatedData = $request->validated();
 //
