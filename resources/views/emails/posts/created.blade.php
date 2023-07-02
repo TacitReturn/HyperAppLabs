@@ -4,7 +4,11 @@
     }
 </style>
 
-<p>Hi {{ $post->user->name }}. A new post has been created!
-    <a href="{{ route('posts.show', ['post' => $post->id])  }}">View Post</a>
+<p>Hi {{ $post->user->name }}. A new post has been created!<br />
+    {{ $post->title }}<br />
+    <a class="text-dark"
+       href="{{ route("blog-post.show", $post->id) }}">
+        View Post
+    </a>
 </p>
 
