@@ -10,7 +10,7 @@ class PostService
 {
     public function createPost(array $postData): Post
     {
-        $post = Post::create(
+        return Post::create(
             [
                 'title' => $postData['title'],
                 'slug' => Str::slug($postData['title'], '-'),
@@ -24,11 +24,11 @@ class PostService
             ]
         );
 
-        if ($postData['tags']) {
-            $post->tags()->attach($postData['tags']);
-        }
-
-        return $post;
+//        if ($postData['tags']) {
+//            $post->tags()->attach($postData['tags']);
+//        }
+//
+//        return $post;
     }
     public function uploadVideo(Request $request): ?string
     {
