@@ -57,39 +57,6 @@ class PostController extends Controller
     {
         $post = $createNewPost->handle($request);
 
-//        $video = $postService->uploadVideo($request);
-//
-//        $image = $postService->uploadImage($request);
-//
-//        $post = $postService->createPost($request->validated() + ["video" => $video] + ["image" => $image]);
-
-
-//        $validatedData = $request->validated();
-//
-//        if ($request->hasFile('image')) {
-//            $image = $request->file('image')->store('posts/images');
-//
-//            $video = $request->file('video')->store('posts/videos');
-//
-//            $post = Post::create(
-//                [
-//                    'title' => $validatedData['title'],
-//                    'slug' => Str::slug($validatedData['title'], '-'),
-//                    'description' => $validatedData['description'],
-//                    'content' => $validatedData['content'],
-//                    'image' => $image,
-//                    'video' => $video,
-//                    'published_at' => $validatedData['published_at'],
-//                    'category_id' => $validatedData['category'],
-//                    'user_id' => auth()->user()->id,
-//                ]
-//            );
-//
-//            if ($request->has('tags')) {
-//                $post->tags()->attach($request->tags);
-//            }
-//        }
-
         $request->session()->flash('status', "Post '{$post->title}' created successfully");
 
         return redirect()->route('posts.index');
