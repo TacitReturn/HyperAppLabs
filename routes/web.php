@@ -32,6 +32,8 @@
 
         Route::resource('categories', CategoriesController::class);
 
+        Route::delete("delete-all-destroyed")->name("deleteAllDestroyed");
+
         Route::resource('posts', PostController::class);
 
         Route::resource('tags', TagController::class);

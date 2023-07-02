@@ -162,6 +162,20 @@ class PostController extends Controller
 
         return redirect()->route('posts.index');
     }
+    public function deleteAllDestroyed()
+    {
+        $deletedPosts = Post::onlyTrashed()->get();
+
+        foreach ($deletedPosts as $deletedPost) {
+            $deletedPost->tags()->sync([]);
+
+            $deletedPost->deleteImage();
+
+            $deletedPost->forceDelete();
+
+            return "Posts Deleted";
+        }
+    }
 
     /**
      * Display a list of all trashed posts.
