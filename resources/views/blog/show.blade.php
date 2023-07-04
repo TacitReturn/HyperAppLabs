@@ -16,7 +16,7 @@
                     <p class="opacity-70 text-uppercase small ls-1">
                         {{ $post->category->name }}
                     </p>
-                    <h1 class="display-4 mt-7 mb-8">
+                    <h1 class="display-4 mt-7 mb-8 text-secondary">
                         {{ $post->title }}
                     </h1>
                     <p>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 mx-auto">
-                        <p class="display-3">
+                        <p class="display-3 text-default">
                             {{ $post->description }}
                         </p>
 
