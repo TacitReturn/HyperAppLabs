@@ -60,8 +60,6 @@
 
         Route::post('users/{user}/make-writer', [UserController::class, 'makeWriter'])->name('users.make-writer');
 
-        Route::get('admin/migrate-database/', [AdminController::class, 'migrateDatabase'])->name('admin.migrate-database');
-
         Route::get('admin/create-user', [AdminController::class, 'createUser'])->name('admin.create-user');
 
         Route::get('admin/create-user', [AdminController::class, 'createUser'])->name('admin.create-user');

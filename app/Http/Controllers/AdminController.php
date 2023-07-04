@@ -91,24 +91,6 @@ class AdminController extends Controller
     }
 
     /**
-     * Runs php artisan migrate:fresh on database
-     */
-    public function migrateDatabase(Request $request): RedirectResponse
-    {
-        Artisan::call('migrate:refresh');
-
-        Artisan::call('db:seed --class=UserSeeder');
-
-        $user = User::where('email', 'glenn@hyperapplabs.com')->first();
-
-        auth()->login($user);
-
-        $request->session()->flash('status', 'Database migrate:refresh ran successfully.');
-
-        return redirect()->back();
-    }
-
-    /**
      * @return Application|Factory|View
      *
      * Display the view to create a new user.

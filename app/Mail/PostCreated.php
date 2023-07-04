@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class PostCreated extends Mailable
 {
@@ -14,6 +15,7 @@ class PostCreated extends Mailable
     use SerializesModels;
 
     public Post $post;
+
     /**
      * Create a new message instance.
      *
@@ -32,7 +34,9 @@ class PostCreated extends Mailable
     public function build()
     {
         $subject = "A new post has been created: {$this->post->title}";
-        
-        return $this->subject($subject)->view('emails.posts.created');
+//        url(secure_asset('storage/' . $post->image)) }}
+        return $this->attachData(Storage::get($this->image))
+            ->subject($subject)
+            ->view('emails.posts.created');
     }
 }

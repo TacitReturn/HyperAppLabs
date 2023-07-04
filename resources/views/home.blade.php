@@ -7,7 +7,7 @@
                 <div class="card-header">{{ __("Dashboard") }}</div>
 
                 <div class="card-body d-flex justify-content-between">
-                    <a href="{{ route("admin.migrate-database") }}" class="btn btn-success">Migrate Database</a>
+{{--                    <a href="{{ route("admin.migrate-database") }}" class="btn btn-success"></a>--}}
                     <form action="admin/deploy-code" method="GET">
                         <button type="submit" class="btn btn-success">Deploy Code</button>
                     </form>
