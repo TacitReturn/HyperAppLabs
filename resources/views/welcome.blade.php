@@ -30,7 +30,12 @@
                 <div class="m-3">
                     <h6 class="sidebar-title">Search</h6>
                     <form class="input-group" target="#" method="GET">
-                        <input type="text" class="form-control" name="client-search" placeholder="Enter a blog title here..">
+                        <input type="text"
+                               class="form-control"
+                               name="client-search"
+                               placeholder="Enter a blog title here.."
+                               value="{{ request("client-search") }}"
+                        >
                     </form>
                 </div>
                 <div class="row">
