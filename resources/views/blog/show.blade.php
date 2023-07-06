@@ -121,7 +121,7 @@
                                                         {{ $comment->created_at->diffForHumans() }}
                                                     </time>
                                                 </div>
-                                                <p class="small-2 mb-0">
+                                                <p class="small-2 mb-0 text-default">
                                                     {{ $comment->content }}
                                                 </p>
                                             </div>
