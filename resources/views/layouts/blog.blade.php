@@ -122,6 +122,9 @@
                     <a target="_blank" class="nav-link" href="https://www.glenn-dev.com">
                         Portfolio
                     </a>
+                    <a target="_blank" class="nav-link" href="https://www.glenn-dev.com">
+                        <img width="25px" src="{{ asset("img/GitHub_Logo.png") }}" alt="bio">
+                    </a>
 {{--                    <a class="nav-link" href="{{ route('contact.create') }}">--}}
 {{--                        Contact--}}
 {{--                    </a>--}}
