@@ -12,12 +12,12 @@ class WelcomeController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::published()->orderBy('created_at', 'DESC')->paginate(4)->withQueryString();
+        $posts = Post::published()->orderBy('created_at', 'DESC')->paginate(4);
 
         $clientSearch = $request->input('client-search');
 
         if ($request->has('client-search')) {
-            $posts = Post::where('title', 'like', "%{$clientSearch}%")->paginate(4);
+            $posts = Post::where('title', 'like', "%{$clientSearch}%")->paginate(4)->withQueryString();
         }
 
         return view('welcome', [
