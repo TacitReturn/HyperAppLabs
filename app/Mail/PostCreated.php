@@ -35,7 +35,7 @@ class PostCreated extends Mailable
     {
         $subject = "A new post has been created: {$this->post->title}";
 //        url(secure_asset('storage/' . $post->image)) }}
-        return $this->attachData(Storage::get($this->image))
+        return $this->attachData(Storage::get($this->post->image))
             ->subject($subject)
             ->view('emails.posts.created');
     }
