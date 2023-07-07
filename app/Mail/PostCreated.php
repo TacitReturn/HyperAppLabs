@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PostCreated extends Mailable
 {
@@ -35,7 +36,7 @@ class PostCreated extends Mailable
     {
         $subject = "A new post has been created: {$this->post->title}";
 //        url(secure_asset('storage/' . $post->image)) }}
-        return $this->attachData(Storage::get($this->post->image))
+        return $this->attachData(Storage::get($this->post->image), Str::random(16))
             ->subject($subject)
             ->view('emails.posts.created');
     }
