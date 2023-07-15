@@ -15,6 +15,20 @@
                         Learn about web development, CI/CD and more..
                     </p>
                 </div>
+                <div class="col-md-8 mx-auto">
+                    <h1>Welcome to Hyper App Labs</h1>
+                    <p class="lead-2 opacity-90 mt-6">
+                        Join our email list to get updated when we create new material.
+                    </p>
+                    <form class="input-group" target="#" method="GET">
+                        <input type="text"
+                               class="form-control"
+                               name="client-search"
+                               placeholder="Enter a blog title here.."
+                               value="{{ request("client-search") }}"
+                        >
+                    </form>
+                </div>
             </div>
         </div>
     </header><!-- /.header -->
