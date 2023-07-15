@@ -6,8 +6,10 @@
 </style>
 
 <p>
-    Hi {{ $post->user->name }}. Just droping by to let you know that a new post has been created!<br />
-    <strong>{{ $post->title }}</strong>
+    Hi {{ $post->user->name }}. Just dropping by to let you know that a new post about {{ $post->category }} has been createe.<br />
+    <strong>
+        {{ $post->title }}
+    </strong>
     <br />
     <a class="text-dark"
        href="{{ route("blog-post.show", $post->id) }}">
