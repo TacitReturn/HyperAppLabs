@@ -12,7 +12,7 @@
                 <div class="col-md-8 mx-auto">
                     <h1>Welcome to Hyper App Labs</h1>
                     <p class="lead-2 opacity-90 mt-6">
-                        Learn about web development, programming paradigms, CI/CD and more..
+                        Learn about web development, different programming paradigms, CI/CD and more..
                     </p>
                 </div>
                 <div class="col-md-8 mx-auto">
