@@ -6,7 +6,7 @@
 @section("header")
     <!-- Header -->
     <header class="header text-center text-white"
-            style="background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);">
+            style="background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
