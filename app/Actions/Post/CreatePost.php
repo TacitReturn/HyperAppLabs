@@ -41,7 +41,7 @@ class CreatePost
         }
 
 //        TODO:// Create an event, for the newly created post.
-        Mail::to($post->user)->send(new PostCreated($post));
+//        Mail::to($post->user)->send(new PostCreated($post));
 
         return $post;
     }
