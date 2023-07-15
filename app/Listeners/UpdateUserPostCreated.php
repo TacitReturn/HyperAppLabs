@@ -28,6 +28,6 @@ class UpdateUserPostCreated
      */
     public function handle(PostCreatedEvent $event)
     {
-        Mail::to($event->post->user)->send(new PostCreated($event->post));
+//        Mail::to($event->post->user)->send(new PostCreated($event->post));
     }
 }

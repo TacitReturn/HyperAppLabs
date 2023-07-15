@@ -2,7 +2,9 @@
 
 namespace App\Observers;
 
+use App\Mail\PostCreated;
 use App\Models\Post;
+use Illuminate\Support\Facades\Mail;
 
 class PostObserver
 {
@@ -14,7 +16,7 @@ class PostObserver
      */
     public function created(Post $post)
     {
-        //
+        Mail::to($post->user)->send(new PostCreated($post));
     }
 
     /**
