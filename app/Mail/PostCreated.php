@@ -15,7 +15,7 @@ class PostCreated extends Mailable
     use Queueable;
     use SerializesModels;
 
-    public Post $post;
+    public $post;
 
     /**
      * Create a new message instance.
