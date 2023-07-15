@@ -14,6 +14,10 @@
 
     Auth::routes();
 
+    Route::get("send-email", function () {
+        return response("Send email with Mailgun");
+    });
+
     Route::get('/', [WelcomeController::class, 'index'])->name('blog.index');
 
     Route::get('blog/posts/{post}', [\App\Http\Controllers\Blog\PostController::class, 'show'])->name('blog-post.show');
