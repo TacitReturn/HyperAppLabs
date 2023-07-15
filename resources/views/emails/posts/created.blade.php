@@ -6,7 +6,7 @@
 </style>
 
 <p>
-    Hi {{ $post->user->name }}. Just dropping by to let you know that a new post about {{ $post->category->name }} has been createe.<br />
+    Hi {{ $post->user->name }}. Just dropping by to let you know that a new post about {{ $post->category->name }} has been created.<br />
     <strong>
         {{ $post->title }}
     </strong>
