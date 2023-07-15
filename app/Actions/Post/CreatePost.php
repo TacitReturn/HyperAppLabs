@@ -41,10 +41,6 @@ class CreatePost
             $post->tags()->attach($request->tags);
         }
 
-//        TODO:// Create an event, for the newly created post.
-//        Mail::to($post->user)->send(new PostCreated($post));
-
-//        event(new PostCreatedEvent($post));
         return $post;
     }
 }
