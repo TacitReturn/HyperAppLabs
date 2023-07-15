@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
     Auth::routes();
 
     Route::get("send-email", function () {
-        $post = DB::table("posts")->where("id", "=", 1)->first();
+        $post = Post::find(1);
 
         Mail::to($post->user)->send(new PostCreated($post));
 
