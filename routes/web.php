@@ -13,7 +13,7 @@ use App\Mail\PostCreated;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Post;
     Auth::routes();
 
     Route::get("send-email", function () {
