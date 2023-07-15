@@ -23,7 +23,7 @@
                         <input type="text"
                                class="form-control"
                                name="client-search"
-                               placeholder="Enter a blog title here.."
+                               placeholder="email address"
                                value="{{ request("client-search") }}"
                         >
                     </form>
