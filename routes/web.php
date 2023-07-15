@@ -17,9 +17,8 @@ use App\Models\Post;
     Auth::routes();
 
     Route::get("send-email", function () {
-        $post = Post::find(1);
 
-        Mail::to($post->user)->send(new PostCreated($post));
+        Mail::to("glenn.rudge@outlook.com")->send(new PostCreated(Post::find(1)));
 
         /**
          * Check if the email has been sent successfully, or not.
