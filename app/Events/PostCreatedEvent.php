@@ -20,7 +20,7 @@ class PostCreatedEvent
      *
      * @return void
      */
-    public function __construct(Post $post)
+    public function __construct(public Post $post)
     {
         //
     }
