@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Events\PostCreatedEvent;
-use App\Listeners\UpdateUserPostCreated;
 use App\Models\Post;
 use App\Observers\PostObserver;
 use Illuminate\Auth\Events\Registered;

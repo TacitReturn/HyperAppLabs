@@ -2,11 +2,8 @@
 
 namespace App\Actions\Post;
 
-use App\Events\PostCreatedEvent;
-use App\Mail\PostCreated;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class CreatePost
@@ -15,12 +12,12 @@ class CreatePost
     {
         $validatedData = $request->validated();
 
-        $image = $request->hasFile("image")
-            ? $request->file("image")->store("posts/images")
+        $image = $request->hasFile('image')
+            ? $request->file('image')->store('posts/images')
             : null;
 
-        $video = $request->hasFile("video")
-            ? $request->file("video")->store("posts/videos")
+        $video = $request->hasFile('video')
+            ? $request->file('video')->store('posts/videos')
             : null;
 
         $post = Post::create(

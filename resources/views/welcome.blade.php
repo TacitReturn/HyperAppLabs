@@ -19,7 +19,7 @@
                     <p class="lead-2 opacity-90 mt-6">
                         Join our email list to get updated when we create new material.
                     </p>
-                    @if(session("message"))
+                    @if (session("message"))
                         <p class="text-muted">
                             {{ session("message") }}
                         </p>

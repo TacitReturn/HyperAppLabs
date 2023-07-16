@@ -32,20 +32,18 @@ class EmailController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Emails\StoreEmailRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreEmailRequest $request, CreateEmail $createEmail)
     {
         $createEmail->handle($request);
 
-        return redirect()->route("blog.index");
+        return redirect()->route('blog.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Email  $email
      * @return \Illuminate\Http\Response
      */
     public function show(Email $email)
@@ -56,7 +54,6 @@ class EmailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Email  $email
      * @return \Illuminate\Http\Response
      */
     public function edit(Email $email)
@@ -67,8 +64,6 @@ class EmailController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Emails\UpdateEmailRequest  $request
-     * @param  \App\Models\Email  $email
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateEmailRequest $request, Email $email)
@@ -79,7 +74,6 @@ class EmailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Email  $email
      * @return \Illuminate\Http\Response
      */
     public function destroy(Email $email)

@@ -11,19 +11,19 @@ class UpdatePost
     {
         $validatedData = $request->validated();
 
-        $image = $request->hasFile("image")
-            ? $request->file("image")->store("posts/images")
+        $image = $request->hasFile('image')
+            ? $request->file('image')->store('posts/images')
             : null;
 
-        $video = $request->hasFile("video")
-            ? $request->file("video")->store("posts/videos")
+        $video = $request->hasFile('video')
+            ? $request->file('video')->store('posts/videos')
             : null;
 
-            $post->deleteImage();
+        $post->deleteImage();
 
-            $validatedData['image'] = $image;
+        $validatedData['image'] = $image;
 
-            $validatedData['video'] = $video;
+        $validatedData['video'] = $video;
 
         if ($request->tags) {
             $post->tags()->syncWithoutDetaching($request->tags);
