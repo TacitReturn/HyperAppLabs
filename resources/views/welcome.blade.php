@@ -19,13 +19,32 @@
                     <p class="lead-2 opacity-90 mt-6">
                         Join our email list to get updated when we create new material.
                     </p>
-                    <form class="input-group" target="#" method="GET">
+                    @if(session("message"))
+                        <p class="text-muted">
+                            {{ session("message") }}
+                        </p>
+                    @endif
+                    @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <p class="text-muted">
+                                        {{ $error }}
+                                    </p>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{ route('emails.store') }}" class="input-group" method="POST">
+                        @csrf
                         <input type="text"
                                class="form-control"
-                               name="client-search"
+                               name="email"
                                placeholder="email address"
-                               value="{{ request("client-search") }}"
                         >
+                        <button type="submit" class="btn btn-success btn-sm">
+                            Join
+                        </button>
                     </form>
                 </div>
             </div>

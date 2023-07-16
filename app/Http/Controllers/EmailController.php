@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEmailRequest;
-use App\Http\Requests\UpdateEmailRequest;
+use App\Actions\Email\CreateEmail;
+use App\Http\Requests\Emails\StoreEmailRequest;
+use App\Http\Requests\Emails\UpdateEmailRequest;
 use App\Models\Email;
 
 class EmailController extends Controller
@@ -31,12 +32,14 @@ class EmailController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEmailRequest  $request
+     * @param  \App\Http\Requests\Emails\StoreEmailRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEmailRequest $request)
+    public function store(StoreEmailRequest $request, CreateEmail $createEmail)
     {
-        //
+        $createEmail->handle($request);
+
+        return redirect()->route("blog.index");
     }
 
     /**
@@ -64,7 +67,7 @@ class EmailController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEmailRequest  $request
+     * @param  \App\Http\Requests\Emails\UpdateEmailRequest  $request
      * @param  \App\Models\Email  $email
      * @return \Illuminate\Http\Response
      */
