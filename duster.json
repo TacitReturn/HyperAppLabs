@@ -6,7 +6,6 @@
     "routes"
   ],
   "exclude": [
-    "tests/fixtures",
-    "**/folderToExclude/**"
+    "tests/"
   ]
 }
