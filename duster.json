@@ -1,0 +1,12 @@
+{
+  "include": [
+    "app",
+    "database",
+    "resources",
+    "routes"
+  ],
+  "exclude": [
+    "tests/fixtures",
+    "**/folderToExclude/**"
+  ]
+}

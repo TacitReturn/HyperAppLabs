@@ -9,7 +9,7 @@ class CreateEmail
 {
     public function handle(Request $request)
     {
-        $request->whenHas("email", function ($email) use ($request) {
+        $request->whenHas("email", function () use ($request) {
             $validatedData = $request->validated();
 
             $email = Email::create($validatedData);

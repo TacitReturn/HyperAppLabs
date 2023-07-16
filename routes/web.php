@@ -28,9 +28,9 @@ Route::post('comments/{post}', [CommentController::class, 'store'])->name('comme
 
 Route::delete('comments/comment', [CommentController::class, 'destroy'])->name('comments.destroy');
 
-// Contact Us Rout  es
 
-Route::get('contact', [ContactUsFormController::class, 'createForm'])->name('contact.create');
+//Route::get('contact', [ContactUsFormController::class, 'createForm'])->name('contact.create');
+
 Route::post('contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 Route::middleware(['auth'])->group(function () {
@@ -54,8 +54,6 @@ Route::middleware(['auth'])->group(function () {
         'restore-posts'
     );
 });
-
-//    Auth::routes();
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('users', [UserController::class, 'index'])->name('users.index');
@@ -98,8 +96,3 @@ Route::middleware(['auth', 'admin'])->group(function () {
  */
 Route::resource('products', ProductController::class);
 
-// TODO: Create products resource
-// TODO Create CRUD routes for products
-// TODO: Create views for routes
-
-// TODO: Create products index.blade.php and create.blade.php

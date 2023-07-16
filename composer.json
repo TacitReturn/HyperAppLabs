@@ -25,7 +25,7 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
         "phpunit/phpunit": "^9.5.10",
-        "tightenco/duster": "^2.0"
+        "tightenco/duster": "^2.1"
     },
     "autoload": {
         "psr-4": {
