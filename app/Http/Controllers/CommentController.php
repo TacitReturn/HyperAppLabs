@@ -33,7 +33,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-            //
+        //
     }
 
     /**
@@ -57,7 +57,7 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-            //
+        //
     }
 
     /**
@@ -67,7 +67,7 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-            //
+        //
     }
 
     /**
@@ -78,7 +78,7 @@ class CommentController extends Controller
      */
     public function update(UpdateCommentRequest $request, Comment $comment)
     {
-            //
+        //
     }
 
     /**

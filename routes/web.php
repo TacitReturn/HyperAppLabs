@@ -13,10 +13,9 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
 Auth::routes();
 
-Route::resource("emails", EmailController::class);
+Route::resource('emails', EmailController::class);
 
 Route::get('/', [WelcomeController::class, 'index'])->name('blog.index');
 
@@ -25,7 +24,6 @@ Route::get('blog/posts/{post}', [\App\Http\Controllers\Blog\PostController::clas
 Route::post('comments/{post}', [CommentController::class, 'store'])->name('comments.store');
 
 Route::delete('comments/comment', [CommentController::class, 'destroy'])->name('comments.destroy');
-
 
 //Route::get('contact', [ContactUsFormController::class, 'createForm'])->name('contact.create');
 
@@ -36,8 +34,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('categories', CategoriesController::class);
 
-    Route::delete("/delete-all-destroyed", [PostController::class, "deleteAllDestroyed"])->name(
-        "posts.deleteAllDestroyed"
+    Route::delete('delete-all-destroyed', [PostController::class, 'deleteAllDestroyed'])->name(
+        'posts.deleteAllDestroyed'
     );
 
     Route::resource('posts', PostController::class);
@@ -75,7 +73,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // Comments Index
     Route::get('comments', [CommentController::class, 'index'])->name('comments.index');
 
-//        // Comments publish
+    //        // Comments publish
     Route::put('comments/{comment}', [CommentController::class, 'publishComment'])->name('comments.publish');
 
     Route::put('comments/unpublish/{comment}', [CommentController::class, 'unPublishComment'])->name(
@@ -93,4 +91,3 @@ Route::middleware(['auth', 'admin'])->group(function () {
  * Product Routes
  */
 Route::resource('products', ProductController::class);
-
