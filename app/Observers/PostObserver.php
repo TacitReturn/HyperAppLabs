@@ -4,12 +4,11 @@ namespace App\Observers;
 
 use App\Mail\PostCreated;
 use App\Mail\PostUpdated;
+use App\Models\Email;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-use App\Models\Email;
-use \Illuminate\Support\Collection;
 
 class PostObserver
 {
@@ -20,12 +19,11 @@ class PostObserver
      */
     public function created(Post $post)
     {
-        $emails = DB::table("emails")->get();
+        $emails = DB::table('emails')->get();
 
-        $emailsAddresses = $emails->pluck("email");
+        $emailsAddresses = $emails->pluck('email');
 
-        foreach($emailsAddresses as $email)
-        {
+        foreach ($emailsAddresses as $email) {
             Mail::to($email)->send(new PostCreated($post));
         }
 
@@ -34,10 +32,10 @@ class PostObserver
          * Return the appropriate message.
          */
         if (Mail::failures() != 0) {
-            info("Emails have been sent successfully.");
+            info('Emails have been sent successfully.');
         }
 
-        info("Oops! There was some error sending the emails.");
+        info('Oops! There was some error sending the emails.');
     }
 
     /**
@@ -47,12 +45,11 @@ class PostObserver
      */
     public function updated(Post $post)
     {
-        $emails = DB::table("emails")->get();
+        $emails = DB::table('emails')->get();
 
-        $emailsAddresses = $emails->pluck("email");
+        $emailsAddresses = $emails->pluck('email');
 
-        foreach($emailsAddresses as $email)
-        {
+        foreach ($emailsAddresses as $email) {
             Mail::to($email)->send(new PostUpdated($post));
         }
 
@@ -61,10 +58,10 @@ class PostObserver
          * Return the appropriate message.
          */
         if (Mail::failures() != 0) {
-            info("Emails have been sent successfully on " . Carbon::now());
+            info('Emails have been sent successfully on ' . Carbon::now());
         }
 
-        info("Oops! There was some error sending the emails on " . Carbon::now());
+        info('Oops! There was some error sending the emails on ' . Carbon::now());
     }
 
     /**
