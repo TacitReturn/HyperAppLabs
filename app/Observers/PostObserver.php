@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Mail\PostCreated;
 use App\Mail\PostUpdated;
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Email;
@@ -60,10 +61,10 @@ class PostObserver
          * Return the appropriate message.
          */
         if (Mail::failures() != 0) {
-            info("Emails have been sent successfully.");
+            info("Emails have been sent successfully on " . Carbon::now());
         }
 
-        info("Oops! There was some error sending the emails.");
+        info("Oops! There was some error sending the emails on " . Carbon::now());
     }
 
     /**
