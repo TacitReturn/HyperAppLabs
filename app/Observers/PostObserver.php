@@ -18,18 +18,11 @@ class PostObserver
      */
     public function created(Post $post)
     {
-//        $emails = DB::table("emails")->where("email", "!=", null)
-//            ->chunkById(100, function (Collection $emails) use ($post) {
-//                foreach ($emails as $email) {
-//                    Mail::to($email->email)->send(new PostCreated($post));
-//                }
-//            });
-
         $emails = DB::table("emails")->get();
 
-        $emails = $emails->pluck("email");
+        $emailsAddresses = $emails->pluck("email");
 
-        foreach($emails as $email)
+        foreach($emailsAddresses as $email)
         {
             Mail::to($email)->send(new PostCreated($post));
         }
