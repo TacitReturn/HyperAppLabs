@@ -20,7 +20,7 @@ class PostPolicy
     {
         return auth()->check()
             ? Response::allow()
-            : Response::deny("You aren't allowed to view this recourse.", 403);
+            : Response::deny("You aren't allowed to view this resource.", 403);
     }
 
     /**
@@ -32,7 +32,7 @@ class PostPolicy
     {
         return auth()->check()
             ? Response::allow()
-            : Response::deny("You aren't allowed to view this recourse.", 403);
+            : Response::deny("You aren't allowed to view this resource.", 403);
     }
 
     /**
@@ -44,7 +44,7 @@ class PostPolicy
     {
         return auth()->check()
             ? Response::allow()
-            : Response::deny("You aren't allowed to create this recourse.", 403);
+            : Response::deny("You aren't allowed to create this resource.", 403);
     }
 
     /**
@@ -56,7 +56,7 @@ class PostPolicy
     {
         return auth()->check()
             ? Response::allow()
-            : Response::deny("You aren't allowed to create this recourse.", 403);
+            : Response::deny("You aren't allowed to create this resource.", 403);
     }
 
     /**
@@ -68,7 +68,7 @@ class PostPolicy
     {
         return auth()->check() && $user->id == $post->user_id
             ? Response::allow()
-            : Response::deny("You aren't allowed to delete this recourse.", 403);
+            : Response::deny("You aren't allowed to delete this resource.", 403);
     }
 
     /**
@@ -80,7 +80,7 @@ class PostPolicy
     {
         return auth()->check() && $user->id == $post->user_id
             ? Response::allow()
-            : Response::deny("You aren't allowed to restore this recourse.", 403);
+            : Response::deny("You aren't allowed to restore this resource.", 403);
     }
 
     /**
@@ -92,6 +92,6 @@ class PostPolicy
     {
         return auth()->check() && $user->id == $post->user_id
             ? Response::allow()
-            : Response::deny("You aren't allowed to force delete this recourse.", 403);
+            : Response::deny("You aren't allowed to force delete this resource.", 403);
     }
 }
