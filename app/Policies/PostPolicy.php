@@ -66,7 +66,7 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-        return auth()->check() && $user->id == $post->user_id
+        return auth()->check()
             ? Response::allow()
             : Response::deny("You aren't allowed to delete this resource.", 403);
     }
@@ -78,7 +78,7 @@ class PostPolicy
      */
     public function restore(User $user, Post $post)
     {
-        return auth()->check() && $user->id == $post->user_id
+        return auth()->check()
             ? Response::allow()
             : Response::deny("You aren't allowed to restore this resource.", 403);
     }
@@ -90,7 +90,7 @@ class PostPolicy
      */
     public function forceDelete(User $user, Post $post)
     {
-        return auth()->check() && $user->id == $post->user_id
+        return auth()->check()
             ? Response::allow()
             : Response::deny("You aren't allowed to force delete this resource.", 403);
     }
