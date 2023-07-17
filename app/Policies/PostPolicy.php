@@ -30,9 +30,7 @@ class PostPolicy
      */
     public function view(User $user, Post $post)
     {
-        return Auth::check()
-            ? Response::allow()
-            : Response::deny("You aren't allowed to view this recourse.", 403);
+        return Response::deny("You aren't allowed to view this recourse.", 403);
     }
 
     /**
