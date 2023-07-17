@@ -64,6 +64,18 @@ class PostPolicy
      *
      * @return \Illuminate\Auth\Access\Response|bool
      */
+    public function softDelete(User $user, Post $post)
+    {
+        return auth()->check()
+            ? Response::allow()
+            : Response::deny("You aren't allowed to delete this resource.", 403);
+    }
+
+    /**
+     * Determine whether the user can delete the model.
+     *
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
     public function delete(User $user, Post $post)
     {
         return auth()->check()

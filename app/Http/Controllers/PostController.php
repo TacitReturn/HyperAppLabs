@@ -107,6 +107,8 @@ class PostController extends Controller
      */
     public function destroy(DeletePost $deletePost, $id): RedirectResponse
     {
+        $this->authorize('update', $deletePost);
+
         $deletePost->handle($id);
 
         request()->session()->flash('status', 'Post deleted successfully..');
