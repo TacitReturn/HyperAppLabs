@@ -22,6 +22,8 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware('verifyCategoryCount')->only(['create', 'store']);
+
+        $this->authorizeResource(Post::class, 'post');
     }
 
     /**
