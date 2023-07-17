@@ -4,7 +4,10 @@ namespace App\Observers;
 
 use App\Mail\PostCreated;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Email;
+use \Illuminate\Support\Collection;
 
 class PostObserver
 {
@@ -15,17 +18,31 @@ class PostObserver
      */
     public function created(Post $post)
     {
-        Mail::to($post->user)->send(new PostCreated($post));
+//        $emails = DB::table("emails")->where("email", "!=", null)
+//            ->chunkById(100, function (Collection $emails) use ($post) {
+//                foreach ($emails as $email) {
+//                    Mail::to($email->email)->send(new PostCreated($post));
+//                }
+//            });
+
+        $emails = DB::table("emails")->get();
+
+        $emails = $emails->pluck("email");
+
+        foreach($emails as $email)
+        {
+            Mail::to($email)->send(new PostCreated($post));
+        }
 
         /**
          * Check if the email has been sent successfully, or not.
          * Return the appropriate message.
          */
         if (Mail::failures() != 0) {
-            return 'Email has been sent successfully.';
+            info("Emails have been sent successfully.");
         }
 
-        return 'Oops! There was some error sending the email.';
+        info("Oops! There was some error sending the emails.");
     }
 
     /**
