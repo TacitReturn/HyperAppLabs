@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\Auth;
 
 class PostPolicy
 {
@@ -30,7 +31,9 @@ class PostPolicy
      */
     public function view(User $user, Post $post)
     {
-        return Response::deny("You aren't allowed to view this recourse.", 403);
+        return auth()->check()
+            ? Response::allow()
+            : Response::deny("You aren't allowed to view this recourse.", 403);
     }
 
     /**
@@ -40,7 +43,9 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        return false;
+        return auth()->check()
+            ? Response::allow()
+            : Response::deny("You aren't allowed to create this recourse.", 403);
     }
 
     /**
@@ -50,7 +55,9 @@ class PostPolicy
      */
     public function update(User $user, Post $post)
     {
-        return false;
+        return auth()->check()
+            ? Response::allow()
+            : Response::deny("You aren't allowed to create this recourse.", 403);
     }
 
     /**
