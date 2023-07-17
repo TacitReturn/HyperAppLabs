@@ -9,10 +9,10 @@ class StorePostRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-//    public function authorize(): bool
-//    {
-//        return auth()->user()->email === 'glenn.rudge@outlook.com';
-//    }
+    //    public function authorize(): bool
+    //    {
+    //        return auth()->user()->email === 'glenn.rudge@outlook.com';
+    //    }
 
     /**
      * Get the validation rules that apply to the request.
