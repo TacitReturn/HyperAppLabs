@@ -66,7 +66,7 @@ class PostPolicy
      */
     public function delete(User $user, Post $post)
     {
-        return auth()->check() && $user->id == $post->user_id
+        return auth()->check()
             ? Response::allow()
             : Response::deny("You aren't allowed to create this recourse.", 403);
     }
