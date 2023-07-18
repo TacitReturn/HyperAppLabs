@@ -14,13 +14,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('backup:clean')->monthlyOn(5, "01:00")
-            ->onFailure(fn() => info("Website backup:clean failed."))
-            ->onSuccess(fn() => info("Website backed:clean up successfully."));
+        $schedule->command('backup:clean')->monthlyOn(5, '01:00')
+            ->onFailure(fn () => info('Website backup:clean failed.'))
+            ->onSuccess(fn () => info('Website backed:clean up successfully.'));
 
-        $schedule->command('backup:run')->monthlyOn(5, "01:30")
-            ->onFailure(fn() => info("Website backup:run failed."))
-            ->onSuccess(fn() => info("Website backed:run up successfully."));
+        $schedule->command('backup:run')->monthlyOn(5, '01:30')
+            ->onFailure(fn () => info('Website backup:run failed.'))
+            ->onSuccess(fn () => info('Website backed:run up successfully.'));
     }
 
     /**
@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
