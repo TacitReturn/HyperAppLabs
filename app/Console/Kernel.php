@@ -16,11 +16,11 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('backup:clean')->monthlyOn(5, "01:00")
             ->onFailure(fn() => info("Website backup:clean failed."))
-            ->onSuccess(fn() => info("Website backed:clean up successfully."));
+            ->onSuccess(fn() => info("Website backed:clean successfully."));
 
         $schedule->command('backup:run')->monthlyOn(5, "01:30")
             ->onFailure(fn() => info("Website backup:run failed."))
-            ->onSuccess(fn() => info("Website backed:run up successfully."));
+            ->onSuccess(fn() => info("Website backed:run successfully."));
     }
 
     /**
