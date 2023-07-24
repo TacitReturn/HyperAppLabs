@@ -13,6 +13,7 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// GitHub
 Auth::routes();
 
 Route::resource('emails', EmailController::class);
