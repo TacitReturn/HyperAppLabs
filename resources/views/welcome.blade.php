@@ -79,7 +79,9 @@
                                         <div class="card border hover-shadow-6 mb-6 d-block">
                                             @if ($post->is_premium)
                                                 <div class="m-3">
-                                                   <a href="" class="m-2 float-right badge badge-pill badge-success"></a>
+                                                   <a href="" class="m-2 float-right badge badge-pill badge-success">
+                                                    Premium
+                                                   </a>
                                                 </div>
                                             @endif
                                             <img class="card-img-top" src="{{ secure_asset("storage/{$post->image}") }}"
