@@ -2,7 +2,9 @@
 @section("title")
     Hyper App Labs
 @endsection
-
+@php
+    echo "Hello, world";
+@endphp
 @section("header")
     <!-- Header -->
     <header class="header text-center text-white"
