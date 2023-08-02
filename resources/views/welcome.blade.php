@@ -3,7 +3,7 @@
     Hyper App Labs
 @endsection
 @php
-    echo "Hello, world";
+    dd("hello");
 @endphp
 @section("header")
     <!-- Header -->
