@@ -45,8 +45,6 @@
 @section("content")
     <!-- Main Content -->
     <main class="main-content">
-
-
         <!--
         |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
         | Blog content
@@ -65,7 +63,6 @@
                                     width="740"
                                     height="264"
                                     poster="{{ url(secure_asset('storage/' . $post->image)) }}"
-                                    data-setup="{}"
                             >
                                 <source src="{{ url(secure_asset('storage/'.$post->video)) }}" type="video/mp4" />
                                 <source src="{{ url(secure_asset('storage/'.$post->video)) }}" type="video/webm" />
@@ -91,7 +88,7 @@
                             {{ $post->description }}
                         </p>
 
-                        <hr class="w-100px">
+                        <hr class="w-100px" id="#post">
 
                         <p>
                             {!! $post->content !!}
