@@ -40,6 +40,13 @@
 
         </div>
     </header><!-- /.header -->
+    <div>
+        @if ($viewsCount > 1)
+            <div class="m-5 text-light text-center">This post has been viewed {{$viewsCount}} times.</div>
+        @else
+            <div class="m-5 text-light text-center">You're the first reader of this post :)</div>           
+        @endif
+    </div>
 @endsection
 
 @section("content")

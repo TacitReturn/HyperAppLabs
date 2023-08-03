@@ -15,13 +15,13 @@ class PostController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(Post $post)
-    {
-        return view('blog.show', ['post' => $post]);
-    }
-
     public function show(Post $post)
     {
-        return view('blog.show', ['post' => $post]);
+        views($post)
+            ->cooldown(now()->addMinutes(30))
+            ->record();
+
+        $viewsCount = views($post)->count();
+        return view('blog.show', ["post" => $post, "viewsCount" => $viewsCount]);
     }
 }

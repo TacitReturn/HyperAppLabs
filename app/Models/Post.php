@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use CyrildeWit\EloquentViewable\Contracts\Viewable;
+use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,10 +15,9 @@ use Illuminate\Support\Facades\Storage;
 /**
  * @property string title
  */
-class Post extends Model
+class Post extends Model implements Viewable
 {
-    use HasFactory;
-    use SoftDeletes;
+    use HasFactory, SoftDeletes, InteractsWithViews;
 
     protected $dates = [
         'published_at',
