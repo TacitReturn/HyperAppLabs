@@ -88,7 +88,7 @@
                             {{ $post->description }}
                         </p>
 
-                        <hr class="w-100px" id="#post">
+                        <hr class="w-100px">
 
                         <p>
                             {!! $post->content !!}

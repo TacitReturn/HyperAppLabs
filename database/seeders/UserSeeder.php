@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         DB::table('bio')->insert(
             [
                 'bio' => 'I started off in tech at a young age, building websites for my E-sports and skateboarding
-                    team. Eventually, I begin learning more and more about web development, and here I am today.',
+                team. Eventually, I begin learning more and more about web development, and here I am today.',
             ]
         );
     }
