@@ -22,6 +22,7 @@ class PostController extends Controller
             ->record();
 
         $viewsCount = views($post)->count();
-        return view('blog.show', ["post" => $post, "viewsCount" => $viewsCount]);
+
+        return view('blog.show', ['post' => $post, 'viewsCount' => $viewsCount]);
     }
 }
