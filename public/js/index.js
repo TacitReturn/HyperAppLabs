@@ -11,7 +11,6 @@ class ReactForm extends React.Component {
             name: "",
             email: "",
             company: "",
-            selectValue: "",
             message: "",
         };
 
@@ -22,7 +21,6 @@ class ReactForm extends React.Component {
         this.setState({
             [evt.target.name]: evt.target.value,
         });
-        this.setState({ selectValue: evt.target.value });
     }
 
     handleSubmit(evt) {
@@ -82,10 +80,10 @@ class ReactForm extends React.Component {
                         class="form-control form-control-lg"
                         name="budget"
                     >
-                        <option value="1">Up to $1,000</option>
-                        <option value="2">Up to $3,000</option>
-                        <option value="3">Up to $5,000</option>
-                        <option value="4">Above $5,000</option>
+                        <option value="1000">Up to $1,000</option>
+                        <option value="3000">Up to $3,000</option>
+                        <option value="5000">Up to $5,000</option>
+                        <option value="+5000">Above $5,000</option>
                     </select>
                 </div>
 
