@@ -25,15 +25,22 @@ class ReactForm extends React.Component {
 
     handleSubmit(evt) {
         evt.preventDefault();
+        const formData = {
+            name: evt.target.name,
+            email: evt.target.email,
+            company: evt.target.company,
+            message: evt.target.message,
+        };
+
+        console.log(formData);
     }
 
     render() {
         return (
             <form
+                onSubmit={this.handleSubmit}
                 class="form-row input-border"
                 action="../assets/php/sendmail.php"
-                method="POST"
-                data-form="mailer"
             >
                 <div class="col-12">
                     <div class="alert alert-success d-on-success">
