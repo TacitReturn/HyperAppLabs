@@ -95,7 +95,9 @@
             <hr>
             <p class="lead">They original on mountains, drew the support time. The of to graduate into to is the to she.</p>
           </header>
-          <ReactForm />
+          <div class="col-md-8">
+            <ReactForm />
+          </div>
         </div>
       </section>
 
