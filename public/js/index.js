@@ -81,7 +81,7 @@ class ReactForm extends React.Component {
                         onChange={this.handleChange}
                         class="form-control form-control-lg"
                         name="budget"
-                        value={selectOption}
+                        value={selectValue}
                     >
                         <option value="1">Up to $1,000</option>
                         <option value="2">Up to $3,000</option>
