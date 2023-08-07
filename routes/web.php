@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get("services", [PageController::class, "services"])->name("page.service");
+Route::get('services', [PageController::class, 'services'])->name('page.service');
 
 Route::resource('emails', EmailController::class);
 
