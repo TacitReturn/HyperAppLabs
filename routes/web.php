@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TagController;
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 // TODO: Create functionality for users to unsibscribe from email list.
 
 Auth::routes();
+
+Route::get("services", [PageController::class, "services"])->name("page.service");
 
 Route::resource('emails', EmailController::class);
 
