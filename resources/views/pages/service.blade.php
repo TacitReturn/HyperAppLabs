@@ -3,7 +3,7 @@
  <!-- Header -->
  <header class="header text-center text-white" style="background-image: linear-gradient(to right top, #051937, #14203b, #1f273f, #292e44, #333648);">
     <div class="container text-center">
-        <h1 class="display-4">Our Services</h1>
+        <p class="display-4">Our Services</p>
         <p class="lead-2 mt-6">We provide quality services to launch your startup or grow your business</p>
     </div>
 </header>
