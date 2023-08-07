@@ -16,9 +16,9 @@
                     <p class="opacity-70 text-uppercase small ls-1">
                         {{ $post->category->name }}
                     </p>
-                    <h1 class="display-4 mt-7 mb-8 text-secondary">
+                    <p class="display-4 mt-7 mb-8 text-secondary">
                         {{ $post->title }}
-                    </h1>
+                    </p>
                     <p>
                         <span class="opacity-70 mr-1">By</span>
                         <a class="text-white" href="#">{{ $post->user->name }}</a>
