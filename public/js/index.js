@@ -14,11 +14,7 @@ class ReactForm extends React.Component {
 
     handleChange(evt) {
         this.setState({
-            name: evt.target.value,
-            email: evt.target.value,
-            company: evt.target.value,
-            budget: evt.target.value,
-            message: evt.target.value,
+            [ent.target.name]: evt.target.value,
         });
     }
 
