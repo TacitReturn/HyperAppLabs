@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateViewsTable extends Migration
 {
@@ -34,11 +34,6 @@ class CreateViewsTable extends Migration
         $this->table = config('eloquent-viewable.models.view.table_name');
     }
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         $this->schema->create($this->table, function (Blueprint $table) {
@@ -50,11 +45,6 @@ class CreateViewsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists($this->table);
