@@ -9,8 +9,8 @@
     <title>{{ config("app.name", "HyperAppLabs") }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset("css/page.min.css") }}" rel="stylesheet">
-    <link href="{{ asset("css/style.css") }}" rel="stylesheet">
+    <link href="{{ url("css/page.min.css") }}" rel="stylesheet">
+    <link href="{{ url("css/style.css") }}" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
