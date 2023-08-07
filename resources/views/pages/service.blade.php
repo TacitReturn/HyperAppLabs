@@ -23,6 +23,25 @@
         <div class="container">
           <div class="row gap-y align-items-center">
 
+            <div class="col-md-6 text-center text-md-left order-md-2">
+              <p class="small-2 text-uppercase text-lightest fw-500 ls-1">Code</p>
+              <h3 class="fw-500">Full-Stack Development</h3>
+              <br>
+              <p>The latest in Laravel development.</p>
+            </div>
+
+            <div class="col-md-5 mx-auto">
+              <img class="rounded-md" src="../assets/img/thumb/5.jpg" alt="...">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="row gap-y align-items-center">
+
             <div class="col-md-6 text-md-right">
               <p class="small-2 text-uppercase text-lightest fw-500 ls-1">Design</p>
               <h3 class="fw-500">Responsive Web Design</h3>
@@ -37,27 +56,6 @@
           </div>
         </div>
       </section>
-
-
-      <section class="section">
-        <div class="container">
-          <div class="row gap-y align-items-center">
-
-            <div class="col-md-6 text-center text-md-left order-md-2">
-              <p class="small-2 text-uppercase text-lightest fw-500 ls-1">Code</p>
-              <h3 class="fw-500">Full-Stack Development</h3>
-              <br>
-              <p>Instrument cultivated alteration any favourable expression law far nor. Both new like tore but year. An from mean on with when sing pain. Oh to as principles devonshire companions unsatiable an delightful. The ourselves suffering the sincerity. Inhabit her manners adapted age certain. Debating offended at branched striking be subjects.</p>
-            </div>
-
-            <div class="col-md-5 mx-auto">
-              <img class="rounded-md" src="../assets/img/thumb/5.jpg" alt="...">
-            </div>
-
-          </div>
-        </div>
-      </section>
-
 
       <section class="section">
         <div class="container">
