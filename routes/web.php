@@ -13,6 +13,8 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// TODO: Create functionality for users to unsibscribe from email list.
+
 Auth::routes();
 
 Route::resource('emails', EmailController::class);

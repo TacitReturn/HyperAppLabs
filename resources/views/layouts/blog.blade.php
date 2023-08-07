@@ -57,13 +57,11 @@
                                 Software Development
                             </a>
                             <nav class="nav">
-                                <a class="nav-link" href="">Web Application</a>
-                                <a class="nav-link" href="">Android/Apple Mobile</a>
-                                <a class="nav-link" href="">Desktop</a>
+                                <a class="nav-link" href="">Laravel App</a>
                             </nav>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            {{-- <a class="nav-link" href="#">
                                 DevOps
                             </a>
                             <nav class="nav">
@@ -73,7 +71,7 @@
                                 <a class="nav-link" href="">
                                     CI/CD
                                 </a>
-                            </nav>
+                            </nav> --}}
                         </li>
                     </ul>
                 </li>
