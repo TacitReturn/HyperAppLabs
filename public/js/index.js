@@ -1,9 +1,3 @@
-const options = [
-    { value: "$1,000", label: "Up to $1,000" },
-    { value: "$3,000", label: "Up to $3,000" },
-    { value: "$5,000", label: "Up to $5,000" },
-];
-
 class ReactForm extends React.Component {
     constructor(props) {
         super(props);
@@ -11,10 +5,12 @@ class ReactForm extends React.Component {
             name: "",
             email: "",
             company: "",
+            budget: "",
             message: "",
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(evt) {
