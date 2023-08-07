@@ -53,12 +53,10 @@
                     <a class="nav-link" href="#">Our Services <span class="arrow"></span></a>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Software Development
-                            </a>
-                            <nav class="nav">
+                            <a class="nav-link" href="#">Laravel App Development</a>
+                            {{-- <nav class="nav">
                                 <a class="nav-link" href="">Laravel App</a>
-                            </nav>
+                            </nav> --}}
                         </li>
                         <li class="nav-item">
                             {{-- <a class="nav-link" href="#">
