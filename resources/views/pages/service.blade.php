@@ -3,8 +3,8 @@
  <!-- Header -->
  <header class="header text-center text-white" style="background-image: linear-gradient(to right top, #051937, #14203b, #1f273f, #292e44, #333648);">
     <div class="container text-center">
-        <p class="display-4">Our Services</p>
-        <p class="lead-2 mt-6">We provide quality services to launch your startup or grow your business</p>
+        <p class="display-4">How can I help you?</p>
+        <p class="lead-2 mt-6">I provide quality Laravel web applications. Want to launch your startup or grow your business?</p>
     </div>
 </header>
 <!-- /.header -->
