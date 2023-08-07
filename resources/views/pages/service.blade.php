@@ -31,7 +31,7 @@
               <p>Add modularity to an existing application or a project you have in mind with font-end frameworks like React and Vue.</p>
             </div>
 
-            <div class="col-md-5 mx-auto">
+            <div class="col-md-5 mx-auto text-center">
                 <i class="laravel-icon fa-brands fa-laravel fa-10x"></i>
                 <i class="vue-icon fa-brands fa-vuejs fa-10x"></i>
                 <i class="react-icon fa-brands fa-react fa-10x"></i>
