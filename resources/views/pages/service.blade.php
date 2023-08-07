@@ -27,7 +27,7 @@
               <p class="small-2 text-uppercase text-lightest fw-500 ls-1">Code</p>
               <h3 class="fw-500">Full-Stack Development</h3>
               <br>
-              <p>I use the latest technologies in the Laravel ecosystem. This allows me to build robust web applications that will serve your needs for many years to come</p>
+              <p>I use the latest technologies in the Laravel ecosystem. This allows me to build robust web applications that scale in todays app market place</p>
               <p>Add modularity to an existing application or a project you have in mind with font-end frameworks like React and Vue.</p>
             </div>
 
