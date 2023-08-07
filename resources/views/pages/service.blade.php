@@ -6,11 +6,10 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <title>TheSaaS — Services</title>
-
+    <title>Our Services</title>
     <!-- Styles -->
-    <link href="../assets/css/page.min.css" rel="stylesheet">
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="{{ url("css/page.min.css") }}" rel="stylesheet">
+    <link href="{{ url("css/style.css") }}" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
