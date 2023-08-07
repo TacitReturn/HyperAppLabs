@@ -8,6 +8,8 @@ class ReactForm extends React.Component {
             budget: [],
             message: "",
         };
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(evt) {
