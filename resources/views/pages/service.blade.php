@@ -61,7 +61,7 @@
         </div>
       </section> --}}
 
-      <section class="section">
+      {{-- <section class="section">
         <div class="container">
           <div class="row gap-y align-items-center">
 
@@ -78,7 +78,7 @@
 
           </div>
         </div>
-      </section>
+      </section> --}}
 
 
 
