@@ -28,9 +28,11 @@
               <h3 class="fw-500">Full-Stack Development</h3>
               <br>
               <p>I use the latest technologies in the Laravel ecosystem. This allows me to build robust web applications that will serve your needs for many years to come</p>
+              <p>Add modularity to an existing application or a project you have in mind with font-end frameworks like React and Vue.</p>
             </div>
 
             <div class="col-md-5 mx-auto">
+                <i class="fa-brands fa-laravel"></i>
               <img class="rounded-md" src="../assets/img/thumb/5.jpg" alt="...">
             </div>
 
