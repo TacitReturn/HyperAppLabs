@@ -18,6 +18,10 @@ class ReactForm extends React.Component {
         });
     }
 
+    handleSubmit(evt) {
+        evt.preventDefault();
+    }
+
     render() {
         return (
             <form
@@ -66,12 +70,16 @@ class ReactForm extends React.Component {
                 </div>
 
                 <div class="form-group col-sm-6 col-xl-3">
-                    <select class="form-control form-control-lg" name="budget">
+                    <select
+                        class="form-control form-control-lg"
+                        name="budget"
+                        value={this.state.budget}
+                    >
                         <option>Budget</option>
-                        <option>Up to $1,000</option>
-                        <option>Up to $3,000</option>
-                        <option>Up to $5,000</option>
-                        <option>Above $5,000</option>
+                        <option value="1">Up to $1,000</option>
+                        <option value="2">Up to $3,000</option>
+                        <option value="3">Up to $5,000</option>
+                        <option value="4">Above $5,000</option>
                     </select>
                 </div>
 
