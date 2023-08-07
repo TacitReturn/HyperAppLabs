@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // TODO: Create functionality for users to unsibscribe from email list.
-// TODO: Update service.blade.php navbar isn't displaying correctly.
 
 Auth::routes();
 
