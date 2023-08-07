@@ -1,3 +1,4 @@
+// TODO: Complete react form, send the contents of formData to the backend
 class ReactForm extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +26,7 @@ class ReactForm extends React.Component {
             name: evt.target.name.value,
             email: evt.target.email.value,
             company: evt.target.company.value,
+            budget: evt.target.budget.value,
             message: evt.target.message.value,
         };
 
