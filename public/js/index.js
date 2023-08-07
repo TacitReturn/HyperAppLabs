@@ -14,7 +14,7 @@ class ReactForm extends React.Component {
 
     handleChange(evt) {
         this.setState({
-            [ent.target.name]: evt.target.value,
+            [evt.target.name]: evt.target.value,
         });
     }
 
