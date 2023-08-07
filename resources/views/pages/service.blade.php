@@ -32,7 +32,9 @@
             </div>
 
             <div class="col-md-5 mx-auto">
-                <i style="font-size: 2.5rem" class="fa-brands fa-laravel"></i>
+                <i class="fa-brands fa-laravel fa-2xl"></i>
+                <i class="fa-brands fa-vuejs fa-2xl"></i>
+                <i class="fa-brands fa-react fa-2xl"></i>
               <img class="rounded-md" src="../assets/img/thumb/5.jpg" alt="...">
             </div>
 
