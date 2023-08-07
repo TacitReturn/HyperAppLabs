@@ -1,7 +1,4 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-
-class ReactForm extends Component {
+class ReactForm extends React.Component {
     render() {
         return (
             <form
