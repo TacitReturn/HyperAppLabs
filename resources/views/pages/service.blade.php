@@ -87,7 +87,7 @@
       | Get A Qoute
       |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
       !-->
-      <section class="section bg-gray">
+      <section id="react-app" class="section bg-gray">
         <div class="container">
           <header class="section-header">
             <small>Work</small>

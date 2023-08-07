@@ -142,5 +142,13 @@
 <script src="{{ asset('js/page.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 
+<!-- React -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+<script language="JavaScript"> 
+    element = React.createElement('h1', {}, 'Hello React!') 
+    ReactDOM.render(element, document.getElementById('react-app')); 
+</script>
 </body>
 </html>
