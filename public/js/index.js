@@ -22,10 +22,10 @@ class ReactForm extends React.Component {
     handleSubmit(evt) {
         evt.preventDefault();
         const formData = {
-            name: evt.target.name,
-            email: evt.target.email,
-            company: evt.target.company,
-            message: evt.target.message,
+            name: evt.target.name.value,
+            email: evt.target.email.value,
+            company: evt.target.company.value,
+            message: evt.target.message.value,
         };
 
         console.log(formData);
