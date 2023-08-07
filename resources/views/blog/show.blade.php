@@ -42,11 +42,7 @@
     </header><!-- /.header -->
     <div>
         @if ($viewsCount > 1)
-<<<<<<< HEAD
-            <div class="m-5 text-light text-center">This article has been read {{ $viewsCount }} times.</div>
-=======
-            <div class="m-5 text-light text-center">This post has been viewed {{ $viewsCount }} times.</div>
->>>>>>> 637fa2781a8663f615f925e675bfc577be730fd9
+            <div class="m-5 text-light text-center">This post has been viewed {{ $viewsCount }} times .</div>
         @else
             <div class="m-5 text-light text-center">You're the first reader of this post :)</div>
         @endif
