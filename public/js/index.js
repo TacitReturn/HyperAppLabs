@@ -1,4 +1,25 @@
 class ReactForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "",
+            email: "",
+            company: "",
+            budget: [],
+            message: "",
+        };
+    }
+
+    handleChange(evt) {
+        this.setState({
+            name: evt.target.value,
+            email: evt.target.value,
+            company: evt.target.value,
+            budget: evt.target.value,
+            message: evt.target.value,
+        });
+    }
+
     render() {
         return (
             <form
@@ -15,6 +36,8 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-sm-6 col-xl-3">
                     <input
+                        value={this.state.name}
+                        onChange={this.handleChange}
                         class="form-control form-control-lg"
                         type="text"
                         name="name"
@@ -24,6 +47,8 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-sm-6 col-xl-3">
                     <input
+                        value={this.state.email}
+                        onChange={this.handleChange}
                         class="form-control form-control-lg"
                         type="email"
                         name="email"
@@ -33,6 +58,8 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-sm-6 col-xl-3">
                     <input
+                        value={this.state.company}
+                        onChange={this.handleChange}
                         class="form-control form-control-lg"
                         type="text"
                         name="company"
@@ -52,6 +79,8 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-12">
                     <textarea
+                        value={this.state.message}
+                        onChange={this.handleChange}
                         class="form-control form-control-lg"
                         rows="4"
                         placeholder="Project Requirements"
