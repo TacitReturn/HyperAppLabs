@@ -5,7 +5,7 @@ class ReactForm extends React.Component {
             name: "",
             email: "",
             company: "",
-            budget: [],
+            budget: "",
             message: "",
         };
 
