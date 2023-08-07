@@ -1,3 +1,9 @@
+const options = [
+    { value: "$1,000", label: "Up to $1,000" },
+    { value: "$3,000", label: "Up to $3,000" },
+    { value: "$5,000", label: "Up to $5,000" },
+];
+
 class ReactForm extends React.Component {
     constructor(props) {
         super(props);
@@ -74,13 +80,8 @@ class ReactForm extends React.Component {
                         class="form-control form-control-lg"
                         name="budget"
                         value={this.state.budget}
-                    >
-                        <option>Budget</option>
-                        <option value="1">Up to $1,000</option>
-                        <option value="2">Up to $3,000</option>
-                        <option value="3">Up to $5,000</option>
-                        <option value="4">Above $5,000</option>
-                    </select>
+                        options={options}
+                    ></select>
                 </div>
 
                 <div class="form-group col-12">
