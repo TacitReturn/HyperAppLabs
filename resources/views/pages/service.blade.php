@@ -32,9 +32,9 @@
             </div>
 
             <div class="col-md-5 mx-auto">
-                <i class="fa-brands fa-laravel fa-2xl"></i>
-                <i class="fa-brands fa-vuejs fa-2xl"></i>
-                <i class="fa-brands fa-react fa-2xl"></i>
+                <i class="fa-brands fa-laravel fa-10x"></i>
+                <i class="fa-brands fa-vuejs fa-10x"></i>
+                <i class="fa-brands fa-react fa-10x"></i>
               {{-- <img class="rounded-md" src="../assets/img/thumb/5.jpg" alt="..."> --}}
             </div>
 
