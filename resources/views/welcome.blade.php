@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <h1>Welcome to Hyper App Labs</h1>
+                    <p class="lead-5">Welcome to Hyper App Labs</p>
                     <p class="lead-2 opacity-90 mt-6">
                         Learn web development, programming paradigms, CI/CD and more..
                     </p>
