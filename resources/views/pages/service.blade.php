@@ -32,7 +32,7 @@
             </div>
 
             <div class="col-md-5 mx-auto">
-                <i class="fa-brands fa-laravel"></i>
+                <i   class="display-5" class="fa-brands fa-laravel"></i>
               <img class="rounded-md" src="../assets/img/thumb/5.jpg" alt="...">
             </div>
 
