@@ -11,13 +11,6 @@
     <!-- Styles -->
     <link href="{{ url("css/page.min.css") }}" rel="stylesheet">
     <link href="{{ url("css/style.css") }}" rel="stylesheet">
-
-    <style type="text/css">
-    body {
-        font-family: 'Dosis', 'Roboto', sans-serif;
-    }
-    </style>
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +40,7 @@
 
             <ul class="nav nav-navbar">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">HyperAppLab</a>
+                    <a style="font-weight: lighter;" class="nav-link" href="/">HyperAppLab</a>
 {{--                    <ul class="nav">--}}
 {{--                        <li class="nav-item">--}}
 {{--                            <a class="nav-link" href="#">Marketing <span class="arrow"></span></a>--}}
@@ -59,10 +52,10 @@
 {{--                    </ul>--}}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('page.service') }}">Our Services<span class="arrow"></span></a>
+                    <a style="font-weight: lighter;"  class="nav-link" href="{{ route('page.service') }}">Our Services<span class="arrow"></span></a>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('page.service') }}">Laravel App Development</a>
+                            <a style="font-weight: lighter;"  class="nav-link" href="{{ route('page.service') }}">Laravel App Development</a>
                             {{-- <nav class="nav">
                                 <a class="nav-link" href="">Laravel App</a>
                             </nav> --}}
