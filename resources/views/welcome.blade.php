@@ -94,7 +94,7 @@
                                                         {{ $post->category->name }}
                                                     </a>
                                                 </p>
-                                                <h5 class="mb-0">
+                                                <p class="mb-0 lead-3">
                                                     <a class="text-dark"
                                                        href="{{ route("blog-post.show", $post->id) }}">
                                                         {{ \Illuminate\Support\Str::limit($post->title, 35) }}
