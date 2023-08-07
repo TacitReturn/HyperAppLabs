@@ -6,6 +6,6 @@ class PageController extends Controller
 {
     public function services()
     {
-        return view("pages.service");
+        return view('pages.service');
     }
 }
