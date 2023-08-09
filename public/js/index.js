@@ -36,6 +36,7 @@ class ReactForm extends React.Component {
             body: JSON.stringify(formData),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
             },
         })
             .then((response) => response.json())
