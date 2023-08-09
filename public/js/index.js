@@ -35,7 +35,7 @@ class ReactForm extends React.Component {
             message: evt.target.message.value,
         };
 
-        fetch("/contact", {
+        fetch("/api/contact", {
             method: "POST",
             credentials: "same-origin",
             body: JSON.stringify({ foo: "Bar" }),
