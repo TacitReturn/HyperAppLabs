@@ -60,9 +60,6 @@
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('page.service') }}">Laravel App Development</a>
-                            {{-- <nav class="nav">
-                                <a class="nav-link" href="">Laravel App</a>
-                            </nav> --}}
                         </li>
                         <li class="nav-item">
                             {{-- <a class="nav-link" href="#">
