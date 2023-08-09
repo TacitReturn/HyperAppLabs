@@ -14,6 +14,7 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// TODO: Create an event and listiner for the contact form, have it sent to the admin when the contact form is filled out.
 // TODO: Create functionality for users to unsibscribe from email list.
 
 Auth::routes();
