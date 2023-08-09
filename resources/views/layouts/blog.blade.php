@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>{{ config("app.name", "HyperAppLabs") }}</title>
 
     <!-- Styles -->

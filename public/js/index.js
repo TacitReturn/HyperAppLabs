@@ -1,4 +1,8 @@
 // TODO: Complete react form, send the contents of formData to the backend
+const csrfToken = document.head.querySelector(
+    "[name~=csrf-token][content]"
+).content;
+
 class ReactForm extends React.Component {
     constructor(props) {
         super(props);
@@ -33,10 +37,11 @@ class ReactForm extends React.Component {
 
         fetch("/contact", {
             method: "POST",
+            credentials: "same-origin",
             body: JSON.stringify(formData),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                "X-CSRF-Token": csrfToken,
             },
         })
             .then((response) => response.json())
