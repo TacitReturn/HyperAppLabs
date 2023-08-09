@@ -59,7 +59,7 @@
                     <a style="font-weight: lighter;"  class="nav-link" href="{{ route('page.service') }}">About Us<span class="arrow"></span></a>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a style="font-weight: bold;" class="nav-link" href="{{ route('page.service') }}">Laravel App Development</a>
+                            <a style="font-weight: normal;" class="nav-link" href="{{ route('page.service') }}">Laravel App Development</a>
                         </li>
                         <li class="nav-item">
                             {{-- <a class="nav-link" href="#">
