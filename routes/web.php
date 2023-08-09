@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 // TODO: Create functionality for users to unsibscribe from email list.
 
-Route::post("/contact", function () {
-    return response()->json(["message" => "Received!"]);
+Route::post('contact', function () {
+    return response()->json(['message' => 'Received!']);
 });
 
 Auth::routes();
