@@ -58,10 +58,11 @@ class ReactForm extends React.Component {
                 >
                     <div class="col-12">
                         <div class="alert alert-success d-on-success">
-                            We received your message and will contact you back soon.
+                            We received your message and will contact you back
+                            soon.
                         </div>
                     </div>
-            
+
                     <div class="form-group col-sm-6 col-xl-3">
                         <input
                             value={this.state.name}
@@ -72,7 +73,7 @@ class ReactForm extends React.Component {
                             placeholder="Name"
                         />
                     </div>
-            
+
                     <div class="form-group col-sm-6 col-xl-3">
                         <input
                             value={this.state.email}
@@ -83,7 +84,7 @@ class ReactForm extends React.Component {
                             placeholder="Email"
                         />
                     </div>
-            
+
                     <div class="form-group col-sm-6 col-xl-3">
                         <input
                             value={this.state.company}
@@ -94,7 +95,7 @@ class ReactForm extends React.Component {
                             placeholder="Company Name"
                         />
                     </div>
-            
+
                     <div class="form-group col-sm-6 col-xl-3">
                         <select
                             onChange={this.handleChange}
@@ -107,7 +108,7 @@ class ReactForm extends React.Component {
                             <option value="+5000">Above $5,000</option>
                         </select>
                     </div>
-            
+
                     <div class="form-group col-12">
                         <textarea
                             value={this.state.message}
@@ -118,7 +119,7 @@ class ReactForm extends React.Component {
                             name="message"
                         ></textarea>
                     </div>
-            
+
                     <div class="col-12 text-center">
                         <button
                             class="btn btn-xl btn-block btn-primary"
@@ -128,8 +129,8 @@ class ReactForm extends React.Component {
                         </button>
                     </div>
                 </form>
+            </StrictMode>
         );
-        </StrictMode>
     }
 }
 
