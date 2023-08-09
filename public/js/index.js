@@ -38,7 +38,7 @@ class ReactForm extends React.Component {
         fetch("/contact", {
             method: "POST",
             credentials: "same-origin",
-            body: JSON.stringify(formData),
+            body: formData,
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
                 "X-CSRF-Token": csrfToken,
