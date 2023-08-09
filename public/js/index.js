@@ -22,6 +22,7 @@ class ReactForm extends React.Component {
 
     handleSubmit(evt) {
         evt.preventDefault();
+
         const formData = {
             name: evt.target.name.value,
             email: evt.target.email.value,
@@ -30,7 +31,15 @@ class ReactForm extends React.Component {
             message: evt.target.message.value,
         };
 
-        console.log(formData);
+        fetch("/contact", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
     }
 
     render() {
