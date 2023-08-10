@@ -28,5 +28,10 @@ class ContactMailable extends Mailable
         $subject = "New Business Inquiry {$this->contactForm->name}";
 
         return $this->subject($subject)->view('emails.contact-form');
+
+        return $this->from('example@example.com')
+            ->markdown('emails.contact-form', [
+                'contactForm' => $this->contactForm,
+            ]);
     }
 }
