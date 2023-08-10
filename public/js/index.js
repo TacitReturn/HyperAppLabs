@@ -49,7 +49,7 @@ class ReactForm extends React.Component {
         fetch("contact", options)
             .then((response) => response.json())
             .then((json) => console.log(json))
-            .catch((error) => console.log(error));
+            .catch((error) => console.log(JSON.stringify(error.message)));
     }
 
     render() {
@@ -63,7 +63,7 @@ class ReactForm extends React.Component {
                     {this.state.success.length > 0 ? (
                         <div class="alert alert-success d-on-success">
                             We received your message and will contact you back
-                            soon.
+                            soon. foo
                         </div>
                     ) : (
                         ""
