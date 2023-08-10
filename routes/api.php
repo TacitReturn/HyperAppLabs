@@ -10,7 +10,6 @@ Route::post('contact', function (Request $request) {
     $formData['budget'];
 
     return response()->json($formData["budget"]);
-    return response()->json(['message' => $formData['budget']]);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
