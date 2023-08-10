@@ -15,7 +15,6 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\ContactUsFormController;
 
 // TODO: Create Mailable for contact form. Send mail when form is submited.
 // TODO: Create functionality for users to unsibscribe from email list.
@@ -29,7 +28,9 @@ Route::post('contact', function (ContactFormRequest $request) {
 
     // Mail::to($user->email)->send(new ContactMailable($contactForm));
 
-    return response()->json(['success' => "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry."]);
+    $request->session()->flash("success", "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry.");
+
+    return;
 });
 
 Auth::routes();
