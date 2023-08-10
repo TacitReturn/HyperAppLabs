@@ -60,7 +60,7 @@ class ReactForm extends React.Component {
                     {this.state.success != null ? (
                         <div class="alert alert-success d-on-success">
                             We received your message and will contact you back
-                            soon.
+                            soon. foo
                         </div>
                     ) : (
                         ""
