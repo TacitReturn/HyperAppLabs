@@ -97,6 +97,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         'comments.unpublish'
     );
 
+    // TODO:// Implement messages route
     Route::get('messages', function () {
         dd('All messages');
     })->name('messages.index');
