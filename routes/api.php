@@ -15,7 +15,7 @@ Route::post('contact', function (Request $request) {
 
     Mail::to($user->email)->send(new Contact($contactForm));
 
-    return response()->json(["success" => "Message sent successfully. We will reach back out to you as soon as possible aobut your inquiry."]);
+    return response()->json(['success' => 'Message sent successfully. We will reach back out to you as soon as possible aobut your inquiry.']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
