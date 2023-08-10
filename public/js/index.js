@@ -44,12 +44,14 @@ class ReactForm extends React.Component {
                 "Content-type": "application/json; charset=UTF-8",
                 "X-CSRF-Token": csrfToken,
             },
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json))
-            .catch((err) => {
-                console.log(err);
-            });
+        }).then((response) => {
+            return response.json();
+        });
+        // .then((response) => response.json())
+        // .then((json) => console.log(json))
+        // .catch((err) => {
+        //     console.log(err);
+        // });
     }
 
     render() {
