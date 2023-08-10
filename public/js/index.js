@@ -45,16 +45,11 @@ class ReactForm extends React.Component {
                 "X-CSRF-Token": csrfToken,
             },
         })
-            .then((response) => {
-                return response.json();
-            })
+            .then((response) => response.json())
             .then((json) => console.log(json))
-            .catch((err) => console.log(err));
-        // .then((response) => response.json())
-        // .then((json) => console.log(json))
-        // .catch((err) => {
-        //     console.log(err);
-        // });
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     render() {
