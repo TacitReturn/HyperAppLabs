@@ -12,6 +12,7 @@ class ReactForm extends React.Component {
             company: "",
             budget: "",
             message: "",
+            success: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -56,9 +57,14 @@ class ReactForm extends React.Component {
                 action="../assets/php/sendmail.php"
             >
                 <div class="col-12">
-                    <div class="alert alert-success d-on-success">
-                        We received your message and will contact you back soon.
-                    </div>
+                    {this.state.success != null ? (
+                        <div class="alert alert-success d-on-success">
+                            We received your message and will contact you back
+                            soon.
+                        </div>
+                    ) : (
+                        ""
+                    )}
                 </div>
 
                 <div class="form-group col-sm-6 col-xl-3">
