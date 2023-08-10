@@ -58,7 +58,7 @@ class ReactForm extends React.Component {
                 action="../assets/php/sendmail.php"
             >
                 <div class="col-12">
-                    {this.state.success != null ? (
+                    {this.state.success.length > 0 ? (
                         <div class="alert alert-success d-on-success">
                             We received your message and will contact you back
                             soon. foo
