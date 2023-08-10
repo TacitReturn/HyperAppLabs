@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Requests\ContactFormRequest;
-use App\Mail\Contact;
+use App\Mail\ContactMailable;
+use App\Models\ContactForm;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -12,9 +13,9 @@ Route::post('contact', function (ContactFormRequest $request) {
 
     $validatedData = $request->validated();
 
-    $contactForm = Contact::create($validatedData);
+    $contactForm = ContactForm::create($validatedData);
 
-    Mail::to($user->email)->send(new Contact($contactForm));
+    Mail::to($user->email)->send(new ContactMailable($contactForm));
 
     return response()->json(['success' => "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry."]);
 });
