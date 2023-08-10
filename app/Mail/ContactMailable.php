@@ -25,9 +25,9 @@ class ContactMailable extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')
-            ->markdown('emails.contact-form', [
-                'contactForm' => $this->contactForm,
+        return $this->from("postmaster@hyperapplabs.com")
+            ->markdown("emails.contact-form", [
+                "contactForm" => $this->contactForm,
             ]);
     }
 }
