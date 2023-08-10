@@ -5,7 +5,4 @@
 <p>Company {{ $contactForm->company }}</p> <br />
 <p>Budget: {{ $contactForm->budget }}</p> <br />
 <p>Message: {{ $contactForm->message }}</p> <br />
-
-Thank you contacting us,<br>
-{{ config('app.name') }}
 @endcomponent
