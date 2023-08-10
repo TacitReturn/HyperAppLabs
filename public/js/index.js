@@ -54,11 +54,7 @@ class ReactForm extends React.Component {
 
     render() {
         return (
-            <form
-                onSubmit={this.handleSubmit}
-                class="form-row input-border"
-                action="../assets/php/sendmail.php"
-            >
+            <form onSubmit={this.handleSubmit} class="form-row input-border">
                 <div class="col-12">
                     {this.state.success.length > 0 ? (
                         <div class="alert alert-success d-on-success">
