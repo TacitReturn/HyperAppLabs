@@ -48,8 +48,8 @@ class ReactForm extends React.Component {
             .then((response) => {
                 return response.json();
             })
-            .then((data) => {
-                console.log(data);
+            .then((json) => {
+                console.log(json);
             });
         // .then((response) => response.json())
         // .then((json) => console.log(json))
