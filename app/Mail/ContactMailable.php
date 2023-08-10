@@ -27,6 +27,6 @@ class ContactMailable extends Mailable
     {
         $subject = "New Business Inquiry {$this->contactForm->name}";
 
-        return $this->subject($subject)->view("emails.contact-form.blade.php");
+        return $this->subject($subject)->view("emails.contact-form");
     }
 }
