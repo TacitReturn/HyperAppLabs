@@ -1,21 +1,36 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\ContactUsFormController;
-use App\Http\Controllers\EmailController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\TagController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\WelcomeController;
+use App\Models\User;
+use App\Models\ContactForm;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmailController;
+use App\Http\Requests\ContactFormRequest;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ContactUsFormController;
 
 // TODO: Create Mailable for contact form. Send mail when form is submited.
 // TODO: Create functionality for users to unsibscribe from email list.
+
+Route::post('contact', function (ContactFormRequest $request) {
+    $user = User::find(1);
+
+    $validatedData = $request->validated();
+
+    $contactForm = ContactForm::create($validatedData);
+
+    // Mail::to($user->email)->send(new ContactMailable($contactForm));
+
+    return response()->json(['success' => "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry."]);
+});
 
 Auth::routes();
 
