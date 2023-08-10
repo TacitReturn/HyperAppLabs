@@ -23,7 +23,7 @@ use Illuminate\Http\Request;
 Route::post('contact', function (Request $request) {
     $user = User::find(1);
 
-    $validatedData = $request->validate([
+    $request->validate([
         'name' => 'required|string|min:3|max:30',
         'email' => 'email:rfc,dns',
         'company' => 'required|string|min:3|max:30',
@@ -31,7 +31,7 @@ Route::post('contact', function (Request $request) {
         'message' => 'required|string|min:3|max:255',
     ]);
 
-    $contactForm = ContactForm::create($validatedData);
+    $contactForm = ContactForm::create($request->all());
 
     // Mail::to($user->email)->send(new ContactMailable($contactForm));
 
