@@ -23,8 +23,6 @@ Route::post('contact', function (ContactFormRequest $request) {
 
         return response()->json(["message" => "Success"]);
     } else {
-        $request->session()->flash("success", "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry.");
-
         return response()->json(["message" => "Error"])->with();
     }
 });
