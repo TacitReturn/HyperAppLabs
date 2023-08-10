@@ -33,7 +33,7 @@ Route::post('contact', function (ContactFormRequest $request) {
 
         return response()->json(["message" => "Success"]);
     } else {
-        return response()->json(["message" => "Error"])->with();
+        return response()->json(["message" => "Error"]);
     }
 });
 
