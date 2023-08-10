@@ -15,7 +15,7 @@ Route::post('contact', function (ContactFormRequest $request) {
 
     $contactForm = ContactForm::create($validatedData);
 
-    Mail::to($user->email)->send(new ContactMailable($contactForm));
+    // Mail::to($user->email)->send(new ContactMailable($contactForm));
 
     return response()->json(['success' => "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry."]);
 });
