@@ -1,11 +1,11 @@
 @component('mail::message')
 # Business Inuiry
-## This business inquiry is from {{ $contactForm->name }}
-<p>Email: {{ $companyForm->email }}</p> <br />
-<p>Company {{ $companyForm->company }}</p> <br />
-<p>Budget: {{ $companyForm->budget }}</p> <br />
-<p>Message: {{ $companyForm->message }}</p> <br />
+## This business inquiry is from {{ $contactForm->name}}
+<p>Email: {{ $contactForm->email }}</p> <br />
+<p>Company {{ $contactForm->company }}</p> <br />
+<p>Budget: {{ $contactForm->budget }}</p> <br />
+<p>Message: {{ $contactForm->message }}</p> <br />
 
-Thank you,<br>
+Thank you contacting us,<br>
 {{ config('app.name') }}
 @endcomponent
