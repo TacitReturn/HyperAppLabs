@@ -2,22 +2,17 @@
 
 namespace App\Mail;
 
+use App\Models\ContactForm;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\ContactForm;
 
 class Contact extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $contactForm;
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+
     public function __construct(ContactForm $contactForm)
     {
         $this->contactForm = $contactForm;
