@@ -96,10 +96,7 @@
             <p class="lead">They original on mountains, drew the support time. The of to graduate into to is the to she.</p>
           </header>
           <div class="col-md-8">
-            <meta name="csrf-token" content="{{ csrf_token() }}">
-            <StrictMode>
-                <ReactForm />
-            </StrictMode>
+            <ReactForm />
           </div>
         </div>
       </section>

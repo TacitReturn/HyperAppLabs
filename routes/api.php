@@ -1,10 +1,16 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 Route::post('contact', function (Request $request) {
-    return response()->json(['message' => $request->all()]);
+
+    $formData = $request->all();
+
+    $formData["budget"];
+
+    return response()->json(['message' => $formData]);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
