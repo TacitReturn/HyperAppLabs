@@ -49,7 +49,7 @@ class ReactForm extends React.Component {
         fetch("contact", options)
             .then((response) => response.json())
             .then((json) => console.log(json))
-            .catch((error) => console.log(error.message));
+            .catch((error) => console.log(error));
     }
 
     render() {
