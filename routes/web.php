@@ -46,10 +46,6 @@ Route::post('comments/{post}', [CommentController::class, 'store'])->name('comme
 
 Route::delete('comments/comment', [CommentController::class, 'destroy'])->name('comments.destroy');
 
-//Route::get('contact', [ContactUsFormController::class, 'createForm'])->name('contact.create');
-
-Route::post('contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
-
 Route::middleware(['auth'])->group(function () {
     Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.index');
 
