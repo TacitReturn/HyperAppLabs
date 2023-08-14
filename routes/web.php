@@ -16,6 +16,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoriesController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 // TODO: Create Mailable for contact form. Send mail when form is submited.
 // TODO: Create functionality for users to unsibscribe from email list.
@@ -23,13 +24,19 @@ use Illuminate\Http\Request;
 Route::post('contact', function (Request $request) {
     $user = User::find(1);
 
-    $validatedData = $request->validate([
+    $validatedData = Validator::make($request->all(), [
         'name' => 'required|string|min:3|max:30',
         'email' => 'email:rfc,dns',
         'company' => 'required|string|min:3|max:30',
         'budget' => 'required',
         'message' => 'required|string|min:3|max:255',
     ]);
+
+    if ($validatedData->fails()) {
+        return response()->json([
+            "validate_err" => $validatedData->messages(),
+        ]);
+    }
 
     $contactForm = ContactForm::create($validatedData);
 
