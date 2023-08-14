@@ -12,7 +12,6 @@ class ReactForm extends React.Component {
             company: "",
             budget: "",
             message: "",
-            error_list: [],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -76,9 +75,6 @@ class ReactForm extends React.Component {
                         name="name"
                         placeholder="Name"
                     />
-                    <span className="text-danger">
-                        {this.state.error_list.name}
-                    </span>
                 </div>
 
                 <div class="form-group col-sm-6 col-xl-3">
@@ -91,9 +87,6 @@ class ReactForm extends React.Component {
                         name="email"
                         placeholder="Email"
                     />
-                    <span className="text-danger">
-                        {this.state.error_list.email}
-                    </span>
                 </div>
 
                 <div class="form-group col-sm-6 col-xl-3">
@@ -106,9 +99,6 @@ class ReactForm extends React.Component {
                         name="company"
                         placeholder="Company Name"
                     />
-                    <span className="text-danger">
-                        {this.state.error_list.company}
-                    </span>
                 </div>
 
                 <div class="form-group col-sm-6 col-xl-3">
@@ -123,9 +113,6 @@ class ReactForm extends React.Component {
                         <option value="5000">Up to $5,000</option>
                         <option value="+5000">Above $5,000</option>
                     </select>
-                    <span className="text-danger">
-                        {this.state.error_list.budget}
-                    </span>
                 </div>
 
                 <div class="form-group col-12">
