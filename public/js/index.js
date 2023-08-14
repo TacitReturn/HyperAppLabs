@@ -68,6 +68,7 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-sm-6 col-xl-3">
                     <input
+                        required
                         value={this.state.name}
                         onChange={this.handleChange}
                         class="form-control form-control-lg"
@@ -79,6 +80,7 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-sm-6 col-xl-3">
                     <input
+                        required
                         value={this.state.email}
                         onChange={this.handleChange}
                         class="form-control form-control-lg"
@@ -90,6 +92,7 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-sm-6 col-xl-3">
                     <input
+                        required
                         value={this.state.company}
                         onChange={this.handleChange}
                         class="form-control form-control-lg"
@@ -101,6 +104,7 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-sm-6 col-xl-3">
                     <select
+                        required
                         onChange={this.handleChange}
                         class="form-control form-control-lg"
                         name="budget"
@@ -114,6 +118,7 @@ class ReactForm extends React.Component {
 
                 <div class="form-group col-12">
                     <textarea
+                        required
                         value={this.state.message}
                         onChange={this.handleChange}
                         class="form-control form-control-lg"
