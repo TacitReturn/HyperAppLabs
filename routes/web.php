@@ -32,11 +32,11 @@ Route::post('contact', function (Request $request) {
         'message' => 'required|string|min:3|max:255',
     ]);
 
-    if ($validatedData->fails()) {
-        return response()->json([
-            "validate_err" => $validatedData->getMessageBag(),
-        ]);
-    }
+    // if ($validatedData->fails()) {
+    //     return response()->json([
+    //         "validate_err" => $validatedData->getMessageBag(),
+    //     ]);
+    // }
 
     $contactForm = ContactForm::create($validatedData);
 
