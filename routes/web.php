@@ -24,19 +24,13 @@ use Illuminate\Support\Facades\Validator;
 Route::post('contact', function (Request $request) {
     $user = User::find(1);
 
-    $validatedData = Validator::make($request->all(), [
+    $validatedData = $request->validate([
         'name' => 'required|string|min:3|max:30',
         'email' => 'email:rfc,dns',
         'company' => 'required|string|min:3|max:30',
         'budget' => 'required',
         'message' => 'required|string|min:3|max:255',
     ]);
-
-    // if ($validatedData->fails()) {
-    //     return response()->json([
-    //         "validate_err" => $validatedData->getMessageBag(),
-    //     ]);
-    // }
 
     $contactForm = ContactForm::create($validatedData);
 
