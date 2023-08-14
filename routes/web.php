@@ -34,7 +34,7 @@ Route::post('contact', function (Request $request) {
 
     if ($validatedData->fails()) {
         return response()->json([
-            "validate_err" => $validatedData->messages(),
+            "validate_err" => $validatedData->getMessageBag(),
         ]);
     }
 
