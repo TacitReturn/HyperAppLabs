@@ -49,8 +49,7 @@ class ReactForm extends React.Component {
         fetch("contact", options)
             .then((response) => response.json())
             .then((json) => console.log(json))
-            .catch((error) => console.log(response.data.validate_err));
-        // .catch((error)) => this.setState({error_list: response.data.validate_err})));
+            .then((json) => console.log(json.data.validate_err));
         // .catch((error) => console.log(JSON.stringify(error.errors)));
     }
 
