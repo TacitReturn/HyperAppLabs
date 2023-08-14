@@ -125,9 +125,6 @@ class ReactForm extends React.Component {
                         placeholder="Project Requirements"
                         name="message"
                     ></textarea>
-                    <span className="text-danger">
-                        {this.state.error_list.message}
-                    </span>
                 </div>
 
                 <div class="col-12 text-center">
