@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Illuminate\Support\Str;
 use App\Http\Requests\Products\StoreProductRequest;
 use App\Http\Requests\Products\UpdateProductRequest;
-use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -60,7 +61,7 @@ class ProductController extends Controller
             }
         }
 
-        $request->session()->flash('status', "Post '{$product->title}' created successfully");
+        $request->session()->flash('status', "Product '{$product->title}' created successfully");
 
         return redirect()->route('posts.index');
     }

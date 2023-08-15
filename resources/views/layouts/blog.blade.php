@@ -57,7 +57,7 @@
         @auth
             <a class="btn btn-xs btn-round btn-success"
                href="{{ route('admin.index') }}">
-                Dashboard lorem
+                Dashboard
             </a>
         @endauth
     </div>
