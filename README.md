@@ -3,4 +3,4 @@
 
 ## About HyperApp Labs
 
-HyperApp Labs is an online community where individuals can learn about web development, continuous integration and continuous deployment.
+HyperApp Labs is an online community where people can learn about web development, CI/CD and much more.
