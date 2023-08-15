@@ -46,11 +46,13 @@
                         </li>
                     </ul>
                 </li>
-
-               <li class="nav-item">
-                   <a href="" class="nav-link">Contact Us</a>
-               </li>
             </ul>
+        </section>
+        <section class="navar-moile">
+            <a class="btn btn-xs btn-round btn-success"
+               href="{{ route('admin.index') }}">
+                Premium
+            </a>
         </section>
         @auth
             <a class="btn btn-xs btn-round btn-success"
