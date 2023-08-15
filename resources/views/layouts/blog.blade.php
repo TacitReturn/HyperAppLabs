@@ -79,7 +79,7 @@
                 </li>
 
                <li class="nav-item">
-                   <a href="{{ route('contact.create') }}" class="nav-link">Contact Us</a>
+                   <a href="" class="nav-link">Contact Us</a>
                </li>
             </ul>
         </section>
