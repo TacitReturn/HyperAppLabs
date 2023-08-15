@@ -48,7 +48,7 @@
                 </li>
             </ul>
         </section>
-        <section class="navar-moile">
+        <section class="navar-moile mx-2">
             <a class="btn btn-xs btn-round btn-success"
                href="{{ route('admin.index') }}">
                 Premium
