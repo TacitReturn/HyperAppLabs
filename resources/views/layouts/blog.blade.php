@@ -57,7 +57,7 @@
 {{--                    </ul>--}}
                 </li>
                 <li class="nav-item">
-                    <a style="font-weight: lighter;"  class="nav-link" href="{{ route('page.service') }}">About Us<span class="arrow"></span></a>
+                    <a style="font-weight: lighter;"  class="nav-link" href="{{ route('page.service') }}">About Us</a>
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="{{ route('page.service') }}">Laravel App Development</a>
