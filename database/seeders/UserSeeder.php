@@ -15,6 +15,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        if (config("app.env") == "local") {
+            \App\Models\User::factory()->create([
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+            ]);
+        }
+        
         $user = User::where('email', 'glenn@hyperapplab.com')->first();
 
         DB::table('bio')->insert(

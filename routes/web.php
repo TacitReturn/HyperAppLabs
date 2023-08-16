@@ -10,13 +10,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EmailController;
-use App\Http\Requests\ContactFormRequest;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 // TODO: Create Mailable for contact form. Send mail when form is submited.
 // TODO: Create functionality for users to unsibscribe from email list.
