@@ -31,57 +31,28 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark" data-navbar="sticky">
     <div class="container">
-
-        {{--        <div class="navbar-left">--}}
-        {{--            <button class="navbar-toggler" type="button">&#9776;</button>--}}
-        {{--            <a class="navbar-brand" href="../index.html">--}}
-        {{--                <img class="logo-dark" src="../assets/img/logo-dark.png" alt="logo">--}}
-        {{--                <img class="logo-light" src="../assets/img/logo-light.png" alt="logo">--}}
-        {{--            </a>--}}
-        {{--        </div>--}}
-
         <section class="navbar-mobile">
             <span class="navbar-divider d-mobile-none"></span>
 
             <ul class="nav nav-navbar">
                 <li class="nav-item">
-                    <a style="font-weight: lighter;" class="nav-link" href="/">HyperAppLab</a>
-{{--                    <ul class="nav">--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link" href="#">Marketing <span class="arrow"></span></a>--}}
-{{--                            <nav class="nav">--}}
-{{--                                <a class="nav-link" href="../demo/marketing-1.html">Marketing 1</a>--}}
-{{--                                <a class="nav-link" href="../demo/marketing-2.html">Marketing 2</a>--}}
-{{--                            </nav>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
+                    <a class="nav-link" href="/">HyperAppLab</a>
                 </li>
                 <li class="nav-item">
-                    <a style="font-weight: lighter;"  class="nav-link" href="{{ route('page.service') }}">About Us</a>
+                    <a class="nav-link" href="{{ route('page.service') }}">About Us</a>
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="{{ route('page.service') }}">Laravel App Development</a>
                         </li>
-                        <li class="nav-item">
-                            {{-- <a class="nav-link" href="#">
-                                DevOps
-                            </a>
-                            <nav class="nav">
-                                <a class="nav-link" href="">
-                                    AWS Cloud Architect
-                                </a>
-                                <a class="nav-link" href="">
-                                    CI/CD
-                                </a>
-                            </nav> --}}
-                        </li>
                     </ul>
                 </li>
-
-               <li class="nav-item">
-                   <a href="" class="nav-link">Contact Us</a>
-               </li>
             </ul>
+        </section>
+        <section class="navar-mobile mx-2">
+            <a class="btn btn-xs btn-round btn-success"
+               href="{{ route('admin.index') }}">
+                Premium
+            </a>
         </section>
         @auth
             <a class="btn btn-xs btn-round btn-success"
@@ -90,7 +61,8 @@
             </a>
         @endauth
     </div>
-</nav><!-- /.navbar -->
+</nav>
+<!-- /Navbar -->
 
 @yield("header")
 

@@ -95,7 +95,7 @@
                 </table>
             @else
                 <div class="text-center">
-                    <p class="lead">No Posts</p>
+                    <p class="lead">No Products</p>
                 </div>
         @endif
         <!-- Button trigger modal -->
