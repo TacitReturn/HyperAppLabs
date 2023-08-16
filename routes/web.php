@@ -17,9 +17,9 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 
-// TODO: Create Mailable for contact form. Send mail when form is submited.
-// TODO: Create functionality for users to unsibscribe from email list.
 
+// TODO: Create functionality for users to unsibscribe from email list.
+// TODO: Decide what to do with the ProductController, and how to implement backend premium content.
 Route::post('contact', function (Request $request) {
     $user = User::find(1);
 

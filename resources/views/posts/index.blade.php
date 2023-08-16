@@ -43,7 +43,7 @@
                             </td>
                             <td colspan="1">
                                 <img
-                                        src="{{ secure_asset('storage/'.$post->image) }}"
+                                        src="{{ url('storage/'.$post->image) }}"
                                         alt="post image"
                                         height="60" width="60">
                             </td>

@@ -17,17 +17,17 @@ class UserSeeder extends Seeder
     {
         if (config("app.env") == "local") {
             \App\Models\User::factory()->create([
-                'name' => 'Test User',
-                'email' => 'test@example.com',
+                "name" => "Test User",
+                "email" => "test@example.com",
             ]);
         }
-        
-        $user = User::where('email', 'glenn@hyperapplab.com')->first();
 
-        DB::table('bio')->insert(
+        $user = User::where("email", "glenn@hyperapplab.com")->first();
+
+        DB::table("bio")->insert(
             [
-                'bio' => 'I started off in tech at a young age, building websites for my E-sports and skateboarding
-                team. Eventually, I begin learning more and more about web development, and here I am today.',
+                "bio" => "I started off in tech at a young age, building websites for my E-sports and skateboarding
+                team. Eventually, I begin learning more and more about web development, and here I am today.",
             ]
         );
     }
