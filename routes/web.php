@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MembershipController;
 use App\Models\User;
 use App\Models\ContactForm;
 use Illuminate\Support\Facades\Auth;
@@ -74,6 +75,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('restore-post/{post}', [PostController::class, 'restorePost'])->name(
         'restore-posts'
     );
+
+    Route::resource("members", MembershipController::class);
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {

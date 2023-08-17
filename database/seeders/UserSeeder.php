@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         if (config("app.env") == "local") {
-            \App\Models\User::factory()->create([
+            User::factory()->create([
                 "name" => "Test User",
                 "email" => "test@example.com",
             ]);
