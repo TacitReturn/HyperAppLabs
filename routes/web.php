@@ -76,6 +76,10 @@ Route::middleware(['auth'])->group(function () {
         'restore-posts'
     );
 
+    Route::get("/members/login", [MembershipController::class, "login"])->name("members.login");
+
+    Route::get("/members/register", [MembershipController::class, "register"])->name("members.register");
+
     Route::resource("members", MembershipController::class);
 });
 
