@@ -55,6 +55,17 @@ Route::post('comments/{post}', [CommentController::class, 'store'])->name('comme
 
 Route::delete('comments/comment', [CommentController::class, 'destroy'])->name('comments.destroy');
 
+/*
+ * Members Routes
+ */
+Route::get("/members/login", [MembershipController::class, "login"])->name("members.login");
+
+Route::get("/members/register", [MembershipController::class, "register"])->name("members.register");
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource("members", MembershipController::class);
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.index');
 
@@ -75,12 +86,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('restore-post/{post}', [PostController::class, 'restorePost'])->name(
         'restore-posts'
     );
-
-    Route::get("/members/login", [MembershipController::class, "login"])->name("members.login");
-
-    Route::get("/members/register", [MembershipController::class, "register"])->name("members.register");
-
-    Route::resource("members", MembershipController::class);
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
