@@ -9,6 +9,25 @@ use App\Models\Membership;
 class MembershipController extends Controller
 {
     /**
+     * Login members.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function login()
+    {
+        return view("members.login");
+    }
+
+    /**
+     * Register members.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function register()
+    {
+        return view("members.register");
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
