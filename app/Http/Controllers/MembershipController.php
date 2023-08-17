@@ -34,7 +34,7 @@ class MembershipController extends Controller
      */
     public function index()
     {
-        //
+        return view("members.index");
     }
 
     /**
