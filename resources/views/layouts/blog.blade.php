@@ -7,7 +7,7 @@
     <meta name="keywords" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config("app.name", "HyperAppLabs") }}</title>
+    <title>{{ config("app.name", "HyperApp Labs") }}</title>
 
     <!-- Styles -->
     <link href="{{ url("css/page.min.css") }}" rel="stylesheet">
@@ -26,8 +26,6 @@
     <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
 </head>
 <body class="m-0">
-
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark" data-navbar="sticky">
     <div class="container">
@@ -48,12 +46,11 @@
                 </li>
             </ul>
         </section>
-        <section class="navar-mobile mx-2">
-            <a class="btn btn-xs btn-round btn-success"
-               href="{{ route('admin.index') }}">
-                Premium
-            </a>
-        </section>
+
+        {{-- <a class="btn btn-xs btn-round btn-success mx-2" href="{{ route('members.login') }} ">
+            Premium
+        </a> --}}
+
         @auth
             <a class="btn btn-xs btn-round btn-success"
                href="{{ route('admin.index') }}">
@@ -67,7 +64,7 @@
 @yield("header")
 
 @yield("content")
-<!-- Footer -->
+
 <footer class="footer">
     <div class="container">
         <div class="row gap-y align-items-center">
@@ -87,7 +84,7 @@
 
         </div>
     </div>
-</footer><!-- /.footer -->
+</footer>
 
 
 <!-- Scripts -->

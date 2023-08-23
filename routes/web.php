@@ -1,26 +1,32 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\MembershipController;
-use App\Models\User;
-use App\Models\ContactForm;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TagController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\EmailController;
-use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Models\ContactForm;
+use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 // TODO: Create functionality for users to unsibscribe from email list.
 // TODO: Decide what to do with the ProductController, and how to implement backend premium content.
+// TODO: Make it so that members can't visit /members/login once they've been authenticated
+
+
+Route::get("/features", [PageController::class, "features"])->name("pages.features");
+
+Route::get("/contact", [PageController::class, "contact"])->name("pages.contact");
+
 Route::post('contact', function (Request $request) {
     $user = User::find(1);
 
@@ -36,9 +42,9 @@ Route::post('contact', function (Request $request) {
 
     // Mail::to($user->email)->send(new ContactMailable($contactForm));
 
-    $request->session()->flash("success", "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry.");
+    $request->session()->flash('success', "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry.");
 
-    return response()->json(["message" => $request->all()]);
+    return response()->json(['message' => $request->all()]);
 });
 
 Auth::routes();
@@ -58,15 +64,25 @@ Route::delete('comments/comment', [CommentController::class, 'destroy'])->name('
 /*
  * Members Routes
  */
-Route::get("/members/login", [MembershipController::class, "login"])->name("members.login");
+Route::get('/members', [MembershipController::class, 'index'])->name('members.index');
 
-Route::get("/members/register", [MembershipController::class, "register"])->name("members.register");
+Route::get('/members/login', [MembershipController::class, 'showLoginForm'])->name('members.login');
+
+Route::get('/members/register', [MembershipController::class, 'showRegisterForm'])->name('members.register');
+
+Route::post('/members/register', [MembershipController::class, 'register']);
+
+Route::post('/members/login', [MembershipController::class, 'authenticate'])->name("members.authenticate");
+
+Route::get('/members/{user}/profile', [MembershipController::class, 'showProfile'])->name("members.profile");
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource("members", MembershipController::class);
+    Route::resource('members', MembershipController::class);
 });
 
 Route::middleware(['auth'])->group(function () {
+    Route::resource("courses", CourseController::class);
+
     Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.index');
 
     Route::resource('categories', CategoriesController::class);

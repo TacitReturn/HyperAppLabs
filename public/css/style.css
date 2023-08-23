@@ -378,3 +378,8 @@ h6 {
 .react-icon {
     color: #61dbfb;
 }
+
+.alert-danger {
+    background-color: red;
+    color: darkred;
+}

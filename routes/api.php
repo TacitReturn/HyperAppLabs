@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
-
 Route::post('contact', function (ContactFormRequest $request) {
     $user = User::find(1);
 
@@ -19,11 +18,11 @@ Route::post('contact', function (ContactFormRequest $request) {
 
         // Mail::to($user->email)->send(new ContactMailable($contactForm));
 
-        $request->session()->flash("success", "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry.");
+        $request->session()->flash('success', "Thank you for your interest in doing busines {$contactForm->name}. We will reach back out to you as soon as possible aobut your inquiry.");
 
-        return response()->json(["message" => "Success"]);
+        return response()->json(['message' => 'Success']);
     } else {
-        return response()->json(["message" => "Error"])->with();
+        return response()->json(['message' => 'Error'])->with();
     }
 });
 

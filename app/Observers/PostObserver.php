@@ -58,10 +58,10 @@ class PostObserver
          * Return the appropriate message.
          */
         if (Mail::failures() != 0) {
-            info('Emails have been sent successfully on ' . Carbon::now());
+            info('Emails have been sent successfully on '.Carbon::now());
         }
 
-        info('Oops! There was some error sending the emails on ' . Carbon::now());
+        info('Oops! There was some error sending the emails on '.Carbon::now());
     }
 
     /**
