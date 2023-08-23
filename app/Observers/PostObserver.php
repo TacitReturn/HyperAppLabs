@@ -19,23 +19,23 @@ class PostObserver
      */
     public function created(Post $post)
     {
-        $emails = DB::table('emails')->get();
+        // $emails = DB::table('emails')->get();
 
-        $emailsAddresses = $emails->pluck('email');
+        // $emailsAddresses = $emails->pluck('email');
 
-        foreach ($emailsAddresses as $email) {
-            Mail::to($email)->send(new PostCreated($post));
-        }
+        // foreach ($emailsAddresses as $email) {
+        //     Mail::to($email)->send(new PostCreated($post));
+        // }
 
-        /**
-         * Check if the email has been sent successfully, or not.
-         * Return the appropriate message.
-         */
-        if (Mail::failures() != 0) {
-            info('Emails have been sent successfully.');
-        }
+        // /**
+        //  * Check if the email has been sent successfully, or not.
+        //  * Return the appropriate message.
+        //  */
+        // if (Mail::failures() != 0) {
+        //     info('Emails have been sent successfully.');
+        // }
 
-        info('Oops! There was some error sending the emails.');
+        // info('Oops! There was some error sending the emails.');
     }
 
     /**
